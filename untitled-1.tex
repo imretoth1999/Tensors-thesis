@@ -1,0 +1,351 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amssymb,amsmath,amsfonts,amsthm, nccmath, amscd}
+\usepackage[utf8]{inputenc}
+\usepackage[romanian,english]{babel}
+\usepackage[T1]{fontenc} 
+\usepackage{fullpage}
+\usepackage{amsthm}
+\usepackage{comment}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{defn}[thm]{Definition} 
+\newtheorem{exmp}{Example}[section]
+
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+
+\textsc{ \large UNIVERSITATEA BABEŞ-BOLYAI CLUJ-NAPOCA}\\\medskip
+
+\textsc{\large FACULTATEA DE MATEMATICĂ ŞI INFORMATICĂ}\\\medskip
+\textsc{\large SPECIALIZAREA MATEMATICĂ }\\[4 cm]
+
+\textsc{\LARGE\textbf{GRADUATION THESIS} }\\[1 cm]
+\textsc{\LARGE\textbf{Tensors}}\\[7 cm]
+\begin{flushleft}
+\textsc{\Large Conducător ştiinţific}\\
+\textsc{\Large Prof. Dr. Andrei Mărcuş }\\[2 cm]
+\end{flushleft}
+\begin{flushright}
+\textsc{\Large Absolvent}\\
+\textsc{\Large Toth Imre}\\[3 cm]
+\end{flushright}
+\textsc{\Large Cluj Napoca\\ 2020}
+\end{center}
+\end{titlepage}
+\renewcommand{\contentsname}{Cuprins}
+\renewcommand{\refname}{Bibliografie}
+\setcounter{page}{0}
+\tableofcontents
+\newpage
+\section{Preliminaries}
+\subsection{Vector space}
+Before we dive into the notion of tensors, first we need to remember fundamental concepts that are necessary into understanding the tensors.
+
+Let us begin with the definition of an abstract vector space.
+\begin{defn} A \textbf{vector space} V over $\mathbb{C}$ is a set of objects called \textbf{vectors}, with the following properties:
+\item[1.] To every pair of vectors x and y in V there corresponds a vector x + y also in V, called the \textit{sum} of x and y such that:
+\item \hspace{1cm} a) x + y = y + x
+\item \hspace{1cm} b) x + (y + z) = (x + y) + z
+\item \hspace{1cm} c) There exists a unique vector 0 $\in$ V, called the \textbf{zero vector}, such that x + 0 = x for every vector x
+\item \hspace{1cm} d) To every vector x $\in$ V there corresponds a unique vector -x $\in$ V such that x + (-x) = 0
+\item[2.] To every complex number $\alpha$(also called a \textbf{scalar}) and every vector x there corresponds a vector $\alpha$x in V such that:
+\item \hspace{1cm} a) $\alpha$($\beta$x) = ($\alpha$$\beta$)x
+\item \hspace{1cm} b) 1x = x
+\item[3.] Multiplication involving vectors and scalars is distributive:
+\item \hspace{1cm} a) $\alpha$(x + y) = $\alpha$x + $\alpha$y
+\item \hspace{1cm} b) ($\alpha$ + $\beta$)x = $\alpha$x + $\beta$x
+\end{defn}
+\begin{exmp}$\mathbb{C}^2$ is a vector space with multiplication and addition having their usual meaning.
+\end{exmp}
+Now we shall remember the inner product as it is defined, so we can revisit it later on when we talk about tensors.
+\begin{remark}
+The inner product generalizes the dot product to abstract vector spaces over a field of scalars, being either the field of real numbers $\mathbb{R}$ or the field of complex numbers $\mathbb{C}$. It is usually denoted by $\langle x, y\rangle$.
+\end{remark}
+\begin{defn}
+The \textbf{inner product} of two vectors, x and y, in a vector space V is a complex number, $\langle x, y\rangle \in \mathbb{C}$ such that
+\item[1.] $\langle x, y \rangle  = \langle y, x \rangle^*$
+\item[2.] $\langle x, (\beta y + \gamma z) \rangle = \beta \langle x, y\rangle + \gamma \langle x, z\rangle$
+\item[3.]$\langle x,x \rangle \geqslant 0 $ and $ \langle x, x \rangle = 0$ if and only if x = 0.\\
+The last relation is called the \textbf{positive definite} property of the inner product. A positive definite real inner product is also called a \textbf{Euclidian} inner product, otherwise it is called \textbf{pseudo-Euclidian}.
+\end{defn}
+\begin{defn}
+The vectors x$_{1}$,x$_{2}$,....,x$_{n}$ are said to be \textbf{linearly independent} if for $\alpha_{i} $$\in$$\mathbb{C}$, the relation $\sum_{i=1}^{n}$$ \alpha_{i}$x$_{i} $= 0 implies $\alpha_{i}$ =0 for all i. The  vectors are called \textbf{linearly dependent} otherwise. 
+\end{defn}
+\begin{defn}
+A \textbf{subspace} W of a vector space V is a nonempty subset of V with the property that if x,y $\in$ W, then $\alpha$x + $\beta$y also belongs to W, $\forall$ $\alpha$,$\beta$ $\in$ $\mathbb{C}$
+\end{defn}
+\begin{remark}
+The subspace is a vector space in its own right and the intersection of two subspaces is also a subspace.
+\end{remark}
+\begin{defn}
+A \textbf{basis} of a vector space V is a set B of linearly independent vectors that spans all of V. A vector space that has a finite basis is called \textbf{finite-dimensional} and \textbf{infinite-dimensional} otherwise. We call the cardinality of the set B the \textbf{dimension} of V.
+\end{defn}
+\begin{defn}
+A \textbf{linear map}(or \textbf{transformation}) from the complex vector space V to the complex vector space W is a mapping \textbf{T}:V$\to$W such that:\\
+\hspace{1cm} \textbf{T}($\alpha$x + $\beta$y) = $\alpha$\textbf{T}(x) + $\beta$\textbf{T}(y) $\forall$ x,y$\in$ V and $\alpha$,$\beta$$\in$$\mathbb{C}$\\
+A linear transformation \textbf{T}:V$\to$V is called an \textbf{endomorphism} of V or a \textbf{linear operator} on V.
+\end{defn}
+An important example of linear transformations occurs when the second vector space W, happens to be the set of scalars, $\mathbb{C}$ or $\mathbb{R}$, in which case the linear transformation is called a \textbf{linear functional}. The set of linear functionals $\mathcal{L}$(V,$\mathbb{C}$) or $\mathcal{L}$(V,$\mathbb{R}$) if V is a real vector space is denoted by V$^*$ and is called the \textbf{dual space} of V.
+\begin{defn}
+A vector space V is said to be isomorphic to another vector space W and written V ${\cong}$W, if there exists a bijective linear map \textbf{T}:
+V $\to$ W. Then \textbf{T} is called an \textbf{isomorphism}. A bijective linear map of V onto itself is called an \textbf{automorphism} of V.An automorphism is also called an \textbf{invertible} linear map. 
+\end{defn}
+\begin{defn}
+Let A be an N $\times$ N matrix. The mapping tr:M$^{(N\times N)}$$\to$$\mathbb{C}$ (or $\mathbb{R}$) given by tr A = $\sum_{i=1}^{n}$$ \alpha_{ii} $ is called the \textbf{trace} of A.
+\end{defn}
+\begin{thm}
+The trace is a linear mapping. Furthermore, tr(AB) = tr(BA) and trA$^t$ = trA.
+\end{thm}
+\begin{proof}
+To prove the first identity, we use the definitions of trace and matrix product:\\
+tr(AB) = $\sum_{i=1}^{n}$(AB)$_{ii} $ = $\sum_{i=1}^{n}$ $\sum_{j=1}^{n}$(A)$_{ij}$(B)$_{ji}$ =  $\sum_{i=1}^{n}$ $\sum_{j=1}^{n}$(B)$_{ji}$(A)$_{ij}$ = $\sum_{j=1}^{n}$ ( $\sum_{i=1}^{n}$(B)$_{ji}$(A)$_{ij}$) = $\sum_{j=1}^{n}$(BA)$_{jj}$ = tr(BA).\\
+The linearity of the trace and the second identity follow directly from the definition.
+\end{proof}
+
+\subsection{Multilinear maps}
+There is a very useful generalization of the linear functionals that becomes essential in the treatment of tensors. However, a limited version of its application is used in the discussion of determinants, which we shall start here.
+
+\begin{defn}
+Let V and U be vector spaces. Let V$^P$ denote the p-fold Cartesian product of V. A \textbf{p-linear map} from V to U is a map $\Theta$:V$^P$$\to$U which is linear with respect to each of its arguments:\\
+$\Theta$(x$_1$,...,$\alpha$x$_j$ + $\beta$y$_j$,...,x$_p$) = $\alpha$$\Theta$(x$_1$,....,x$_j$,....,x$_p$) + $\beta$$\Theta$(x$_1$,....,y$_j$,...,x$_p$).\\
+A p-linear map from V to $\mathbb{C}$ or $\mathbb{R}$ is called a \textbf{p-linear function} in V.
+\begin{exmp}
+Let \{$\Phi$$_i$\}$^{p}_{i}$ be a linear functionals on V. Define $\Theta$ by $\Theta$(x$_1$,...,x$_p$) = $\Phi$$_1$(x$_1$),...,$\Phi$$_P$(x$_P$), x$_i$$\in$V.\\
+Clearly $\Theta$ is p-linear.
+\end{exmp}
+\hspace {1cm} Let $\sigma$ denote the permutation of 1, 2,..., p. Define the p-linear map $\sigma$$\omega$ by $\sigma$$\omega$(x$_1$,...,x$_p$) = $\omega$(x$_{\sigma (1)}$,....,x$_{\sigma (p)}$)\\
+\end{defn}
+\begin{defn}
+A p-linear map $\omega$ from V to U is \textbf{skew-symmetric} if $\sigma\omega$ = $\epsilon_{\sigma}$ if:\begin{center}
+$\omega$(x$_{\sigma(1)}$,...,x$_{\sigma(p)}$) = $\epsilon_{\sigma}\omega$(x$_1$,...,x$_p$)\end{center}
+where $\epsilon_{\sigma}$ is the sign of $\sigma$, which is +1 if $\sigma$ is even and -1 if it is odd. The set of p-linear skew-symmetric maps from V to U is denoted by $\Lambda^{P}$(V,U). The set of p-linear skew-symmetric functions in V is denoted by $\Lambda^{P}$(V).\\
+\hspace{1cm} The permutation sign $\epsilon_{\omega}$ is sometimes written as \begin{center}
+$\epsilon_{\sigma}$ = $\epsilon_{\sigma(1)\sigma(2)...\sigma(p)} $$\equiv$ $\epsilon_{i_{1}i_{2}...i_{p}}$, where i$_k$ $\equiv$ $\sigma(k)$.
+\end{center}
+\end{defn}
+
+
+\begin{defn}
+A skew symmetric N-linear function in V,i.e., a member of $\Lambda^N$(V) is called a \textbf{determinant function} in V.\\
+Let B = \{|e$_k$\}$^{N}_{k=1}$ be a basis of V and B$^*$ = \{$\epsilon_k$\}$^N_{j=1}$ a basis of V$^*$, dual to B. For any set of N vector \{x$_k$\}$^N_{k=1}$ in V, define the N-linear function $\Theta$ by \begin{center}
+	$\Theta$(x$_1$,...,x$_N$) = $\epsilon_1$(x$_1$)...$\epsilon_N$(x$_N$),
+\end{center} 
+Now let $\Delta$ be defined by $\Delta$ $\equiv$ $\sum_{\pi}\epsilon_{\pi} \cdot \theta$ Then, $\Delta \in \Lambda^N(V)$,i.e., $\Delta$ is a determinant function.
+\end{defn}
+Let \textbf{A} be a linear operator on an N-dimensional vector space V. Choose a nonzero determinant function $\Delta$. For a basis \{v$_i$\}$^{N}_{i=1}$ define the function $\Delta_A$ by \begin{center}
+$\Delta_A$(v$_1$,...,v$_N$) $\equiv$ $\Delta$(Av$_1$,...,Av$_N$).
+\end{center}
+\begin{defn}
+Let A $\in$ End(V). Let $\Delta$ be a nonzero determinant function in V, and let $\Delta_A$ be as mentioned before. Then \begin{center}
+$\Delta_A$ = det A$\cdot \Delta$
+\end{center}
+defines the \textbf{determinant of A}.\end{defn}
+\section{Tensors}
+From here on,we will consider only real vector spaces and the basis vectors of a vector space V will be distinguished by a subscript and those of its dual space by a superscript.For example, if \{e$_i$\}$^N_{i=1}$ is a basis in V, then the basis in V$^*$ will be \{$\epsilon^j$\}$^N_{j=1}$ so we can avoid confusions.\textbf{ Einstein's summation convention} will also be used:\\
+Repeated indices, of which one is an upper and the other a lower index, are assumed to be summed over: a$^k_i$b$^i_j$ means $\sum^N_{i=1}$a$^k_i$b$^i_j$.\\
+It is more natural to label the elements of a matrix representation of an operator \textbf{A} by $\alpha^i_j$ (rather than $\alpha_{ji}$, because then Ae$_i$= $\alpha^j_i$e$_j$.
+\subsection{Tensors as Multilinear Maps}
+Since tensors are special kinds of linear operators on vector spaces, let us reconsider $\mathcal{L}$(V,W), the space of all linear mappings from the real vector space V to the real vector space W. 
+\begin{defn}
+A map \textbf{T}:V$_1\times$ V$_2\times $...$\times$ V$_r\to$ W is called r-\textbf{linear} if it is linear in all its variables:\begin{center}
+\textbf{T}(v$_1$,....,$\alpha v_i$ + $\alpha'v'_i$,....,v$_r$) = $\alpha$\textbf{T}(v$_1$,....,v$_i$,....,v$_r$) + $\alpha'$\textbf{T}(v$_1$,....,v'$_i$,....,v$_r$) for all i.
+\end{center}
+\end{defn}
+\begin{defn}
+Let $\tau_1\in V^*_1$ and $\tau_2\in V^*_2$. We construct the bilinear map $\tau_1\otimes \tau_2:V_1\times V_2\to \mathbb{R}$ by $\tau_1\otimes \tau_2$(v$_1$,v$_2$) = $\tau_1$(v$_1$)$\tau_2$(v$_2$). The expression $\tau_1\otimes \tau_2$ is called the \textbf{tensor product} of $\tau_1$ and $\tau_2$
+\end{defn}
+An r-linear map can be multiplied by a scalar, and two r-linear maps can
+be added; in each case the result is an r-linear map. Thus, the set of r-linear
+maps from V$_1$ $\times$···$\times$ V$_r$ into W forms a vector space that is denoted by
+$\mathcal{L}$(V$_1$,...,V$_r$;W).\\
+
+We can also construct multilinear maps on the dual space. First, we note
+that we can define a natural linear functional on V$^*$ as follows. We let $\tau \in V^* $
+and v $\in$ V; then $\tau$(v) $\in$ $\mathbb{R}$. Now we twist this around and define a mapping
+v : V$_*$ $\to$ $\mathbb{R}$ given by v($\tau$) $\equiv$ $\tau$(v). We have naturally constructed a linear functional on V$^*$ by
+identifying (V$^*)^*$ with V.
+\begin{defn}
+Let V be a vector space with dual space V$^*$. Then a \textbf{tensor of type (r,s)} is a multilinear mapping\begin{center}
+\textbf{T} $^r_s$:$\underbrace{V^*\times V^*\times ... \times V^*}_{r\ times}\times\underbrace{V\times V\times...\times V}_{s\ times}$
+\end{center}
+The set of all such mappings for fixed r and s forms a vector space denoted
+by T$^r_s$ (V). The number r is called the \textbf{contravariant degree} of the tensor,
+and s is called the \textbf{covariant degree} of the tensor.
+\end{defn}
+\begin{exmp}
+\item[a)]A tensor of type (0, 0) is defined to be a scalar, so T$^0_0$(V) = $\mathbb(R)$.
+\item[b]) A tensor of type (1, 0), an ordinary vector, is called a contravariant vector, and one
+of type (0, 1), a dual vector (or a linear functional), is called a covariant
+vector.
+\item[c)] A tensor of type (r, 0) is called a contravariant tensor of rank r,
+and one of type (0,s) is called a covariant tensor of rank s.
+\end{exmp}
+The union of T$^r_s$ (V) for all possible r and s can be made into an (infinite-dimensional) algebra called \textbf{algebra of tensors}.\\
+First we define the following product on it:
+\begin{defn}
+The \textbf{tensor product} of a tensor \textbf{T} of type (r,s) and a tensor \textbf{U} of type (k,l) is a tensor \textbf{T}$\otimes$\textbf{U} of type (r+k,s+l),defined, as an operator on (V$^*$)$^{r+k}\times V^{s+l}$, by \begin{center}
+\textbf{T}$\otimes$\textbf{U}($\theta^1$,...,$\theta^{r+k}$,u$_1$,...,u$_{s+l}$) = \textbf{T}($\theta^1$,...,$\theta^r$,u$_1$,....,u$_s$)\textbf{U}($\theta^{r+1}$,....,$\theta^{r+k}$,u$_{s+l}$,...,u$_{s+l}$).
+\end{center}
+This product turns the (infinite-dimensional) vector space of all tensors into an associative algebra called a \textbf{tensor algebra}.
+\end{defn}
+\begin{exmp}
+What is the tensor product of \textbf{A} = 2e$_x$ - e$_y$ + 3e$_z$ with itself?\\
+\textbf{A}$\otimes$\textbf{A} = (2,-1,3)$\otimes$(2-1,3)\\
+Using the formula from above, we can compute the tensor product\\
+(2,-1,3)$\otimes$(2-1,3)=(2 $\cdot$ 2,2 $\cdot$ -1,2 $\cdot$ 3,-1 $\cdot$ 2,-1 $\cdot$ -1,-1 $\cdot$ 3,3 $\cdot$ 2,3 $\cdot$ -1,3 $\cdot$ 3)\\
+(2,-1,3)$\otimes$(2-1,3) = (4, -2, 6, -2, 1, -3, 6, -3, 9)
+
+\end{exmp}
+\textbf{Difference between direct sum and tensor product}\\
+We'll assume V and W are finite dimensional vector spaces. That means we can think of V as $\mathbb{R}^n$ and W as $\mathbb{R}^m$ for some positive integers n and m.I will use the following simple example to show the difference between direct sum and tensor product:\\
+Let x.y be two vectors, x $\in\mathbb{R}^3$ and y $\in\mathbb{R}^2$
+\[x = 
+\begin{pmatrix}
+1\\2\\3
+\end{pmatrix}
+,y = 
+\begin{pmatrix}
+4\\5
+\end{pmatrix}
+\]
+We call x $\oplus$ y the \textbf{direct sum} .In this case, x$\oplus$y is:
+\[x = 
+\begin{pmatrix}
+1\\2\\3
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+4\\5
+\end{pmatrix}
+=\begin{pmatrix}
+1\\2\\3\\4\\5
+\end{pmatrix}
+\]
+We shall see that the direct sum give a list of m + n numbers, this gives us a way to build a space where the dimensions \textbf{add}.\\
+Now lets see the tensor product of x and y, denoted x$\otimes$y.
+\[x = 
+\begin{pmatrix}
+1\\2\\3
+\end{pmatrix}
+\oplus
+\begin{pmatrix}
+4\\5
+\end{pmatrix}
+=\begin{pmatrix}
+1 \cdot 4 \\ 1 \cdot 5\\2 \cdot 4\\2 \cdot 5\\3 \cdot 4\\3 \cdot 5
+\end{pmatrix}
+\]
+We see that the tensor product gives a list of m * n numbers, this gives us a way to build a space where the dimensions \textbf{multiply}.
+\begin{defn}
+A \textbf{contraction} of a tensor A$\in T^r_s$(V) with respect to a contravariant index at position p and covariant index at position q is a linear mapping C$^p_q$(V)$\to$T$^{r-1}_{s-1}$(V) given in \textit{component form} by\begin{center}
+	[C$^p_q$(A)]$^{i_1...i_{r-1}}_{j_1...j_{s-1}}$ = A $^{i_1...i_{p-1}ki_{p+1}...i_r}_{j_1...j_{q-1}kj_{q+1}...j_s}$ $\equiv$ $\sum_{k}$A $^{i_1...i_{p-1}ki_{p+1}...i_r}_{j_1...j_{q-1}kj_{q+1}...j_s}$
+\end{center}
+\end{defn}
+\subsection{Symmetries of Tensors}
+Many applications demand tensors that have some kind of symmetry property. One symmetric tensor is the metric 'tensor' of an inner product: If V is a vector space  and v$_1$,v$_2$$\in$V, then g(v$_1$,v$_2$) = g(v$_2$,v$_1$). The following generalizes this property.
+\begin{defn}
+A tensor A is \textbf{symmetric} in the ith and jth variables if its value as a multilinear function is unchanged when these variables are interchanged.Clearly, the two variables must be of the same kind.
+\end{defn}
+\hspace{1cm} From this definition. it follows that in any basis, the components of a symmetric tensor do not change when the ith and jth indices are interchanged.
+\begin{defn}
+A tensor is \textbf{contravariant-symmetric} if it is symmetric in every pair of its covariant indices. A tensor is \textbf{symmetric} if it is both contravariant-symmetric and covariant-symmetric.
+\end{defn}
+\hspace{1cm} An immediate consequence of this definition is the following theorem:
+\begin{thm}
+A tensor S of type(r,0) is symmetric if and only if for any permutation $\pi$ of 1,2,...r, and any $\tau^1,\tau^2,...,\tau^r$ in V$^*$ we have \begin{center}
+S($\tau^{\pi(1)},\tau^{\pi(2)},...,\tau^{\pi(r)}$) = S($\tau^1,\tau^2,...,\tau^n$)
+\end{center}
+\end{thm}
+\begin{defn}
+A \textbf{symmetrizer} is an operator S:T$_0^r\to$S$^r$ given by:\begin{center}
+[S(A)]($\tau^1$,...,$\tau^r$) = $\dfrac{1}{r!}$$\sum_{\pi}$A($\tau^{\pi(1)},...\tau^{\pi(r)})$, where the sum is taken over the r! permutations of the integers 1, 2,...., r, and $\tau^1$,....$\tau^r$ are all in V$^*$. S(A) is often denoted by A$_s$.
+\end{center}
+\end{defn}
+A$_s$ is a symmetric tensor. In fact,
+A$_s$ ($\tau^{\sigma(1)},$...,$\tau^{\sigma(r)}$) =
+[S(A)]($\tau^{\sigma(1)},$...,$\tau^{\sigma(r)}$)\\
+\begin{flushright}
+= $\dfrac{1}{r!}$$\sum_\pi$A($\tau^{\pi(\sigma(1))},...,\tau^{\pi(\sigma(r))})$\\
+= $\dfrac{1}{r!}$$\sum_{\pi\sigma}$A($\tau^{\pi\sigma(1)},...,\tau^{\pi\sigma(r)})$\\
+= A$_s(\tau^1,\tau^2,...\tau^r),$
+\end{flushright}
+where we have used the fact that the sum over $\pi$ is equal to the sum over the product (or composition) $\pi\sigma$, because they both include all permutations. Furthermore,if A is symmetric, then S(A) = A:\newline
+[S(A)]($\tau^{1},....,\tau^{r}$) = $\dfrac{1}{r!}\sum_\pi$A($\tau^{\pi(1)}$,...,$\tau^{\pi(r)}$) = $\dfrac{1}{r!}\sum_\pi$A($\tau^1,...,\tau^r$) = $\dfrac{1}{r!}\underbrace{(\sum_\pi 1)}_{=r!}$A($\tau^1,...,\tau^r)$ = A($\tau^1,...,\tau^r$).\\
+\hspace{1cm} A similar definition gives the symmetrizer S:T$_s^0\to$S$_s$. Instead of $\tau^1,...\tau^r$ in the definition, we would have v$_1$,...,v$_s$.
+\begin{exmp}
+For r = 2, we only have two permutations, and \begin{center}
+A$_s$($\tau^1,\tau^2$) = $\dfrac{1}{2}$ [A($\tau^1,\tau^2$) + A($\tau^2,\tau^1$)].
+\end{center}
+For r = 3, we have six permutations 1, 2, 3, and the definition gives\begin{center}
+A$_s$($\tau^1,\tau^2,\tau^3)$ = $\dfrac{1}{6}$[A($\tau^1,\tau^2,\tau^3$) + A($\tau^2,\tau^1,\tau^3$) + A($\tau^1,\tau^3,\tau^2$) + A($\tau^3,\tau^1,\tau^2$) + A($\tau^3,\tau^2,\tau^1$) + A($\tau^2,\tau^3,\tau^1$)].     
+\end{center}
+It is clear that the interchanging any pair of $\tau$'s on the right hand side of the above  two equations does not change the sum. Thus, A$_s$ is indeed a symmetric tensor.
+\end{exmp}
+\hspace{1cm} We are now ready to define a product on the collection of symmetric tensors and make it an algebra, called the \textbf{symmetric algebra}.
+\begin{defn}
+The \textbf{symmetric product} of symmetric tensors A$\in S^r$(V) and B$\in S^s$(V) is denoted by AB and defined as\\
+AB($\tau^1$,...,$\tau^{r+s}$)$\equiv$ $\dfrac{(r+s)!}{r!s!}$S(A$\otimes$B)($\tau^1,...,\tau^{r+s}$)\\
+= $\dfrac{1}{r!s!}\sum_{\pi}$A($\tau^{\pi(1)},...,\tau^{\pi(r)}$)B($\tau^{\pi(r+1)},...,\tau^{\pi(r+s)}$), where the sum is over all permutations of 1 2,...,r+s. The symmetric product of A$\in S_{r}$(V) and B$\in S_{s}$(V) is defined similarly.
+\end{defn}
+\begin{exmp}
+Let us construct the symmetric tensor products of vectors. Fist we find the symmetric product of v$_1$ and v$_2$ both belonging to V = T$_0^1$(V):\\
+(v$_1$,v$_2$)($\tau^1$,$\tau^2$) $\equiv$ v$_1$($\tau^1$)v$_2$($\tau^2$) + v$_1$($\tau^2$)v$_2$($\tau^1$)\\
+=v$_1$($\tau^1$)v$_2$($\tau^2$) + v$_2$($\tau^1$)v$_1$($\tau^2$)\\
+=(v$_1$$\otimes$ v$_2$ + v$_2$$\otimes$v$_1$)($\tau^1$,$\tau^2$).\\
+Since it is true for any pair $\tau^1$ and $\tau^2$, we have \begin{center}
+v$_1$v$_2$ = v$_1$$\otimes$v$_2$ + v$_2$$\otimes$v$_1$.
+\end{center}
+In general v$_1$,v$_2$...v$_r$ = $\sum_{\pi}$v$_{\pi(1)}\otimes v_{\pi(2)}\otimes ... \otimes v_{\pi(r)}.$\\
+\hspace{1cm} It is clear from the definition that the symmetric multiplication is commutative, associative, and distributive. If we choose a basis \{e$_i$\}$_{i=1}^N$ for V and express all symmetric tensors in terms of symmetric products of e$_i$ using the above properties, then any symmetric tensor can be expressed as a linear combination of terms of the form $(e_1)^{n_1}$...($e_N)^{n_N}$.
+\end{exmp}
+\hspace{1cm} Skew-symmetry or \textbf{antisymmetry} is the same as symmetry except that in the interchange of variables the tensor changes sign.
+\begin{defn}
+A \textbf{covariant} (\textbf{contravariant}) skew-symmetric (or anti-symmetric) tensor is one that is skew-symmetric in all pairs of covariant (contravariant) variables. A tensor is skew-symmetric if it is both covariant
+and contravariant skew-symmetric.
+\end{defn}
+\begin{thm}
+A tensor A of type(r, 0) is skew if and only if for any permutations $\pi$ of 1, 2, ... r, and any$\tau^1,\tau^2, ..., \tau^r$ in V$^*$. we have\begin{center}
+$A(\tau^{\pi(1)},\tau^{\pi(2)},....,\tau^{\pi(r)}$ = $\epsilon_\pi$ A($\tau^1,\tau^2,...,\tau^r$).
+\end{center}
+\end{thm}
+\begin{defn}
+An \textbf{antisymmetrizer} is a linear operator A on T$^r_0$, given by \begin{center}
+[A(T)]($\tau^1,...,\tau^r$) = $\dfrac{1}{r!}\sum_{\pi}$T($\tau^{\pi(1)},....,\tau^{\pi(r)}$.
+\end{center}
+\end{defn}
+A(T) is denoted by T$_a$.\\
+\hspace{1cm} Clearly, T$_a$ is an antisymmetric tensor. In fact, using ($\epsilon_\sigma$)$^2$ = 1, which holds for any permutation, we have\\
+T$_a \tau^{\sigma(1)},....,\tau^{\sigma(r)}$ = [A(T)]($\tau^{\sigma(1)},...,\tau^{\sigma(r)}$)\\
+=$(\epsilon_\sigma)^2 \dfrac{1}{r!} \sum_{\pi} \epsilon_\pi$A($\tau^{\pi\sigma(1)},...,\tau^{\pi\sigma(r)}$)\\
+=$\epsilon_\sigma \dfrac{1}{r!} \sum_{\pi\sigma} \epsilon_\pi \epsilon_\sigma$T($\tau^{\pi\sigma(1)},...,\tau^{\pi\sigma(r)}$)\\
+=$\epsilon_\sigma T_a$($\tau^1,\tau^2,....\tau^r$).\\
+\hspace{1cm} where we used the fact that $\epsilon_\pi \epsilon_\sigma$ = $\epsilon_{\pi\sigma}$. If T is antisymmetric, then A(T) = T:\newline
+[A(T)]($\tau^1,...,\tau^r)$ = $\dfrac{1}{r!}\sum_{\pi}\epsilon_\pi$T($\tau^{\pi(1)},...,\tau^{\pi(r)}$)\\
+=$\dfrac{1}{r!}\sum_{\pi}(\epsilon_\pi)^2 T(\tau^1,...\tau^r)$\\
+=$\dfrac{1}{r!} \sum_{\pi} 1$ T($\tau^1,...,\tau^r) = T(\tau^1,...\tau^r).$\newline
+\hspace{1cm} A similar definition gives the antisymmetrizer A on T$_s^0$. Instead of $\tau^1,...\tau^r$ we would have used $v_1,...v_s$.
+
+\begin{exmp}
+Let us write the equation of an antisymmetrizer for r = 3.\\
+T$_a(\tau^1,\tau^2,\tau^3)$ = $\dfrac{1}{6} [\epsilon_{123}$A($\tau^1,\tau^2,\tau^3)$ +$ \epsilon_{213}$A($\tau^2,\tau^1,\tau^3) $+ $\epsilon_{132}$A($\tau^1,\tau^3,\tau^2)$ +$ \epsilon_{312}$A($\tau^3,\tau^1,\tau^2)$ + $\epsilon_{321}$A($\tau^3,\tau^2,\tau^1)$ + $\epsilon_{231}$A($\tau^2,\tau^3,\tau^1)$ ]\\
+=$\dfrac{1}{6}[$A($\tau^1,\tau^2,\tau^3)$- A($\tau^2,\tau^1,\tau^3) $ - A($\tau^1,\tau^3,\tau^2)$ + A($\tau^3,\tau^1,\tau^2)$ - A($\tau^3,\tau^2,\tau^1)$ + A($\tau^2,\tau^3,\tau^1)$ ].
+\end{exmp}
+\newpage
+\begin{thebibliography}{9}
+
+\bibitem{1}  Hassani, S,
+
+  \emph{Mathematical Physics: A Modern Introduction to Its Foundations}  2nd ed. Springer, 2013
+
+
+
+\end{thebibliography}
+\end{document}
+
