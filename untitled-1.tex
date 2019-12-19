@@ -337,6 +337,50 @@ Let us write the equation of an antisymmetrizer for r = 3.\\
 T$_a(\tau^1,\tau^2,\tau^3)$ = $\dfrac{1}{6} [\epsilon_{123}$A($\tau^1,\tau^2,\tau^3)$ +$ \epsilon_{213}$A($\tau^2,\tau^1,\tau^3) $+ $\epsilon_{132}$A($\tau^1,\tau^3,\tau^2)$ +$ \epsilon_{312}$A($\tau^3,\tau^1,\tau^2)$ + $\epsilon_{321}$A($\tau^3,\tau^2,\tau^1)$ + $\epsilon_{231}$A($\tau^2,\tau^3,\tau^1)$ ]\\
 =$\dfrac{1}{6}[$A($\tau^1,\tau^2,\tau^3)$- A($\tau^2,\tau^1,\tau^3) $ - A($\tau^1,\tau^3,\tau^2)$ + A($\tau^3,\tau^1,\tau^2)$ - A($\tau^3,\tau^2,\tau^1)$ + A($\tau^2,\tau^3,\tau^1)$ ].
 \end{exmp}
+
+\subsection{Exterior algebra}
+The following discussion will concentrate on tensors of type (r, 0). However, interchanging the roles of V and V$^*$ makes all definitions, theorems,
+propositions, and conclusions valid for tensors of type (0,s) as well. The set of all skew-symmetric tensors of type (p, 0) forms a subspace of T$^{p}_{0}$. This subspace is denoted by $\Lambda^{p}  (V^*)$ and its members are called \textbf{p-vectors} It is not, however, an algebra unless we define a skew-symmetric
+product analogous to that for the symmetric case. This is done in the following definition:
+\begin{defn}
+The \textbf{exterior product} (also called the wedge, Grassmann, alternating, or veck product) of two skew-symmetric tensors \textbf{A}$\in\Lambda^{p}(V^*)$ and  \textbf{B}$\in\Lambda^{q}(V^*)$ is a skew-symmetric tensor belonging to $\Lambda^{p+q}(V^*)$ and given by
+\begin{center}
+A $\wedge$ B $\equiv$ $\dfrac{(r+s)!}{r!s!}$ $\mathbb{A}$ (A $\otimes$ B ) =$\dfrac{(r+s)!}{r!s!}$(A $\otimes$ B ) $_{a}$.
+\end{center}
+\end{defn}
+
+More explicitly,\\
+A $\wedge$ B = ($\tau^1$,...,$\tau^{r+s}$)\\	
+= $\dfrac{1}{r!s!}\sum_{\pi}\epsilon_{\pi} A (\tau^{\pi(1)},...,\tau^{\pi(r)})B (\tau^{\pi(r+1)},...,\tau^{\pi(r+s)})$
+
+%add example 
+\begin{thm}
+The exterior product is associative and distributive
+with respect to the addition of tensors. Furthermore, it satisfies the
+following anticommutativity property:
+\begin{center}
+A $\wedge$ B = (-1)$^{pq}B\wedge A$
+\end{center}
+whenever A $\in$ $\Lambda^{p} (V^*)$ and B $\in$ $\Lambda^{q} (V^*)$ .  In particular, v$_1$ $\wedge$ v$_2$ =
+   - v$_2$ $\wedge$ v$_1$ for v$_1$, v$_2$ $\in$ V
+\end{thm}
+\begin{defn}
+The elements of $\Lambda^{p} (V^*)$ are called \textbf{p-forms} 
+\end{defn}
+A linear transformation T : V $\to$ W induces a transformation T$^*$ : $\Lambda^{p} (W)$  $\to$ $\Lambda^{p} (V)$ defined by
+\begin{center}
+($T^{*} \rho (v_1,...,v_p) \equiv \rho (T v_1,...,T v_p)$ , $\rho \in \Lambda^{p}(W)$, $v_i \in V$
+\end{center}
+
+T$^*\rho$ is is called the \textbf{pullback } of $\rho$ by T. The most important properties of
+pullback maps are given in the following:\\
+Let T : V $\to$ W and  S : W $\to$ U. Then\\
+\\
+1. T$^* : \Lambda^{p} (W) \to \Lambda^{p} (V)$\\
+2. (S $\circ$ T)$^*$ = $T^* \circ S^*$\\
+3. If T is the identity map, so is $T^*$\\
+4. If T is an isomorphism, so is $T^*$ and $(T^*)^{-1} = (T^{-1})^*$\\
+5. If $\rho \in \Lambda^{p} (W)$ and $\sigma \in \Lambda^{p} (W)$, then T$^*$( $\rho \wedge \sigma $) = $T^* \rho \wedge T^* \sigma$.
 \newpage
 \begin{thebibliography}{9}
 
