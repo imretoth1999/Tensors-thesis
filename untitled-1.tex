@@ -111,6 +111,24 @@ tr(AB) = $\sum_{i=1}^{n}$(AB)$_{ii} $ = $\sum_{i=1}^{n}$ $\sum_{j=1}^{n}$(A)$_{i
 The linearity of the trace and the second identity follow directly from the definition.
 \end{proof}
 
+\begin{thm} \label{inj0}
+A linear transformation is 1–1 (injective) iff its kernel is
+zero
+\end{thm}
+\begin{proof}
+Suppose T |$a_1\rangle$ = T |$a_2\rangle$; \\\\Then linearity of T implies that T ($|a_1\rangle - |a_2\rangle)$ = 0. Since ker T = 0, we must have $|a_1\rangle = |a_2 \rangle$.
+\end{proof}
+\begin{thm} \label{inj}
+A linear isometric map is injective.
+\end{thm}
+\begin{proof}
+Let T : V $\to$ U be a linear isometry. Let |a$\rangle$ $\in$ kerT, then
+\begin{center}
+$\braket{a | a} = \braket{Ta | Ta} = \braket{0|0} = 0.$ 
+\end{center}
+Therefore, |a$\rangle$ = |0$\rangle$.\\
+By Theorem $\ref{inj0}$, T is injective.
+\end{proof}
 \subsection{Multilinear maps}
 There is a very useful generalization of the linear functionals that becomes essential in the treatment of tensors. However, a limited version of its application is used in the discussion of determinants, which we shall start here.
 
@@ -590,9 +608,11 @@ $\braket{b_*(u), v} = $\\
 where we used Proposition $\ref{prop2}$ in the last step.\\
 \\
 The components $b_{ij}v^{j}$ of $b_*$(v) in the basis of \{$\epsilon^i$\}$^N_{i=1}$ of $V^*$ are denoted by v$_i$, so
+\begin{exmp} \label{eq1}
 \begin{center}
 $b_*(v) = v_i \epsilon^i$
 \end{center}
+\end{exmp}
 where $v_i = b_{ij} v^j$.\\
 \\
 We have thus $\textbf{lowered}$ the index of v$^j$ by the use of the symmetric bilinear
@@ -612,9 +632,11 @@ $v^j e_j$ = v = \\
 \end{center}
 \indent Comparison of the LHS and the RHS yield $v^j$ = $v_i(g^{-1})^{ji}$. It is customary
 to omit the -1 and simply write \\
-\begin{center}
+\begin{exmp}\label{eq2}
+\begin{center} 
 $v^j = g ^ {ji} v_{i}$,
 \end{center}
+\end{exmp}
 where it is understood that g with upper indices is the inverse of g (with
 lower indices). \\
 \begin{defn}
@@ -626,8 +648,116 @@ A symmetric bilinear form g that is nondegenerate is called an $\textbf{inner pr
 % TODO add deffinitions
 We therefore see that the presence of a nondegenerate symmetric bilinear
 form (or an inner product) naturally connects the vectors in V and V$^*$in a
-unique way. For any vector v$\in$V there is a unique linear functional φv ∈ V∗
-given by φv = g∗(v). 
+unique way. For any vector v$\in$V there is a unique linear functional $\phi_u \in V^*$
+given by $\phi_u = g_*(v)$. An inner product
+makes a vector space self-dual. \\There exists a determinant function $\Delta_0$ such that
+\begin{center}
+$\Delta_0 (v_1, ... , v_N) \Delta_0 ( u_1, ..., u_N) = \alpha det(g(v_i, u_j))$.
+\end{center}
+This is called the $\textbf{Lagrange identity}$\\
+\\
+Going from a vector in V to its unique image in $V^*$ is done by simply $\textbf{lowering the index}$ using Eq. $\ref{eq1}$, and going the other way involves using Eq. $\ref{eq2}$ to $\textbf{raise the index}$.\\
+\\
+This process can be generalized to all tensors. For instance, although in general, there is no connection among T$^2_0(V), T^1_1(V),$ and $T_2^0$(V), the introduction of an inner product connects all
+these spaces in a natural way and establishes a one-to-one correspondence
+among them. Thus, to a tensor in T$^2_0(V)$ with components $t^{ij}$ j there corresponds a unique tensor in $T^1_1(V)$ given, in component form, by $t_j^i$ = $g_{jk}t^{ik}$, and another unique tensor in $T_2^0$(V), given by $t_{ij} = g_{il} t^l_j = g_{il} g_{jk} t^{lk}$.\\\\
+Let us apply this technique to g$^{ij}$ , which is also a tensor and for which
+the lowering process is defined. We have
+\begin{center}
+$g^i_j = g_{ik}g^{kj} = (g^{-1})^{ik} g_{kj} = \zeta_j^i$.
+\end{center}
+This relation holds in all bases.\\
+\\
+The inner product has been defined as a nondegenerate symmetric bilinear form. The important criterion of nondegeneracy has equivalences:
+\begin{prop} \label{propdeg}
+A symmetric bilinear form g is nondegenerate if
+and only if\\ \\
+1. the matrix of components $g_{ij}$ has a nonvanishing determinant or,\\ \\
+2. for every nonzero v $\in$ V, there exists w $\in$ V such that g(v,w) $\ne$ 0.
+\end{prop}
+\begin{proof}
+The first part is a direct consequence of the definition of nondegeneracy. The second part follows from the fact that $g_*$ : V $\to$ V$^*$ is invertible if and only if the nullity of $g_*$ is zero.  It follows that if $v \in V$ is nonzero, then $g_*(v) \ne 0,$ i.e., $g_*(v)$ is not the zero functional. Thus, there must exist a
+vector w $\in$ V such that [ $g_*$(v)](w) $\ne$ 0. The proposition is proved once we
+note that [$g_*$(v)](w) $\equiv$ g(v,w).
+\end{proof}
+Let (V,g) and (U,h) be inner product spaces. Recall that an isometry is
+a linear transformation T : V $\to$ U which preserves the inner product, i.e.,
+\begin{center}
+$g(v_1, v_2) = h(T v_1, T v_2).$
+\end{center}
+It was shown in Theorem $\ref{inj}$ that  an isometry is injective. However, the
+proof relied on the positive definiteness of the inner product. That is not
+necessary. In fact, suppose that Tv = 0. Then, for any x $\in$ V, we have
+\begin{center}
+g(x, v) = h(Tx,Tv) = h(Tx,0) = 0.
+\end{center}
+By proposition $\ref{propdeg}$ since g is nondegenerate. It follows that
+ker T = \{0\}, and we have
+\begin{thm}
+A linear isometry is injective for all inner products.
+\end{thm}
+\begin{defn}
+The $\textbf{g-transpose}$ of a linear endomorphism T : V $\to$ V is
+the endomorphism T$^t$ given by
+\begin{center}
+g($T^t u, v)$ = g(u, Tv).
+\end{center}
+\end{defn}
+
+If T is an is isometry, then
+\begin{center}
+g(u, v) = g(Tu, Tv) = g(T^t Tu, v).
+\end{center}
+Since this holds for arbitrary u and v, we must have T$^t$
+T = 1. Thus,
+\begin{prop}
+An endomorphism T : V$\to$V is an isometry if and only
+if T$^t$ = T$^{−1}$.
+\end{prop}
+\begin{defn} 
+A symmetric bilinear form b can be categorized as follows:
+\\\\
+1. positive (negative) definite: b(v, v) > 0 [b(v, v) < 0] for every
+nonzero vector v;\\
+2. definite: b is either positive definite or negative definite;
+3. positive (negative) semidefinite: b(v, v) ≥ 0 [b(v, v) ≤ 0] for every v;
+4. semidefinite: b is either positive semidefinite or negative semidefinite;
+5. indefinite: b is not definite.
+\end{defn}
+If b is a symmetric bilinear form on V, then the restriction b|$_W$ of b on a
+subspace W is also symmetric and bilinear, and if b is definite or semidefinite, then so is b|$_W$.
+\begin{defn}
+The $\textbf{index}$ ν of a symmetric bilinear form b on V is the
+dimension of the largest subspace W of V on which b|$_W$ is negative definite.\\\\
+Sometimes ν is referred to as the index of V.
+\end{defn}
+\begin{exmp}
+Some of the categories of the definition above can be illustrated in $\mathbb{R}^2$ with $v_1 = (x_1, y_1)$, $v_2 = (x_2, y_2)$, and v = (x, y).\\\\
+1. Positive definite: b$(v_1, v_2)$ = $x_1 x_2 + y_1 y_2$ because if v $\ne$ 0, then one of its components is nonzero and b(v, v) = $x^2$ + $y^2$ > 9. \\
+2. Negative definite: b($v_1, v_2)$ = $\dfrac{1}{2}(x_1 y_2 + x_2 y_1) - x_1 x_2 - y_1 y_2 because 
+\begin{center}
+b(v, v) = x y - $x^2 - y^2$ = - $\dfrac{1}{2}(x - y)^2$ - $\dfrac{1}{2}x^2 -\dfrac{1}{2} y^2,
+\end{center}
+which is negative for nonzero v.
+3 . Indefinite: b($v_1,v_2$) = $x_1 x_2 - y_1 y_2$. For v = (x, x), b(v, v) = 0. However, b is nondegenerate, because it has the invertible matrix g = \begin{pmatrix}
+1 & 0 \\
+0 & -1 
+\end{pmatrix} in the standard basis for $\mathbb{R}^2$.
+4. Positive semidefinite: b($v_1, v_2$) = $x_1 x_2$ $\Rightarrow$ b(v, v) = $x ^2$ and b(v, v) is never negative. However, b id degenerate because its matrix in the standard basis of $\mathbb(R)^2$ is b = 
+\begin{pmatrix}
+1 & 0\\
+0 & 0
+\end{pmatrix}
+which is not invertible.
+\end{exmp}
+Let g be an inner product on V. \\
+Two vectors u, v$\in$V are said to be
+g-orthogonal if g(u, v) = 0. A null or isotropic vector of g is a vector that
+g-orthogonal and null or
+isotropic vectors
+is g-orthogonal to itself. If g is definite, then the only null vector is the zero
+vector. \\\\The converse is also true, as the following proposition shows
+
 % TODO add sympletic group
 
 % TODO add  inner product revisited
