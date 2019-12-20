@@ -129,6 +129,13 @@ $\braket{a | a} = \braket{Ta | Ta} = \braket{0|0} = 0.$
 Therefore, |a$\rangle$ = |0$\rangle$.\\
 By Theorem $\ref{inj0}$, T is injective.
 \end{proof}
+\begin{thm} \label{dimthm}
+Let T : V $\to$ W be a linear transformation. Then
+\begin{center}
+dim V = dim ker T + dim T(V)
+\end{center}
+This theorem is called the $\textbf{dimension theorem}$.
+\end{thm}
 \subsection{Multilinear maps}
 There is a very useful generalization of the linear functionals that becomes essential in the treatment of tensors. However, a limited version of its application is used in the discussion of determinants, which we shall start here.
 
@@ -758,6 +765,104 @@ isotropic vectors
 is g-orthogonal to itself. If g is definite, then the only null vector is the zero
 vector. \\\\The converse is also true, as the following proposition shows
 
+\begin{prop}
+If g is not definite, then there exists a nonzero
+isotropic vector.
+\end{prop}
+\begin{proof}
+That g is not positive definite implies that there exists a nonzero vector v$\in$V such that g(v, v) $\leq$ 0. Similarly, that g is not negative definite
+implies that there exists a nonzero vector w $\in$ V such that g(w, w) $\geq$ 0. Construct the vector u = $\alpha$v + (1 - $\alpha$)w and note that g(u,u) is a continuous function of $\alpha$. For $\alpha$ = 0 this function has the value g(w,w) $\geq$ 0, and for $\alpha$ = 1 it has the value g(v, v) $\leq$ 0. Thus, there must be some $\alpha$ for which g(u, u) = 0.
+\end{proof}
+\begin{defn}
+Let g be an inner product on V and y a non-null (nonisotropic) vector in V. The $\textbf{projection}$ $x_y$ of x along y is given by 
+\begin{center}
+$x_y = \dfrac{g(x,y)}{g(y,y)} y$
+\end{center}
+\end{defn}
+\begin{defn}
+Let g be an inner product on V and y a non-null (nonisotropic) vector in V. The $\textbf{reflection}$ $x_{r,y}$ of x in a plane perpendicular to y are given by 
+\begin{center}
+$x_{r,y} = x - 2 \dfrac{g(x,y)}{g(y,y)} y$
+\end{center}
+\end{defn}
+
+\subsection{Subscpaces}
+Let V be a vector space with inner product g. Let W be a subspace of V.\\\\
+Let W$^\perp$ be all vectors in V which are g-orthogonal to all vectors in W.
+Ordinarily, we would call W$^\perp$ the orthogonal complement of W, but if g
+is not definite, we can’t.
+\begin{lem}
+Let W be a subspace of a finite-dimensional inner product
+space V. Then\\\\
+1. dim W + dim W$^\perp$ = dim V\\
+2. (W$^\perp$)$^\perp$ = W.
+\end{lem}
+
+\begin{proof}
+1. Let \{e$_i$\}$^m_{i=1}$  be a basis of W with the dual basis \{$\epsilon$$_i$\}$^m_{i=1}$. Consider the linear operator $g_W$: V $\to$ W$^*$ given by
+\begin{center}
+$g_W(v) = \sum_{i=1}^{m} g(v, e_i)\epsilon^i$
+\end{center}
+ Using the dimension theorem ($\ref{dimthm}$) we can write
+ \begin{center}
+dim W$^*$ + dim ker g$_W$ = dim V.
+\end{center}
+Since dim W$^*$ = dim W, all that is left to show is that dim ker$g_W$ = dim W$^\perp$. We show more than that; we prove that ker$g_W = W^\perp$. In fact,\\
+v $\in ker g_W$ \\
+$\Leftrightarrow \sum^m_{i=1} g(v, e_i) \epsilon^i = 0$\\
+$\Leftrightarrow g(v, e_i) = 0, i = 1, 2, ... , m. $\\
+The last equality follows from the linear independence of  \{$\epsilon$$_i$\}$^m_{i=1}$, and it holds if and only if v $\in$ W$^\perp$.\\\\
+2. If v $\in$ W, then v is orthogonal to all vectors in $W^\perp$, i.e., $v \in (W^\perp)^\perp$. Thus W $\subset$ (W$^\perp)^\perp$. Applying 1) to the subspace
+W$^\perp$, we get dim $W^\perp$ + dim (W$^\perp)^\perp$ = dim V. Hence, dim W = dim (W$^\perp)^\perp$, and W = ( W$^\perp)^\perp$.
+\end{proof}
+A subspace W of an inner product space (V,g) is called $\textbf{nondegenerate}$ if g|$_W$ is nondegenerate. When g is definite, any subspace of V inherits
+a definite inner product. Therefore, in this case every subspace is nondegenerate. However, when g is not definite, there will always be degenerate
+subspaces. For example, if v is null, then the span of v is clearly degenerate.
+
+\begin{prop}
+A subspace W of an inner product space V is nondegenerate if and only if W$\oplus$W$^\perp$ = V.
+\end{prop}
+
+\begin{cor}
+A subspace W of an inner product space is nondegenerate if and only if W$^\perp$ is nondegenerate.
+\end{cor}
+\begin{lem}
+6 Let x and y be two vectors in V such that g(x, x) =
+g(y, y) $\ne$ 0. Then there is a reflection R such that R(x) = $\pm y$.
+\end{lem}
+\begin{proof}
+Because of the relation
+\begin{center}
+g(x + y, x + y) + g(x -y, x - y) = 4g(x, x) $\ne$ 0,
+\end{center}
+at least one of the terms on the left is nonzero. Assume that g(x -y, x - y) $\ne$, and let z = x - y. Then the reflection operator
+\begin{center}
+R$_z$ = 1 - 2P$_z$ = 1 - 2z $\dfrac{1}{g(z, z)} \phi_z$
+\end{center}
+is such that 
+\begin{center}
+$R_z(x) = x - 2z\dfrac{g(z,x)}{g(z,z)} = x - 2(x-y)\dfrac{g(x - y, x)}{g(x - y, x -y)}$\\
+=$x - 2(x-y)\dfrac{g(x,x) - g(x, y)}{2g(x,x) - 2g(x,y)} = y.$
+\end{center}
+If g(x + y, x + y) $\neq$ 0, then let z = x + y. The reflection operator $R_z$, when acting on x, yields
+\begin{center}
+$R_z(x) = x - 2z\dfrac{g(z,x)}{g(z,z)} = x - 2(x + y)\dfrac{g(x+y,x)}{g(x+y, x+y)}$\\
+= x - 2(x+y)$\dfrac{g(x,x) + g(x,y)}{2g(x,x) + 2g(x,y)} = -y.$
+\end{center}
+and the proof of the lemma is complete. 
+\end{proof}
+\begin{thm}
+Let V be an N-dimensional inner product space.
+Then any isometry T of V is the product of at most N + 1 reflections.
+\end{thm}
+\subsubsection{Orthonormal Basis}
+Whenever there is an inner product on a vector space, there is the possibility
+of orthogonal basis vectors. Since, in general, g(v, v) is allowed to be negative or zero, we have to redefine what we mean by a vector of norm 1. If
+g(v, v) $\ne$ 0, we define the norm of v as ||v|| = |$\sqrt{g(v,v)}|. A unit vector, or
+a vector of norm 1 obtained from v is simply v /||v||.
+\begin{thm}
+An inner product space V has an orthonormal basis.
+\end{thm}
 % TODO add sympletic group
 
 % TODO add  inner product revisited
