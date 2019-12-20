@@ -713,13 +713,13 @@ g($T^t u, v)$ = g(u, Tv).
 
 If T is an is isometry, then
 \begin{center}
-g(u, v) = g(Tu, Tv) = g(T^t Tu, v).
+g(u, v) = g(Tu, Tv) = g(T$^t$ Tu, v).
 \end{center}
 Since this holds for arbitrary u and v, we must have T$^t$
 T = 1. Thus,
 \begin{prop}
 An endomorphism T : V$\to$V is an isometry if and only
-if T$^t$ = T$^{−1}$.
+if T$^t$ = T$^{-1}$.
 \end{prop}
 \begin{defn} 
 A symmetric bilinear form b can be categorized as follows:
@@ -727,34 +727,35 @@ A symmetric bilinear form b can be categorized as follows:
 1. positive (negative) definite: b(v, v) > 0 [b(v, v) < 0] for every
 nonzero vector v;\\
 2. definite: b is either positive definite or negative definite;
-3. positive (negative) semidefinite: b(v, v) ≥ 0 [b(v, v) ≤ 0] for every v;
+3. positive (negative) semidefinite: b(v, v) $\geq$ 0 [b(v, v) $\leq$ 0] for every v;
 4. semidefinite: b is either positive semidefinite or negative semidefinite;
 5. indefinite: b is not definite.
 \end{defn}
 If b is a symmetric bilinear form on V, then the restriction b|$_W$ of b on a
 subspace W is also symmetric and bilinear, and if b is definite or semidefinite, then so is b|$_W$.
 \begin{defn}
-The $\textbf{index}$ ν of a symmetric bilinear form b on V is the
+The $\textbf{index}$ v of a symmetric bilinear form b on V is the
 dimension of the largest subspace W of V on which b|$_W$ is negative definite.\\\\
-Sometimes ν is referred to as the index of V.
+Sometimes v is referred to as the index of V.
 \end{defn}
 \begin{exmp}
 Some of the categories of the definition above can be illustrated in $\mathbb{R}^2$ with $v_1 = (x_1, y_1)$, $v_2 = (x_2, y_2)$, and v = (x, y).\\\\
 1. Positive definite: b$(v_1, v_2)$ = $x_1 x_2 + y_1 y_2$ because if v $\ne$ 0, then one of its components is nonzero and b(v, v) = $x^2$ + $y^2$ > 9. \\
-2. Negative definite: b($v_1, v_2)$ = $\dfrac{1}{2}(x_1 y_2 + x_2 y_1) - x_1 x_2 - y_1 y_2 because 
+2. Negative definite: b($v_1, v_2)$ = $\dfrac{1}{2}(x_1 y_2 + x_2 y_1) - x_1 x_2 - y_1 y_2 $because 
 \begin{center}
-b(v, v) = x y - $x^2 - y^2$ = - $\dfrac{1}{2}(x - y)^2$ - $\dfrac{1}{2}x^2 -\dfrac{1}{2} y^2,
+b(v, v) = x y - $x^2 - y^2$ = - $\dfrac{1}{2}(x - y)^2$ - $\dfrac{1}{2}x^2 -\dfrac{1}{2} y^2$,
 \end{center}
 which is negative for nonzero v.
-3 . Indefinite: b($v_1,v_2$) = $x_1 x_2 - y_1 y_2$. For v = (x, x), b(v, v) = 0. However, b is nondegenerate, because it has the invertible matrix g = \begin{pmatrix}
+3 . Indefinite: b($v_1,v_2$) = $x_1 x_2 - y_1 y_2$. For v = (x, x), b(v, v) = 0. However, b is nondegenerate, because it has the invertible matrix g = 
+$\begin{pmatrix}
 1 & 0 \\
 0 & -1 
-\end{pmatrix} in the standard basis for $\mathbb{R}^2$.
+\end{pmatrix} $in the standard basis for $\mathbb{R}^2$.
 4. Positive semidefinite: b($v_1, v_2$) = $x_1 x_2$ $\Rightarrow$ b(v, v) = $x ^2$ and b(v, v) is never negative. However, b id degenerate because its matrix in the standard basis of $\mathbb(R)^2$ is b = 
-\begin{pmatrix}
+$\begin{pmatrix}
 1 & 0\\
 0 & 0
-\end{pmatrix}
+\end{pmatrix}$
 which is not invertible.
 \end{exmp}
 Let g be an inner product on V. \\
@@ -786,7 +787,7 @@ $x_{r,y} = x - 2 \dfrac{g(x,y)}{g(y,y)} y$
 \end{center}
 \end{defn}
 
-\subsection{Subscpaces}
+\subsection{Subspaces}
 Let V be a vector space with inner product g. Let W be a subspace of V.\\\\
 Let W$^\perp$ be all vectors in V which are g-orthogonal to all vectors in W.
 Ordinarily, we would call W$^\perp$ the orthogonal complement of W, but if g
@@ -858,7 +859,7 @@ Then any isometry T of V is the product of at most N + 1 reflections.
 \subsubsection{Orthonormal Basis}
 Whenever there is an inner product on a vector space, there is the possibility
 of orthogonal basis vectors. Since, in general, g(v, v) is allowed to be negative or zero, we have to redefine what we mean by a vector of norm 1. If
-g(v, v) $\ne$ 0, we define the norm of v as ||v|| = |$\sqrt{g(v,v)}|. A unit vector, or
+g(v, v) $\ne$ 0, we define the norm of v as ||v|| = |$\sqrt{g(v,v)}|$. A unit vector, or
 a vector of norm 1 obtained from v is simply v /||v||.
 \begin{thm}
 An inner product space V has an orthonormal basis.
