@@ -6,7 +6,7 @@
 \usepackage{fullpage}
 \usepackage{amsthm}
 \usepackage{comment}
-
+\usepackage{mmap}
 \newtheorem{thm}{Theorem}
 \newtheorem{lem}[thm]{Lemma}
 \newtheorem{cor}[thm]{Corollary}
@@ -15,6 +15,7 @@
 \newtheorem{conj}[thm]{Conjecture}
 \newtheorem{defn}[thm]{Definition} 
 \newtheorem{exmp}{Example}[section]
+\newtheorem{prop}{Proposition}
 
 
 \begin{document}
@@ -381,6 +382,182 @@ Let T : V $\to$ W and  S : W $\to$ U. Then\\
 3. If T is the identity map, so is $T^*$\\
 4. If T is an isomorphism, so is $T^*$ and $(T^*)^{-1} = (T^{-1})^*$\\
 5. If $\rho \in \Lambda^{p} (W)$ and $\sigma \in \Lambda^{p} (W)$, then T$^*$( $\rho \wedge \sigma $) = $T^* \rho \wedge T^* \sigma$.
+\\ \\
+If \{e$_i$\}$^N_{i=1}$ is a basis of V, we can form a basis for $\Lambda^{p}(V^*)$ by constructing all products of the form $e_{i_1} \wedge e_{i_2} \wedge ... \wedge e_{1_p}$.  The number of linearly independent such vectors, which is the dimension of  $\Lambda^{p}(V^*)$,  , is equal to the number
+of ways p numbers can be chosen from among N distinct numbers in such
+a way that no two of them are equal. This is simply the combination of N
+objects taken p at a time. Thus, we have \\
+\begin{center}
+ dim ($\Lambda^{p}(V^*)$) =  $\begin{pmatrix} N \\ p \end{pmatrix}$ =  $\dfrac{N!}{p!(N - p)!}$
+\end{center}
+
+In particular dim ($\Lambda^{p}(V^*)$) = 1.\\
+\indent Any A $\in \Lambda^{p}(V^*)$ can be written as 
+\begin{center}
+A = $\sum^{N}_{i_1 < i_2 < ... < i_p}$ A$^{i_1...i_p}$  $e_{i_1} \wedge e_{i_2} \wedge ... \wedge e_{1_p}$ \\
+= $\dfrac{1}{p!} \sum^{N}_{i_1,i_2 ... i_p}$ A$^{i_1...i_p}$  $e_{i_1} \wedge e_{i_2} \wedge ... \wedge e_{1_p}$
+\end{center}
+where A$^{i_1...i_p}$ are the components of A, which are assumed completely antisymmetric in all $i_1,i_2 ... i_p$. In the second sum, all i’s run from 1 to N.\\
+\begin{thm}
+Set $\Lambda^{0}(V^*)$ = $\mathbb{R}$ and let $\Lambda(V^*)$ denote the direct
+sum of all  $\Lambda^{p}(V^*)$:
+\begin{center}
+$\Lambda(V^*)$  = $\oplus^{N}_{p = 0}$  $\Lambda(V^*)$ $\equiv$ $\mathbb{R} \oplus V \oplus \Lambda^{2}(V^*) \oplus \Lambda^{N}(V^*)$
+\end{center}
+Then $\Lambda(V^*)$ is a $2^N$-dimensional algebra with exterior product defining its multiplication rule.	
+\end{thm}
+
+\indent Given two vector spaces V and U, one can construct a tensor product
+of $\Lambda(V^*)$ and $\Lambda(U^*)$ and define a product $\odot$ on it as follows. Let $A_i \in \Lambda^{p_i}(V^*)$, i = 1, 2 and  $B_j \in \Lambda^{q_j}(U^*)$, j = 1, 2. Then \\
+\begin{center}
+$(A_1 \otimes B_1) \odot (A_2 \otimes B_2) \equiv (-1)^{p_2 q_1}(A_1 \wedge A_2) \otimes ( B_1 \wedge B_2). $
+\end{center}
+\begin{defn}
+The tensor product of the two vector spaces $\Lambda(V^*)$ and $\Lambda(U^*)$ together with the product given before is called $\textbf{skew tensor product}$ of  $\Lambda(V^*)$ and $\Lambda(U^*)$ and denoted by  $\Lambda(V^*) \overset{\wedge}{\otimes} \Lambda(U^*)$
+\end{defn}
+An elegant way of determining the linear independence of vectors using
+the formalism developed so far is given in the following proposition.\\
+\begin{prop}\label{prop1}
+A set of vectors v$_1,...,v_p$ is linearly independent if
+and only if $v_1 \wedge ... \wedge v_p$ $\ne$ 0.
+\end{prop}
+\begin{proof}
+If \{v$_i$\}$^p_{i=1}$ are independent, then they span a p-dimensional subspace M of V. Considering M as a vector space in its own right, we have
+dim  $\Lambda^{p}(M^*)$ = 1. A basis for $\Lambda^{p}(M^*)$ is simply $v_1 \wedge ... \wedge v_p$ , which cannot
+be zero. \\
+\indent Conversely, suppose that $\alpha_1 v_1 + ... \alpha_p v_p $= 0. Then taking the exterior
+product of the left hand side with $v_2 \wedge v_3 \wedge ... \wedge v_p$ makes all terms vanish (because
+each will have two factors of a vector in the wedge product) except the first
+one. Thus, we have $\alpha_1 v_1 \wedge ... \wedge v_p $.  The fact that the wedge product is
+not zero forces $\alpha_1$ to be zero. Similarly, multiplying by $v_1 \wedge v_3 \wedge ... \wedge v_p$ shows that $\alpha_2$ = 0, and so on.
+\end{proof}
+\begin{exmp}
+Let \{e$_i$\}$^N_{i=1}$ be a basis for V. Let $v_1 = e_1 + 2e_2 - e_3$ $v_2 = 3e_1 + e_2 + 2e_3$ , $v_3 = -e_1 - 3e_2 + 2 e_3$.
+\begin{center}
+$v_1 \wedge v_2$ = ($ e_1 + 2e_2 - e_3$) $\wedge$ ($3e_1 + e_2 + 2e_3$)\\
+= -5$e_1 \wedge e_2$ + 5$e_1 \wedge e_3$ + 5 $e_2 \wedge e_3$.
+\end{center}	
+All the wedge products that have repeated factors vanish. Now we multiply
+by $v_3$: 
+\begin{center}
+$v_1 \wedge v_2 \wedge v_3$ = -5$e_1 \wedge e_2 \wedge ( -e_1 - 3e_2 + 2e_3) $\\$+ 5e_1 \wedge e_3 \wedge ( -e_1 -3e_2 + 2e_3)  $\\$+5e_2 \wedge
+e_3 \wedge (-e_1 - 3e_2 + 2e_3)$\\
+= $-10e_1 \wedge e_2 \wedge e_3 - 15e_1 \wedge e_3 \wedge e_2 - 5e_2 \wedge e_3 \wedge e_1$ = 0.
+\end{center}
+We conclude that the three vectors are linearly dependent.
+\end{exmp}
+As an aplication of Proposition 1 let us prove the following.
+\begin{thm}
+(Cartan’s lemma) Suppose that \{e$_i$\}$^p_{i=1}$ , p $\leq$ dim V form
+a linearly independent set of vectors in V and that  \{v$_i$\}$^p_{i=1}$ are also vectors
+in V such that $\sum^{p}_{i=1} e_i \wedge v_i$ = 0. Then all $v_i$ are linear combinations of only
+the set \{e$_i$\}$^p_{i=1}$. Furthermore, if $v_i$ = $\sum^p_{j=1} A_{ij}e_{j}$, then $A_{ij} = A_{ji}$.
+\end{thm}
+\begin{proof}
+Multiplying both sides of $\sum^{p}_{i=1} e_i \wedge v_i$ = 0 by $e_2 \wedge ... e_p$ gives
+\begin{center}
+$-v_1 \wedge e_1 \wedge e_2 \wedge ... \wedge e_p = 0.$
+\end{center}
+By Proposition 1, $v_1$ and the $e_i$ are linearly dependent. Similarly, by
+multiplying $\sum^{p}_{i=1} e_i \wedge v_i$ = 0 by the wedge product with $e_k$  we
+show that $v_k$ and  the $e_i$ are linearly dependent. Thus, $v_k = \sum^p_{i=1} A_{ki} e_i$, for all k. Furthermore, we have\\
+\begin{center}
+ 0 = $\sum^{p}_{k=1} e_k \wedge v_k$  = $\sum^{p}_{k=1} \sum^{p}_{i=1} e_k \wedge ( A_{ki} e_i) = \sum_{k<i} (A_{ki} - A_{ik}) e_k \wedge e_i$
+\end{center}
+where the last sum is over both k and i with k<i. Clearly, \{$e_k \wedge e_i$\} with k <
+i are linearly independent . Therefore, their coefficients must
+vanish.
+\end{proof}
+\begin{defn}
+The symbol $\epsilon_{i_1, i_2, ... , i_n}$ called the $\textbf{Levi-Civita tensor}$, can be defined by
+\begin{center}
+$\epsilon^{i_1} \wedge ... \wedge \epsilon^{i_N} $ = $\epsilon_{i_1 ... i_N} \epsilon^1 \wedge ... \epsilon^N$.
+\end{center}
+\end{defn}
+\begin{prop}
+The Levi-Civita tensor $\epsilon_{i_1, i_2, ... , i_n}$ takes the same value in
+all coordinate systems.
+\end{prop}
+\begin{defn}
+A U-valued p-form, is a linear machine that takes p
+vectors from V and produces a vector in U. The space of U-valued p-forms
+is denoted by $\Lambda^{p}(V, U)$.  In this new context $\Lambda^{p}(V)$ =  $\Lambda^{p}(V, \mathbb{R})$.
+\end{defn}
+
+\subsection{Orientation}
+\begin{defn}
+An $\textbf{oriented basis}$ of an N-dimensional vector space is
+an ordered collection of N linearly independent vectors.
+\begin{center}
+If \{v$_i$\}$^N_{i=1}$ is one oriented basis and \{u$_i$\}$^N_{i=1}$ is a second one, then\\
+$u_1 \wedge u_2 \wedge ... \wedge u_N = (det R)v_1 \wedge v_2 \wedge ... \wedge v_n,$
+\end{center}
+where R is the transformation matrix and det R is a nonzero number (R is
+invertible), which can be positive or negative
+\end{defn}
+ \indent Accordingly, we have the following definition
+\begin{defn}
+An $\textbf{orientation}$ is the collection of all oriented bases related by a transformation matrix having a positive determinant. A vector
+space for which an orientation is specified is called an $\textbf{oriented}$ vector space.
+\end{defn}
+\indent Clearly, there are only two orientations in any vector space. Each oriented
+basis is positively related to any oriented basis belonging to the same orientation and negatively related to any oriented basis belonging to the other
+orientation. For example, in $\mathbb{R}^3$,  the bases \{$e_x, e_y, e_z$\} and \{$e_y, e_x, e_z$\} belong
+to different orientations because
+\begin{center}
+$e_x \wedge e_y \wedge e_z$ = -$e_y \wedge e_x \wedge e_z$.
+\end{center}
+
+The first basis is (by convention) called a right-handed coordinate system,
+and the second is called a left-handed coordinate system. Any other basis
+is either right-handed or left-handed. There is no third alternative!
+
+\begin{defn}
+Let V be a vector space. Let V$^{*}$ have the oriented basis \{$\epsilon_i$\}$^N_{i=1}$. The oriented $\textbf{volume element}$ $\mu \in \Lambda^{N}(V)$ of V is defined as
+\begin{center}
+$\mu \equiv \epsilon^1 \wedge \epsilon^2 \wedge ... \wedge \epsilon^N.$
+\end{center}
+\end{defn}
+\indent Note that if \{$e_i$\} is as ordered as \{$\epsilon^j$\} then $\mu( e_1, e_2, ... , e_N) = +1/N!$ and we say that \{$e_i$\} is positively oriented with respect to $\mu$. In general, \{$v_i$\}  is
+positively oriented with respect to $\mu$ if $\mu(v_1, v_2, ... , v_N) > 0$. \\ The volume element of V is defined in terms of a basis for V$^*$
+\subsection{Symplectic Vector Spaces}
+
+\begin{defn}
+A 2-form $\omega \in \Lambda^{2}(V)$ is $\textbf{nondegenerate}$ if $\omega(v_1, v_2) = 0$ for all $v_1 \in V$ implies $v_2 = 0$. \\A $\textbf{symplectic form}$ on V is a nondegenerate
+2-form $\omega \in \Lambda^{2}(V)$. \\The pair(V,$\omega$) is called a $\textbf{symplectic vector space}$.\\
+If (V,$\omega$) and (W,$\rho$) are symplectic vector spaces, a linear transformation $T:V \to W$ is called a $\textbf{symplectic transformation}$ or a $\textbf{symplectic map}$ if T$^* \rho = \omega$.
+\end{defn}
+
+Any 2-form (degenerate or nondegenerate) leads to other quantities that
+are also of interest. For instance, given any basis \{$v_i$\} in V, one defines the
+$\textbf{matrix}$ of the 2-form $\omega \in \Lambda^{2}(V)$ by $\omega_{ij} \equiv \omega$(v$_i$, v$_j$ ). Similarly, one can
+define the useful linear map $\omega^{\flat}$ : V$\to$ V$^*$ by
+\begin{center}
+$ [ \omega^{\flat} (v) ] v^{'} \equiv \omega(v, v^{'})$.
+\end{center}
+\indent where $ [ \omega^{\flat} (v) ] v^{'} \in \mathbb{R}$ and  $ [ \omega^{\flat} (v) ] \in V^{*}$
+% TODO add skew tensor product
+
+% TODO add proposition +  example 26.3.9 798
+
+% TODO add cartans lema + proof 
+
+%TODO add levi-civita tensor and determinants
+
+% TODO add definition 26.3.13 800
+
+% TODO add orientation three definitions
+
+% TODO add 26.4 Symplectic Vector Spaces
+
+% TODO add deffinitions
+
+% TODO add sympletic group
+
+% TODO add  inner product revisited
+
+
+
 \newpage
 \begin{thebibliography}{9}
 
