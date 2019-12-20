@@ -6,6 +6,7 @@
 \usepackage{fullpage}
 \usepackage{amsthm}
 \usepackage{comment}
+\usepackage{braket}
 \usepackage{mmap}
 \newtheorem{thm}{Theorem}
 \newtheorem{lem}[thm]{Lemma}
@@ -549,10 +550,84 @@ called the $\textbf{symplectic group}$ and denoted by Sp(V,$\omega$).
 \end{prop}
 \subsection{Inner Product}
 \begin{defn}
-A symmetric bilinear form b on V is a symmetric tensor of type (0, 2).
+A $\textbf{symmetric bilinear form}$ b on V is a symmetric tensor of type (0, 2).
+\end{defn}
+\indent If \{e$_j$\}$^N_{j=1}$ is a basis of V and \{$\epsilon^i$\}$^N_{i=1}$ is its dual basis, then b = $\dfrac{1}{2}b_{ij}\epsilon^i\epsilon^j$, because $\epsilon^i \epsilon^j $ = $\epsilon^i \otimes \epsilon^j$ + $\epsilon^j \otimes \epsilon^i$ form a basis of S$_2$(V). If v and u are any two vectors in V, then
+\begin{center} \label{prop2}
+b(v,u) = $\dfrac{1}{2}b_{ij}(\epsilon^i \otimes \epsilon^j$ + $\epsilon^j \otimes \epsilon^i)$($v^k e_k , u^m e_m)$\\
+=$\dfrac{1}{2}b_{ij}v^k u^m [ \epsilon^i (e_k) \epsilon^j (e_m) + \epsilon^j (e_k) + \epsilon^i (e_m)]$\\
+=$\dfrac{1}{2}b_{ij}v^k u^m [ \zeta_k^i \zeta_m^j + \zeta_k^j \zeta_m^i]$\\
+=$ \dfrac{1}{2}b_{ij} ( v^i u ^j + v^j u^i)$ \\
+=$ b_{ij} v^i u^j$\\
+\end{center}
+For any vector v $\in$ V, we can write
+\begin{center}
+b(v) = $\dfrac{1}{2}b_{ij} \epsilon^i \epsilon^j (v)$ \\
+= $\dfrac{1}{2}b_{ij}(\epsilon^i \otimes \epsilon^j$ + $\epsilon^j \otimes \epsilon^i)$($v^k e_k )$\\
+=$\dfrac{1}{2}b_{ij}v^k [ \epsilon^i \epsilon^j (e_k) \epsilon^j  \epsilon^i (e_k) ]$\\
+=$\dfrac{1}{2}b_{ij}v^k [ \epsilon^i \zeta_k^j (e_k) \epsilon^j  \zeta^i_k (e_k) ]$\\
+=$ \dfrac{1}{2}b_{ij} [ v^j \epsilon ^i + v^i \epsilon^j]$ \\
+=$b_{ij}v^j\epsilon^i$\\
+=$b_{ij}v^i\epsilon^j$.
+\end{center}
+
+Thus, b(v)$\in$ V$^*$. This shows that b can be thought of as a mapping from
+V to V$^*$, which we denote by $b_*$ and write $b_*$ : V $\to$ V$^*$. For this mapping
+to make sense, it should not matter which factor in the symmetric product v
+contracts with. But this is a trivial consequence of the symmetries b$_{ij}$ = b$_{ji}$
+and $\epsilon^i \epsilon^j = \epsilon^j \epsilon^i.$\\
+\\Let v and u be any two vectors in V. Let  \{e$_j$\}$^N_{j=1}$ be a basis of V and \{$\epsilon^i$\}$^N_{i=1}$ its dual basis. The natural pairing of v and b$_*$(u) is given by
+\begin{center}
+$\braket{b_*(u), v} = $\\
+=$\braket{b_{ij} u^j \epsilon^i, v^k e_k} $\\
+= $b_{ij}u^j v^k \braket{\epsilon^i, e_k}$\\
+=$b_{ij}u^j v^k \zeta^i_k$\\
+=$b_{ij}u^j v^i$\\
+=$b(u,v)$\\
+=$b(v,u)$
+
+\end{center}
+where we used Proposition $\ref{prop2}$ in the last step.\\
+\\
+The components $b_{ij}v^{j}$ of $b_*$(v) in the basis of \{$\epsilon^i$\}$^N_{i=1}$ of $V^*$ are denoted by v$_i$, so
+\begin{center}
+$b_*(v) = v_i \epsilon^i$
+\end{center}
+where $v_i = b_{ij} v^j$.\\
+\\
+We have thus $\textbf{lowered}$ the index of v$^j$ by the use of the symmetric bilinear
+form b. In applications v$_i$ is uniquely defined; furthermore, there is a one-to-one correspondence between v$_i$ and v$^i$
+. This can happen if and only if the
+mapping b$_*$ : V $\to$ V$^*$ is invertible, in which case b is usually denoted by g.
+If g$_*$ is invertible, there must exist a unique $(g_*)^-1 \equiv (g^-1)_* : V^* \to V$, or $g^-1 \in S_2(V^*)= S_2(V)$, such that
+\begin{center}
+
+$v^j e_j$ = v = \\
+= $(g_*)^{-1} g_*(v)$\\
+=$(g_*)^{-1} (v_i \epsilon^i)$\\
+= $v_i (g_*)^{-1}(\epsilon^i)$\\
+=$v_i [ (g^{-1})^{jk} e_j e_k ]( \epsilon^i) $\\
+=$v_i (g^{-1}) ^ {jk} e_j \underbrace{e_k (\epsilon^i)}_{= \zeta^i_k}$\\
+=$v_i (g^{-1})^{ji} e_j$.
+\end{center}
+\indent Comparison of the LHS and the RHS yield $v^j$ = $v_i(g^{-1})^{ji}$. It is customary
+to omit the -1 and simply write \\
+\begin{center}
+$v^j = g ^ {ji} v_{i}$,
+\end{center}
+where it is understood that g with upper indices is the inverse of g (with
+lower indices). \\
+\begin{defn}
+An invertible bilinear form is called $\textbf{nondegenerate}$.
+\end{defn}
+\begin{defn}
+A symmetric bilinear form g that is nondegenerate is called an $\textbf{inner product}$. When there is no danger of confusion, we write $\braket{u, v}$ instead of g(u, v).
 \end{defn}
 % TODO add deffinitions
-
+We therefore see that the presence of a nondegenerate symmetric bilinear
+form (or an inner product) naturally connects the vectors in V and V$^*$in a
+unique way. For any vector v$\in$V there is a unique linear functional φv ∈ V∗
+given by φv = g∗(v). 
 % TODO add sympletic group
 
 % TODO add  inner product revisited
