@@ -525,7 +525,7 @@ vectors from V and produces a vector in U. The space of U-valued p-forms
 is denoted by $\Lambda^{p}(V, U)$.  In this new context $\Lambda^{p}(V)$ =  $\Lambda^{p}(V, \mathbb{R})$.
 \end{defn}
 
-\subsection{Orientation}
+\subsubsection{Orientation}
 \begin{defn}
 An $\textbf{oriented basis}$ of an N-dimensional vector space is
 an ordered collection of N linearly independent vectors.
@@ -800,7 +800,7 @@ x_{r,y} = x - 2 \dfrac{g(x,y)}{g(y,y)} y
 \end{eqnarray*}
 \end{defn}
 
-\subsection{Subspaces}
+\subsubsection{Subspaces}
 Let V be a vector space with inner product g. Let W be a subspace of V.\\\\
 Let W$^\perp$ be all vectors in V which are g-orthogonal to all vectors in W.
 Ordinarily, we would call W$^\perp$ the orthogonal complement of W, but if g
@@ -950,7 +950,7 @@ define it as
 \end{equation}
 $\widetilde{gh}$ is basis-independent.
 
-\subsubsection{The Hodge Star Operator}
+\subsection{The Hodge Star Operator}
 All vectors spaces of the same dimension are isomorphic. Therefore, the two vector spaces $\Lambda^{p}(V)$ and $\Lambda^{N-p}(V^*)$ having the dimension, $\begin{pmatrix}
 N\\
 p
@@ -958,11 +958,11 @@ p
 N\\
 N-p
 \end{pmatrix}$, must be isomorphic. In fact, there is a natural isomorphism between the two spaces:
-\begin{defn}
+\begin{defn} \label{star}
 Let g be an inner product and \{$\epsilon_i$\}$^N_{i=1}$  a g-orthonormal ordered basis of $V^*$. \\\\The $\textbf{Hodge star operator}$ is a linear mapping, $\ast$: $\Lambda^{p}(V)$ $\to$ $\Lambda^{N-p}(V)$, given by
-\begin{eqnarray*} \label{star}
+\begin{eqnarray*} 
 \ast (\epsilon^{i_1} \wedge ... \wedge \epsilon^{i_p}) \equiv \dfrac{1}{N - p)!} \epsilon^{i_1 i_2 ... i_p}_{j_{p+1}... j_N} \epsilon^{j_{p+1} }\wedge ... \wedge \epsilon^{j_n}.
-\end{eqnarray*}
+\end{eqnarray*} 
 A similar star operator can be defined on p-vectors $\epsilon^{i_1 i_2 ... i_p}_{j_{p+1}... j_N}$ is obtained
 from $\epsilon_{j_1...j_N}$ by raising its first p subscripts.\\
 \end{defn}
@@ -1018,12 +1018,40 @@ In particular, for Euclidean spaces with an odd number of dimensions
 (such as $\mathbb{R}^3$, $\ast \ast A = A.$\\
 One can extend the star operation to any A $\in \Lambda^{p}(V)$ by writing A as a linear combination of basis vectors of $\Lambda^{p}(V)$ constructed out of 
 \{e$_i$\}$^N_{i=1}$ and using linearity of $\ast$.\\
-The star operator creates an (N − p)-form out of a p-form. If we take
+The star operator creates an (N - p)-form out of a p-form. If we take
 the exterior product of a p-form and the star of another p-form, we get an
 N-form, which is proportional to a volume element.
 % TODO add  inner product revisited
+\begin{thm}
+Let (V, g) be an inner product space and $\mu$ a volume element relative to g. Let $\widetilde{g}$ be the inner product induced by g on $\in \Lambda^{p}(V)$  and given explicitly in $\ref{star}$. Then for $\alpha \beta \in \Lambda^{p}(V)$ , we have $\alpha \wedge \ast \beta = \widetilde{g}(\alpha, \beta) \mu.$
+\end{thm}
+In the discussion of exterior algebra one encounters sums of the form
 
+\begin{eqnarray*}
+A^{i_1 ... i_p} v_{i_1} \wedge ... \wedge v_{i_p}
+\end{eqnarray*}
+It is important to note that $A^{i_1 ... i_p}$ is assumed skew-symmetric. For example,
+if A = $e_1 \wedge e_2$, then in the sum A = $A^{ij} e_i \wedge e_j$, the nonzero components consist of $A^{12} = \dfrac{1}{2}$ and $A^{21} = -\dfrac{1}{2}$. Similarly, when B = $e_1 \wedge e_2 \wedge e_3$ is written in the form B = $B^{ijk} e_i \wedge e_j \wedge e_k$, it is understood that the nonzero components of B are not restricted to  $B^{123}$. Other components, such as $B^{132}$, $B^{231}$, and so on, are also nonzero. In fact we have\\
+\begin{eqnarray*}
+B^{123} = -B^{132} = -B^{213} = B^{231} = B^{312} = -B^{231} = \dfrac{1}{6}
+\end{eqnarray*}
+This should be kept in mind when sums over exterior products with numerical coefficients are encountered.
+\begin{exmp}
+Let a, b $\in \mathbb{R}^3$ and $\{e_1, e_2, e_3\}$ an oriented orthonormal basis of $\mathbb{R}^3$. Then a = $a^i e_i$ and b = $b^j e_j$.\\
+Let us calculate  $a \wedge b$ and $\ast(a \wedge b)$.\\
+We assume a Euclidean g on $\mathbb{R}^3$. Then $a \wedge b$ = $( a^i e_i) \wedge (b^j e_j) = a^i b^j e_i \wedge e_j$ , and
+\begin{eqnarray*}
+\ast (a \wedge b) = \ast (a ^ i e_i) \wedge (b^j e_j) = a^i b^j \ast (e_i \wedge e_j)\\
+= a^i b^j ( \epsilon^k_{ij} e_k) = (\epsilon^k_{ij} a^i b^j) e_k.
+\end{eqnarray*}
+We see that $\ast (a \wedge b)$ is a vector with components [$\ast(a \wedge b)]^k$ = $\epsilon^k_{ij} a^i b^j,$ which are precisely the components of $a \times b$.
+\end{exmp}
+The correspondence between a$\wedge$ b and a$\times$b holds only in three dimensions, because dim $\Lambda^{1}(V)$ = dim $\Lambda^{2}(V)$ only if dim V = 3.
 
+\begin{prop}
+When the product of two tensors is summed over a pair
+of indices in which one of the tensors is symmetric and the other antisymmetric, the result is zero.
+\end{prop}
 
 \newpage
 \begin{thebibliography}{9}
