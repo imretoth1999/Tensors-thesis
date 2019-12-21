@@ -46,6 +46,26 @@
 \setcounter{page}{0}
 \tableofcontents
 \newpage
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+\ \ \ \ 
+Tensor comes from the Latin tendere, which means "to stretch."The concept of tensor arose in 19th century physics when it was observed that a force (a 3-dimensional vector) applied to a medium (a deformable crystal, a polarizable dielectric, etc.) may give rise to a response, a 3-dimensional vector, that is not parallel to the applied force. \\ One of the first examples was treated by Cauchy (1827) in the case of stress. Some crystalline materials deform in a direction that is not parallel to the applied stress; this is a property of the material; such material is said to be mechanically anisotropic. An electric field applied to an electrically anisotropic material gives a polarization with a direction that is not parallel to the field. \\The existence of anisotropic materials was considered to be remarkable, because it required revision of Newton's third law (action is minus reaction): apparently reaction can have a direction that is not along and opposite the action that causes it. In these early days the linear space V mentioned above was invariably the real 3-dimensional Euclidean space. The rank k of the early tensors was almost always equal to two, so that for a long time tensors were represented solely by real 3$\times$3 matrices.
+\\It is, parenthetically, illuminating to observe that the prototype model of a cause-effect relation is Newton's second law (1687),
+\begin{equation}
+F = ma
+\end{equation}
+This law does not show a tensor behavior at all. The force F causes the acceleration a of a particle; effect and cause are parallel and connected by a scale factor (single real number) m, the mass of the particle; a and F have the same direction.\\
+ In 1884, Gibbs introduced the tensor product of vectors in $\mathbb{R}^3$ under the label "indeterminate product" and applied it to the study of strain on a body. Gibbs extended the indeterminante product to n dimensions two years later . \\Voigt used tensors for a description of stress and strain on crystals in 1898, and the term tensor first appeared with its modern meaning in his work.\\ In mathematics, Ricci applied tensors to differential geometry during the 1880s and 1890s. A paper from 1901 that Ricci wrote with Levi-Civita  was crucial in Einstein's work on general relativity, and the widespread adoption of the term "tensor" in physics and mathematics comes from Einstein's usage; Ricci and Levi-Civita referred to tensors by the bland name "systems." In all of this work, tensor products were built out of vector spaces. The first step in extending tensor products to modules is due to Hassler Whitney, who defined $A \otimes_z B$ for any abelian groups A and B in 1938. A few years later Bourbaki's volume on algebra contained a definition of tensor products of modules in the form that it has essentially had ever since (within pure mathematics).
+
+\newpage
+I choosed to talk in this paper about tensors only because of my fascination about them. The development of mathematics to model physical forces has allowed humans to make tremendous leaps in technological progress.\\
+Let’s consider that for most of civilization, the tallest structures created by human were piles of stones — pyramids and eventually cathedrals.
+The tensor mathematics used to model stresses in materials such as steel was developed in the mid 1800’s by Augustin-Louis Cauchy. These tensor equations helped advance humanity’s engineering from tall piles of stones to the Eiffel Tower, and far beyond.
+The consequences of this can be staggering if you think that every time you drive over a large bridge or ride a tall elevator, that your life relies (at least in some small way) on these equations of mathematical physics and continuum mechanics. Engineering design calculations apply principles of tensors to ensure that the roof doesn’t fall in on our heads.\\
+Because I am a mathematics and informatics student, I can't neglect the use of tensors in deep learning. As we know modern data is often multi-dimensional. Tensors can play an important role in deep learning by encoding multi-dimensional data. For example, a picture is generally represented by three fields: width, height and color. It makes total sense to encode it as a 3D tensor.  Operations with tensors can simplify the process of creating neural networks used in algorithms to predict data.\\\\
+My paper structures the tensors in two parts.\\The first part being the preliminaries that are needed to understand the rest of the paper. It discusses concepts like vector space, multilinear maps, dimensions that are extremely important in understanding the tensors. This way if anyone reads the paper, they can refresh their memory about the basic stuffs so they can dive in confidently in the second part.\\
+The second part of my paper consists of the actual stuff regarding tensors. This part consists of 6 subparts that contain important concepts about the tensors.\\The first part talks about the use of tensors as multilinear maps. The second part talks about the symmetry of tensors. The third part discusses about the exterior algebra by first introducing the important notion of a exterior product. The forth part talks about sympletic vector spaces. The fifth part talks about the inner product revised in the context of tensors, we heard about the inner product of vectors but now we extend the concept to tensors. The sixth part introduces the concept of Hodge Star operator.
+\newpage 
 \section{Preliminaries}
 \subsection{Vector space}
 Before we dive into the notion of tensors, first we need to remember fundamental concepts that are necessary into understanding the tensors.
@@ -160,9 +180,10 @@ Let $\sigma$ denote the permutation of 1, 2,..., p. \\\\Define the p-linear map 
 A p-linear map $\omega$ from V to U is \textbf{skew-symmetric} if $\sigma\omega$ = $\epsilon_{\sigma}$ if:\begin{equation}
 \omega(x_{\sigma(1)},...,x_{\sigma(p)}) = \epsilon_{\sigma}\omega(x_1,...,x_p)\end{equation}
 where $\epsilon_{\sigma}$ is the sign of $\sigma$, which is +1 if $\sigma$ is even and -1 if it is odd. The set of p-linear skew-symmetric maps from V to U is denoted by $\Lambda^{P}$(V,U). The set of p-linear skew-symmetric functions in V is denoted by $\Lambda^{P}$(V).\\\\
-\hspace{1cm} The permutation sign $\epsilon_{\omega}$ is sometimes written as \begin{equation}
+\hspace{1cm} The permutation sign $\epsilon_{\omega}$ is sometimes written as \\ \begin{equation}
 \epsilon_{\sigma} = \epsilon_{\sigma(1)\sigma(2)...\sigma(p)} \equiv \epsilon_{i_{1}i_{2}...i_{p}}, where i_k \equiv \sigma(k).
 \end{equation}
+\\
 \end{defn}
 
 
@@ -181,6 +202,7 @@ Let \textbf{A} be a linear operator on an N-dimensional vector space V. Choose a
 Let A $\in$ End(V). Let $\Delta$ be a nonzero determinant function in V, and let $\Delta_A$ be as mentioned before. Then \begin{equation}
 \Delta_A = det A\cdot \Delta
 \end{equation}
+\\
 defines the \textbf{determinant of A}.\end{defn}
 \newpage
 \section{Tensors}
@@ -1059,6 +1081,10 @@ of indices in which one of the tensors is symmetric and the other antisymmetric,
 \bibitem{1}  Hassani, S,
 
   \emph{Mathematical Physics: A Modern Introduction to Its Foundations}  2nd ed. Springer, 2013
+ 
+\bibitem{2}  Keith Contrad,
+
+  \emph{Tensor products}  Cambridge University Press, Year: 2013
 
 
 
