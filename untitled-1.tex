@@ -549,7 +549,9 @@ S(\tau^{\pi(1)},\tau^{\pi(2)},...,\tau^{\pi(r)}) = S(\tau^1,\tau^2,...,\tau^n)
 \end{align*}
 \end{thm}
 \begin{proof}
-pl
+By looking over Definition 28, we see that a tensor is symmetric if it is both contravariant-symmetric and covariant-symmetric. \\
+By using this fact we show that if the condition holds, the tensor S is symmetric.\\
+If by all the permutations $\pi$ of any $\tau$, the tensor S remains unchaged, it means that in all of it's variables the value of the multilinear function remains unchaged which is the definition of a symmetric tensor.
 \end{proof}
 \begin{defn}
 A \textbf{symmetrizer} is an operator S:T$_0^r\to$S$^r$ given by:\\
@@ -559,47 +561,79 @@ A \textbf{symmetrizer} is an operator S:T$_0^r\to$S$^r$ given by:\\
 \begin{align*}
 \dfrac{1}{r!}\sum_{\pi}A(\tau^{\pi(1)},...\tau^{\pi(r)}),
 \end{align*}
-where the sum is taken over the r! permutations of the integers 1, 2,...., r, and $\tau^1$,....$\tau^r$ are all in V$^*$. S(A) is often denoted by A$_s$.
+where the sum is taken over the r! permutations of the integers 1, 2,...., r, and $\tau^1$,....$\tau^r$ are all in $\mathcal{V}$$^*$.\\\\ S(A) is often denoted by A$_s$.
 \end{defn}
-A$_s$ is a symmetric tensor. In fact,
-A$_s$ ($\tau^{\sigma(1)},$...,$\tau^{\sigma(r)}$) =
-[S(A)]($\tau^{\sigma(1)},$...,$\tau^{\sigma(r)}$)\\
-\begin{flushright}
-= $\dfrac{1}{r!}$$\sum_\pi$A($\tau^{\pi(\sigma(1))},...,\tau^{\pi(\sigma(r))})$\\
-= $\dfrac{1}{r!}$$\sum_{\pi\sigma}$A($\tau^{\pi\sigma(1)},...,\tau^{\pi\sigma(r)})$\\
-= A$_s(\tau^1,\tau^2,...\tau^r),$
-\end{flushright}
-where we have used the fact that the sum over $\pi$ is equal to the sum over the product (or composition) $\pi\sigma$, because they both include all permutations. Furthermore,if A is symmetric, then S(A) = A:\begin{eqnarray*}
-[S(A)](\tau^{1},....,\tau^{r}) = \dfrac{1}{r!}\sum_\pi A(\tau^{\pi(1)},...,\tau^{\pi(r)})\\ = \dfrac{1}{r!}\sum_\pi A(\tau^1,...,\tau^r) = \dfrac{1}{r!}\underbrace{(\sum_\pi 1)}_{=r!}A(\tau^1,...,\tau^r) = A(\tau^1,...,\tau^r).
-\end{eqnarray*}
+A$_s$ is a symmetric tensor. In fact,\\
+\begin{align*}
+A_s (\tau^{\sigma(1)},...,\tau^{\sigma(r)}) =
+[S(A)](\tau^{\sigma(1)},...,\tau^{\sigma(r)}) 
+\end{align*}
+\begin{align*}
+\dfrac{1}{r!}\sum_\pi A(\tau^{\pi(\sigma(1))},...,\tau^{\pi(\sigma(r))})=
+\end{align*}
+\begin{align*}
+ \dfrac{1}{r!}\sum_{\pi\sigma}A(\tau^{\pi\sigma(1)},...,\tau^{\pi\sigma(r)})=
+\end{align*}
+\begin{align*}
+= A_s(\tau^1,\tau^2,...\tau^r),
+\end{align*}
+where we have used the fact that the sum over $\pi$ is equal to the sum over the product (or composition) $\pi\sigma$, because they both include all permutations. \\\\Furthermore,if A is symmetric, then S(A) = A:
+\begin{align*}
+[S(A)](\tau^{1},....,\tau^{r}) = 
+\end{align*}
+\begin{align*}
+\dfrac{1}{r!}\sum_\pi A(\tau^{\pi(1)},...,\tau^{\pi(r)}) = 
+\end{align*}
+\begin{align*}
+\dfrac{1}{r!}\sum_\pi A(\tau^1,...,\tau^r) =  
+\end{align*}
+\begin{align*}
+\dfrac{1}{r!}\underbrace{(\sum_\pi 1)}_{=r!}A(\tau^1,...,\tau^r) =
+\end{align*}
+\begin{align*}
+= A(\tau^1,...,\tau^r).
+\end{align*}
 \hspace{1cm} A similar definition gives the symmetrizer S:T$_s^0\to$S$_s$. Instead of $\tau^1,...\tau^r$ in the definition, we would have v$_1$,...,v$_s$.
 \begin{exmp}
-For r = 2, we only have two permutations, and \begin{eqnarray*}
+For r = 2, we only have two permutations, and
+ \begin{align*}
 A_s(\tau^1,\tau^2) = \dfrac{1}{2} [A(\tau^1,\tau^2) + A(\tau^2,\tau^1)].
-\end{eqnarray*}
-For r = 3, we have six permutations 1, 2, 3, and the definition gives\begin{eqnarray*}
+\end{align*}
+For r = 3, we have six permutations 1, 2, 3, and the definition gives
+\begin{align*}
 A_s(\tau^1,\tau^2,\tau^3) = 
+\end{align*}
+\begin{align*}
  \dfrac{1}{6}[A(\tau^1,\tau^2,\tau^3) + A(\tau^2,\tau^1,\tau^3) + A(\tau^1,\tau^3,\tau^2) \\+ A(\tau^3,\tau^1,\tau^2) + A(\tau^3,\tau^2,\tau^1) + A(\tau^2,\tau^3,\tau^1)].     
-\end{eqnarray*}
+\end{align*}
 It is clear that the interchanging any pair of $\tau$'s on the right hand side of the above  two equations does not change the sum. Thus, A$_s$ is indeed a symmetric tensor.
 \end{exmp}
 \hspace{1cm} We are now ready to define a product on the collection of symmetric tensors and make it an algebra, called the \textbf{symmetric algebra}.
 \begin{defn}
-The \textbf{symmetric product} of symmetric tensors A$\in S^r$(V) and B$\in S^s$(V) is denoted by AB and defined as\\
-\begin{eqnarray*}
+The \textbf{symmetric product} of symmetric tensors A$\in S^r$($\mathcal{V}$) and B$\in S^s$($\mathcal{V}$) is denoted by AB and defined as\\
+\begin{align*}
 AB(\tau^1,...,\tau^{r+s})\equiv \dfrac{(r+s)!}{r!s!}S(A\otimes B)(\tau^1,...,\tau^{r+s})\\
-= \dfrac{1}{r!s!}\sum_{\pi}A(\tau^{\pi(1)},...,\tau^{\pi(r)})B(\tau^{\pi(r+1)},...,\tau^{\pi(r+s)}), \end{eqnarray*} where the sum is over all permutations of 1 2,...,r+s. The symmetric product of A$\in S_{r}$(V) and B$\in S_{s}$(V) is defined similarly.
+= \dfrac{1}{r!s!}\sum_{\pi}A(\tau^{\pi(1)},...,\tau^{\pi(r)})B(\tau^{\pi(r+1)},...,\tau^{\pi(r+s)}), 
+\end{align*} 
+where the sum is over all permutations of 1 2,...,r+s. The symmetric product of A$\in S_{r}$($\mathcal{V}$) and B$\in S_{s}$($\mathcal{V}$) is defined similarly.
 \end{defn}
 \begin{exmp}
-Let us construct the symmetric tensor products of vectors. Fist we find the symmetric product of v$_1$ and v$_2$ both belonging to V = T$_0^1$(V):\\
-(v$_1$,v$_2$)($\tau^1$,$\tau^2$) $\equiv$ v$_1$($\tau^1$)v$_2$($\tau^2$) + v$_1$($\tau^2$)v$_2$($\tau^1$)\\
-=v$_1$($\tau^1$)v$_2$($\tau^2$) + v$_2$($\tau^1$)v$_1$($\tau^2$)\\
-=(v$_1$$\otimes$ v$_2$ + v$_2$$\otimes$v$_1$)($\tau^1$,$\tau^2$).\\
-Since it is true for any pair $\tau^1$ and $\tau^2$, we have \begin{equation}
+Let us construct the symmetric tensor products of vectors. First we find the symmetric product of v$_1$ and v$_2$ both belonging to $\mathcal{V}$ = T$_0^1$($\mathcal{V}$):
+\begin{align*}
+(v_1,v_2)(\tau^1,\tau^2) \equiv v_1(\tau^1)v_2(\tau^2) + v_1(\tau^2)v_2(\tau^1)=
+\end{align*}
+\begin{align*}
+v_1(\tau^1)v_2(\tau^2) + v_2(\tau^1)v_1(\tau^2)=
+\end{align*}
+\begin{align*}
+(v_1\otimes v_2 + v_2\otimes v_1)(\tau^1,\tau^2).
+\end{align*}
+Since it is true for any pair $\tau^1$ and $\tau^2$, we have 
+\begin{align*}
 v_1v_2 = v_1\otimes v_2 + v_2\otimes v_1.
-\end{equation}
-In general v$_1$,v$_2$...v$_r$ = $\sum_{\pi}$v$_{\pi(1)}\otimes v_{\pi(2)}\otimes ... \otimes v_{\pi(r)}.$\\
-\hspace{1cm} It is clear from the definition that the symmetric multiplication is commutative, associative, and distributive. If we choose a basis \{e$_i$\}$_{i=1}^N$ for V and express all symmetric tensors in terms of symmetric products of e$_i$ using the above properties, then any symmetric tensor can be expressed as a linear combination of terms of the form $(e_1)^{n_1}$...($e_N)^{n_N}$.
+\end{align*}
+In general v$_1$,v$_2$...v$_r$ = $\sum_{\pi}$v$_{\pi(1)}\otimes v_{\pi(2)}\otimes ... \otimes v_{\pi(r)}.$\\\\
+\hspace{1cm} It is clear from the definition that the symmetric multiplication is commutative, associative, and distributive. If we choose a basis \{e$_i$\}$_{i=1}^N$ for $\mathcal{V}$ and express all symmetric tensors in terms of symmetric products of e$_i$ using the above properties, then any symmetric tensor can be expressed as a linear combination of terms of the form $(e_1)^{n_1}$...($e_N)^{n_N}$.
 \end{exmp}
 \hspace{1cm} Skew-symmetry or \textbf{antisymmetry} is the same as symmetry except that in the interchange of variables the tensor changes sign.
 \begin{defn}
@@ -607,31 +641,64 @@ A \textbf{covariant} (\textbf{contravariant}) skew-symmetric (or anti-symmetric)
 and contravariant skew-symmetric.
 \end{defn}
 \begin{thm}
-A tensor A of type(r, 0) is skew if and only if for any permutations $\pi$ of 1, 2, ... r, and any$\tau^1,\tau^2, ..., \tau^r$ in V$^*$. we have\begin{equation}
+A tensor A of type(r, 0) is skew if and only if for any permutations $\pi$ of 1, 2, ... r, and any $\tau^1,\tau^2, ..., \tau^r$ in $\mathcal{V}$$^*$. we have
+\begin{align*}
 A(\tau^{\pi(1)},\tau^{\pi(2)},....,\tau^{\pi(r)} = \epsilon_\pi A(\tau^1,\tau^2,...,\tau^r).
-\end{equation}
+\end{align*}
 \end{thm}
+\begin{proof}
+By looking over definition, we see that a tensor is skew if it is both contravariant skew-symmetric and covariant skew-symmetric. \\
+By using this fact we show that if the condition holds, the tensor A is skew.\\
+If by all the permutations $\pi$ of any $\tau$, the tensor A changes it's sign (i.e is multiplied with $\epsilon_\pi$ which is +1 if $\pi$ is even or -1 if not), then by definition the tensor is skew.
+\end{proof}
 \begin{defn}
-An \textbf{antisymmetrizer} is a linear operator A on T$^r_0$, given by \begin{equation}
-[A(T)](\tau^1,...,\tau^r) = \dfrac{1}{r!}\sum_{\pi}T(\tau^{\pi(1)},....,\tau^{\pi(r)}.
-\end{equation}
+An \textbf{antisymmetrizer} is a linear operator A on T$^r_0$, given by 
+\begin{align*}
+[A(T)](\tau^1,...,\tau^r) = \dfrac{1}{r!}\sum_{\pi}T(\tau^{\pi(1)},....,\tau^{\pi(r)}).
+\end{align*}
 \end{defn}
-A(T) is denoted by T$_a$.\\
-\hspace{1cm} Clearly, T$_a$ is an antisymmetric tensor. In fact, using ($\epsilon_\sigma$)$^2$ = 1, which holds for any permutation, we have\\
-T$_a \tau^{\sigma(1)},....,\tau^{\sigma(r)}$ = [A(T)]($\tau^{\sigma(1)},...,\tau^{\sigma(r)}$)\\
-=$(\epsilon_\sigma)^2 \dfrac{1}{r!} \sum_{\pi} \epsilon_\pi$A($\tau^{\pi\sigma(1)},...,\tau^{\pi\sigma(r)}$)\\
-=$\epsilon_\sigma \dfrac{1}{r!} \sum_{\pi\sigma} \epsilon_\pi \epsilon_\sigma$T($\tau^{\pi\sigma(1)},...,\tau^{\pi\sigma(r)}$)\\
-=$\epsilon_\sigma T_a$($\tau^1,\tau^2,....\tau^r$).\\
-\hspace{1cm} where we used the fact that $\epsilon_\pi \epsilon_\sigma$ = $\epsilon_{\pi\sigma}$. If T is antisymmetric, then A(T) = T:\newline
-[A(T)]($\tau^1,...,\tau^r)$ = $\dfrac{1}{r!}\sum_{\pi}\epsilon_\pi$T($\tau^{\pi(1)},...,\tau^{\pi(r)}$)\\
-=$\dfrac{1}{r!}\sum_{\pi}(\epsilon_\pi)^2 T(\tau^1,...\tau^r)$\\
-=$\dfrac{1}{r!} \sum_{\pi} 1$ T($\tau^1,...,\tau^r) = T(\tau^1,...\tau^r).$\newline
+A(T) is denoted by T$_a$.\\\\
+\hspace{1cm} T$_a$ is an antisymmetric tensor. \\In fact, using ($\epsilon_\sigma$)$^2$ = 1, which holds for any permutation, we have\\
+\begin{align*}
+T_a \tau^{\sigma(1)},....,\tau^{\sigma(r)} = [A(T)](\tau^{\sigma(1)},...,\tau^{\sigma(r)})=
+\end{align*}
+\begin{align*}
+(\epsilon_\sigma)^2 \dfrac{1}{r!} \sum_{\pi} \epsilon_\pi A(\tau^{\pi\sigma(1)},...,\tau^{\pi\sigma(r)}) =
+\end{align*}
+\begin{align*}
+\epsilon_\sigma \dfrac{1}{r!} \sum_{\pi\sigma} \epsilon_\pi \epsilon_\sigma T(\tau^{\pi\sigma(1)},...,\tau^{\pi\sigma(r)})=
+\end{align*}
+\begin{align*}
+=\epsilon_\sigma T_a(\tau^1,\tau^2,....\tau^r).
+\end{align*}
+where we used the fact that $\epsilon_\pi \epsilon_\sigma$ = $\epsilon_{\pi\sigma}$. \\
+\hspace{1cm} If T is antisymmetric, then A(T) = T:\\
+\begin{align*}
+[A(T)](\tau^1,...,\tau^r) = \dfrac{1}{r!}\sum_{\pi}\epsilon_\pi T(\tau^{\pi(1)},...,\tau^{\pi(r)})=
+\end{align*}
+\begin{align*}
+\dfrac{1}{r!}\sum_{\pi}(\epsilon_\pi)^2 T(\tau^1,...\tau^r) =
+\end{align*}
+\begin{align*}
+\dfrac{1}{r!} \sum_{\pi} 1 T(\tau^1,...,\tau^r) =
+\end{align*}
+\begin{align*}
+ T(\tau^1,...\tau^r).
+\end{align*}
 \hspace{1cm} A similar definition gives the antisymmetrizer A on T$_s^0$. Instead of $\tau^1,...\tau^r$ we would have used $v_1,...v_s$.
 
 \begin{exmp}
 Let us write the equation of an antisymmetrizer for r = 3.\\
-T$_a(\tau^1,\tau^2,\tau^3)$ = $\dfrac{1}{6} [\epsilon_{123}$A($\tau^1,\tau^2,\tau^3)$ +$ \epsilon_{213}$A($\tau^2,\tau^1,\tau^3) $+ $\epsilon_{132}$A($\tau^1,\tau^3,\tau^2)$ +$ \epsilon_{312}$A($\tau^3,\tau^1,\tau^2)$ + $\epsilon_{321}$A($\tau^3,\tau^2,\tau^1)$ + $\epsilon_{231}$A($\tau^2,\tau^3,\tau^1)$ ]\\
-=$\dfrac{1}{6}[$A($\tau^1,\tau^2,\tau^3)$- A($\tau^2,\tau^1,\tau^3) $ - A($\tau^1,\tau^3,\tau^2)$ + A($\tau^3,\tau^1,\tau^2)$ - A($\tau^3,\tau^2,\tau^1)$ + A($\tau^2,\tau^3,\tau^1)$ ].
+\begin{align*}
+T_a(\tau^1,\tau^2,\tau^3) =
+\end{align*}
+\begin{align*}
+ \dfrac{1}{6} [ \epsilon_{123}A(\tau^1,\tau^2,\tau^3) + \epsilon_{213}A(\tau^2,\tau^1,\tau^3) + \epsilon_{132}A(\tau^1,\tau^3,\tau^2) +\\ \epsilon_{312}A(\tau^3,\tau^1,\tau^2) + \epsilon_{321}A(\tau^3,\tau^2,\tau^1) + \epsilon_{231}A(\tau^2,\tau^3,\tau^1) ] =
+ \end{align*}
+ \begin{align*}
+\dfrac{1}{6} [A(\tau^1,\tau^2,\tau^3)- A(\tau^2,\tau^1,\tau^3)  - A(\tau^1,\tau^3,\tau^2) + A(\tau^3,\tau^1,\tau^2) - A(\tau^3,\tau^2,\tau^1) + A(\tau^2,\tau^3,\tau^1) ].
+\end{align*}
+
 \end{exmp}
 
 \subsection{Exterior algebra}
