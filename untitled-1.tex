@@ -344,56 +344,90 @@ is skew-symmetric:
 where we have used the fact that the sign of the product is the product of the
 signs of two permutations, and if $\sum_\pi$ sums over all the permutations, then so does $\sum_{\sigma \pi}$.
 \begin{defn}
-A skew symmetric N-linear function in $\mathcal{V}$ ,i.e., a member of $\Lambda^N$(V) is called a \textbf{determinant function} in V.\\\\
-Let B = \{|e$_k$\}$^{N}_{k=1}$ be a basis of V and B$^*$ = \{$\epsilon_k$\}$^N_{j=1}$ a basis of V$^*$, dual to B. For any set of N vector \{x$_k$\}$^N_{k=1}$ in V, define the N-linear function $\Theta$ by 
-\begin{eqnarray*}
+A skew symmetric N-linear function in $\mathcal{V}$ ,i.e., a member of $\Lambda^N$($\mathcal{V}$) is called a \textbf{determinant function} in $\mathcal{V}$.\\\\
+Let B = \{|e$_k$\}$^{N}_{k=1}$ be a basis of $\mathcal{V}$ and B$^*$ = \{$\epsilon_k$\}$^N_{j=1}$ a basis of $\mathcal{V}$$^*$, dual to B. For any set of N vector \{x$_k$\}$^N_{k=1}$ in $\mathcal{V}$, define the N-linear function $\Theta$ by 
+\begin{align*}
 	\Theta(x_1,...,x_N) = \epsilon_1(x_1)...\epsilon_N(x_N),
-\end{eqnarray*} 
-Now let $\Delta$ be defined by $\Delta$ $\equiv$ $\sum_{\pi}\epsilon_{\pi} \cdot \theta$ Then, $\Delta \in \Lambda^N(V)$,i.e., $\Delta$ is a determinant function.
-\end{defn}
+\end{align*}
+and note that 
 
-Let \textbf{A} be a linear operator on an N-dimensional vector space V. Choose a nonzero determinant function $\Delta$. For a basis \{v$_i$\}$^{N}_{i=1}$ define the function $\Delta_A$ by \\ \begin{equation}
-\Delta_A(v_1,...,v_N) \equiv \Delta(Av_1,...,Av_N).
-\end{equation}
+\begin{align*}
+\pi \theta(e_1, ... , e_N) \equiv \theta(e_{\pi(1)}, ... , e_{\pi(N)}) = \delta_{\iota \pi}
+\end{align*}
+
+where $\iota$ is the identity permutation and $\delta_{\iota \pi}$ = 1 if $\pi = \iota$ and $\delta_{\iota \pi}$ = 0 if $\pi \ne \iota$.
+Now let $\Delta$ be defined by $\Delta$ $\equiv$ $\sum_{\pi}\epsilon_{\pi} \cdot \theta$ Then, by using the fact that any p-linear map can be turned into a skew-symmetric linear map, $\Delta \in \Lambda^N(\mathcal{V})$,i.e., $\Delta$ is a determinant function.
+\end{defn}
+Furthermore,
+\begin{align*}
+\Delta( e_1, ... , e_N) = \sum_\pi \epsilon_\pi \cdot \pi \theta (e_1, ... , e_N) =
+\end{align*}
+\begin{align*}
+\sum_\pi \epsilon_\pi \delta_{\iota \pi} = \epsilon_\iota = 1
+\end{align*}
+Therefore we have the following:
+\begin{remark}
+In every finite-dimensional vector space, there are determinant functions which are not identically zero.
+\end{remark}
+Let \textbf{A} be a linear operator on an N-dimensional vector space $\mathcal{V}$. \\ \\Choose a nonzero determinant function $\Delta$. For a basis \{v$_i$\}$^{N}_{i=1}$ define the function $\Delta_A$ by \\ 
+\begin{align*}
+\Delta_A(v_1,...,v_N) \equiv \Delta(Av_1,...,Av_N). \\
+\end{align*}
 \begin{defn}
-Let A $\in$ End(V). Let $\Delta$ be a nonzero determinant function in V, and let $\Delta_A$ be as mentioned before. Then \begin{equation}
+Let A $\in$ End($\mathcal{V}$). Let $\Delta$ be a nonzero determinant function in V, and let $\Delta_A$ be as mentioned before. Then
+ \begin{align*}
 \Delta_A = det A\cdot \Delta
-\end{equation}
+\end{align*}
 \\
 defines the \textbf{determinant of A}.\end{defn}
 \newpage
 \section{Tensors}
+Now we shall dive into the world of tensors. After remembering the basic concepts necessary in understanding tensors, we can begin the section on tensors.\\\\
 For this notions I will use the chapter 26 Tensors from the book Mathematical Physics A Modern Introduction to Its Foundations by Sadri Hassani.\\
-From here on, we will consider only real vector spaces and the basis vectors of a vector space V will be distinguished by a subscript and those of its dual space by a superscript.\\\\For example, if \{e$_i$\}$^N_{i=1}$ is a basis in V, then the basis in V$^*$ will be \{$\epsilon^j$\}$^N_{j=1}$ so we can avoid confusions.\textbf{ Einstein's summation convention} will also be used:\\
+First, from here on, we will consider only real vector spaces and the basis vectors of a vector space $\mathcal{V}$ will be distinguished by a subscript and those of its dual space by a superscript.\\\\For example, if \{e$_i$\}$^N_{i=1}$ is a basis in $\mathcal{V}$, then the basis in $\mathcal{V}$$^*$ will be \{$\epsilon^j$\}$^N_{j=1}$ so we can avoid confusions.\textbf{ Einstein's summation convention} will also be used:\\
 Repeated indices, of which one is an upper and the other a lower index, are assumed to be summed over: a$^k_i$b$^i_j$ means $\sum^N_{i=1}$a$^k_i$b$^i_j$.\\
-It is more natural to label the elements of a matrix representation of an operator \textbf{A} by $\alpha^i_j$ (rather than $\alpha_{ji}$, because then Ae$_i$= $\alpha^j_i$e$_j$.
+It is more natural to label the elements of a matrix representation of an operator \textbf{A} by $\alpha^i_j$ (rather than $\alpha_{ji}$, because then Ae$_i$= $\alpha^j_i$e$_j$).
 \subsection{Tensors as Multilinear Maps}
-Since tensors are special kinds of linear operators on vector spaces, let us reconsider $\mathcal{L}$(V,W), the space of all linear mappings from the real vector space V to the real vector space W. 
+Since tensors are special kinds of linear operators on vector spaces, let us reconsider $\mathcal{L}$($\mathcal{V},\ \mathcal{W}$), the space of all linear mappings from the real vector space $\mathcal{V}$ to the real vector space $\mathcal{W}$. 
 \begin{defn}
-A map \textbf{T}:V$_1\times$ V$_2\times $...$\times$ V$_r\to$ W is called r-\textbf{linear} if it is linear in all its variables:\begin{equation}
-\textbf{T}(v_1,....,\alpha v_i + \alpha'v'_i,....,v_r) = \alpha\textbf{T}(v_1,....,v_i,....,v_r) + \alpha'\textbf{T}(v_1,....,v'_i,....,v_r) 
-\end{equation}
+A map \textbf{T}:$\mathcal{V}$$_1\times$ $\mathcal{V}$$_2\times $...$\times$ $\mathcal{V}$$_r\to$ W is called r-\textbf{linear} if it is linear in all its variables:
+\begin{align*}
+\textbf{T}(v_1,....,\alpha v_i + \alpha'v'_i,....,v_r) =  
+\end{align*}
+\begin{align*}
+\alpha\textbf{T}(v_1,....,v_i,....,v_r) + \alpha'\textbf{T}(v_1,....,v'_i,....,v_r)
+\end{align*}
 for all i.
 \end{defn}
 \begin{defn}
-Let $\tau_1\in V^*_1$ and $\tau_2\in V^*_2$. We construct the bilinear map $\tau_1\otimes \tau_2:V_1\times V_2\to \mathbb{R}$ by $\tau_1\otimes \tau_2$(v$_1$,v$_2$) = $\tau_1$(v$_1$)$\tau_2$(v$_2$). \\\\The expression $\tau_1\otimes \tau_2$ is called the \textbf{tensor product} of $\tau_1$ and $\tau_2$
+Let $\tau_1\in \mathcal{V}^*_1$ and $\tau_2\in \mathcal{V}^*_2$. \\
+We construct the bilinear map $\tau_1\otimes \tau_2:\mathcal{V}_1\times \mathcal{V}_2\to \mathbb{R}$ by $\tau_1\otimes \tau_2$(v$_1$,v$_2$) = $\tau_1$(v$_1$)$\tau_2$(v$_2$). \\\\The expression $\tau_1\otimes \tau_2$ is called the \textbf{tensor product} of $\tau_1$ and $\tau_2$
 \end{defn}
 An r-linear map can be multiplied by a scalar, and two r-linear maps can
 be added; in each case the result is an r-linear map. Thus, the set of r-linear
-maps from V$_1$ $\times$···$\times$ V$_r$ into W forms a vector space that is denoted by
-$\mathcal{L}$(V$_1$,...,V$_r$;W).\\
+maps from $\mathcal{V}$$_1$ $\times$···$\times$ $\mathcal{V}$$_r$ into $\mathcal{W}$ forms a vector space that is denoted by
+$\mathcal{L}$($\mathcal{V}$$_1$,...,$\mathcal{V}$$_r$;$\mathcal{W}$).\\
 
 We can also construct multilinear maps on the dual space. First, we note
-that we can define a natural linear functional on V$^*$ as follows. We let $\tau \in V^* $
-and v $\in$ V; then $\tau$(v) $\in$ $\mathbb{R}$. Now we twist this around and define a mapping
-v : V$_*$ $\to$ $\mathbb{R}$ given by v($\tau$) $\equiv$ $\tau$(v). We have naturally constructed a linear functional on V$^*$ by
-identifying (V$^*)^*$ with V.
+that we can define a natural linear functional on $\mathcal{V}$$^*$ as follows. We let $\tau \in \mathcal{V}^* $
+and v $\in$ $\mathcal{V}$; then $\tau$(v) $\in$ $\mathbb{R}$. Now we twist this around and define a mapping
+v : $\mathcal{V}$$^*$ $\to$ $\mathbb{R}$ given by v($\tau$) $\equiv$ $\tau$(v). We have naturally constructed a linear functional on $\mathcal{V}$$^*$ by
+identifying ($\mathcal{V}$$^*)^*$ with $\mathcal{V}$.
 \begin{defn}
-Let V be a vector space with dual space V$^*$. Then a \textbf{tensor of type (r,s)} is a multilinear mapping\begin{equation}
-\textbf{T} ^r_s:\underbrace{V^*\times V^*\times ... \times V^*}_{r\ times}\times\underbrace{V\times V\times...\times V}_{s\ times}
-\end{equation}
+There is a bilinear map \textbf{h} : $\mathcal{V}^* \times \mathcal{V} \to \mathbb{R}$ that naturally pairs $\mathcal{V} \ and \ \mathcal{V}^*$.\\
+It is given by $\textbf{h} (\theta, v) \equiv \theta(v)$. This mapping is called the \textbf{natural pairing} of $\mathcal{V} \ and 
+\ \mathcal{V}^*$ into $\mathbb{R}$ and is denoted by using angle brackets:
+\begin{align*}
+\textbf{h}(\theta, \ v) \equiv \langle \theta, \  v \rangle \equiv \theta (v).
+\end{align*}
+\end{defn}
+\begin{defn}
+Let $\mathcal{V}$ be a vector space with dual space $\mathcal{V}$$^*$. Then a \textbf{tensor of type (r,s)} is a multilinear mapping
+\begin{align*}
+\textbf{T} ^r_s:\underbrace{\mathcal{V}^*\times \mathcal{V}^*\times ... \times \mathcal{V}^*}_{r\ times}\times\underbrace{\mathcal{V}\times \mathcal{V}\times...\times \mathcal{V}}_{s\ times} \to \mathbb{R}
+\end{align*}
 The set of all such mappings for fixed r and s forms a vector space denoted
-by T$^r_s$ (V). \\The number r is called the \textbf{contravariant degree} of the tensor,
+by T$^r_s$ ($\mathcal{V}$). \\The number r is called the \textbf{contravariant degree} of the tensor,
 and s is called the \textbf{covariant degree} of the tensor.\\\\
 \end{defn}
 
@@ -405,12 +439,13 @@ vector.
 \item[c)] A tensor of type (r, 0) is called a contravariant tensor of rank r,
 and one of type (0,s) is called a covariant tensor of rank s.
 \end{exmp}
-The union of T$^r_s$ (V) for all possible r and s can be made into an (infinite-dimensional) algebra called \textbf{algebra of tensors}.\\\\
+The union of T$^r_s$ ($\mathcal{V}$) for all possible r and s can be made into an (infinite-dimensional) algebra called \textbf{algebra of tensors}.\\\\
 First we define the following product on it:
 \begin{defn}
-The \textbf{tensor product} of a tensor \textbf{T} of type (r,s) and a tensor \textbf{U} of type (k,l) is a tensor \textbf{T}$\otimes$\textbf{U} of type (r+k,s+l),defined, as an operator on (V$^*$)$^{r+k}\times V^{s+l}$, by \begin{equation}
+The \textbf{tensor product} of a tensor \textbf{T} of type (r,s) and a tensor \textbf{U} of type (k,l) is a tensor \textbf{T}$\otimes$\textbf{U} of type (r+k,s+l),defined, as an operator on ($\mathcal{V}$$^*$)$^{r+k}\times \mathcal{V}^{s+l}$, by 
+\begin{align*}
 \textbf{T}\otimes\textbf{U}(\theta^1,...,\theta^{r+k},u_1,...,u_{s+l}) = \textbf{T}(\theta^1,...,\theta^r,u_1,....,u_s)\textbf{U}(\theta^{r+1},....,\theta^{r+k},u_{s+l},...,u_{s+l}).
-\end{equation}
+\end{align*}
 This product turns the (infinite-dimensional) vector space of all tensors into an associative algebra called a \textbf{tensor algebra}.
 \end{defn}
 \begin{exmp}
@@ -422,7 +457,7 @@ Using the formula from above, we can compute the tensor product\\
 
 \end{exmp}
 \textbf{Difference between direct sum and tensor product}\\
-We'll assume V and W are finite dimensional vector spaces. \\That means we can think of V as $\mathbb{R}^n$ and W as $\mathbb{R}^m$ for some positive integers n and m.I will use the following simple example to show the difference between direct sum and tensor product:\\
+We'll assume $\mathcal{V}$ and $\mathcal{W}$ are finite dimensional vector spaces. \\That means we can think of $\mathcal{V}$ as $\mathbb{R}^n$ and $\mathcal{W}$ as $\mathbb{R}^m$ for some positive integers n and m. I will use the following simple example to show the difference between direct sum and tensor product:\\
 Let x, y be two vectors, x $\in\mathbb{R}^3$ and y $\in\mathbb{R}^2$
 \[x = 
 \begin{pmatrix}
@@ -461,13 +496,45 @@ Now lets see the tensor product of x and y, denoted x$\otimes$y.
 \end{pmatrix}
 \]
 We see that the tensor product gives a list of m * n numbers, this gives us a way to build a space where the dimensions \textbf{multiply}.
+
+\begin{exmp}
+Show that the components of a tensor product are products of the components of factors:
+\begin{align*}
+(U \otimes T)^{i_1 ... i_{r+k}}_{j_1 ... j_{s+l}} = U ^{i_1 ... i_{r}}_{j_1 ... j_{s}} T ^{i_{r+1} ... i_{r+k}}_{j_{s+1}... j_{s+l}}
+\end{align*}
+This exercise is a simple usage of the definition of a tensor product.\\
+Looking over the definition $\tau_1\otimes \tau_2$(v$_1$,v$_2$) = $\tau_1$(v$_1$)$\tau_2$(v$_2$), we see how it translates in the solution for the exercise.\\
+The difference is the notation in the exercise and where the indices are put. \\
+We can consider
+\begin{align*}
+v_1 = (i_1... i_r, j_1 ..., j_s)
+\end{align*}
+and
+\begin{align*}
+v_2 = (i_{r+1} ..., i_{r+k}, j_{s+1} ... ,j_{s+k})
+\end{align*}
+We got the components of the vectors $v_1$ and $v_2$
+Now by changing the notation we get\\
+\begin{align*}
+(U \otimes T)(v_1, v_2) = U (v_1) T (v_2).
+\end{align*}
+Which proves that the components of a tensor product are the products of components of factors by definition.
+\end{exmp}
 \begin{defn}
-A \textbf{contraction} of a tensor A$\in T^r_s$(V) with respect to a contravariant index at position p and covariant index at position q is a linear mapping C$^p_q$(V)$\to$T$^{r-1}_{s-1}$(V) given in \textit{component form} by\begin{eqnarray*}
-	[C^p_q(A)]^{i_1...i_{r-1}}_{j_1...j_{s-1}} = A ^{i_1...i_{p-1}ki_{p+1}...i_r}_{j_1...j_{q-1}kj_{q+1}...j_s} \\ \equiv \sum_{k}A ^{i_1...i_{p-1}ki_{p+1}...i_r}_{j_1...j_{q-1}kj_{q+1}...j_s}
-\end{eqnarray*}
+A \textbf{contraction} of a tensor A$\in T^r_s$($\mathcal{V}$) with respect to a contravariant index at position p and covariant index at position q is a linear mapping C$^p_q$($\mathcal{V}$)$\to$T$^{r-1}_{s-1}$($\mathcal{V}$) given in \textit{component form} by
+\begin{align*}
+	[C^p_q(A)]^{i_1...i_{r-1}}_{j_1...j_{s-1}} = 
+\end{align*}
+\begin{align*}
+A ^{i_1...i_{p-1}ki_{p+1}...i_r}_{j_1...j_{q-1}kj_{q+1}...j_s}  \equiv
+\end{align*}
+
+\begin{align*}
+ \sum_{k}A ^{i_1...i_{p-1}ki_{p+1}...i_r}_{j_1...j_{q-1}kj_{q+1}...j_s}
+\end{align*}
 \end{defn}
 \subsection{Symmetries of Tensors}
-Many applications demand tensors that have some kind of symmetry property. One symmetric tensor is the metric 'tensor' of an inner product: If V is a vector space  and v$_1$,v$_2$$\in$V, then g(v$_1$,v$_2$) = g(v$_2$,v$_1$). The following generalizes this property.
+Many applications demand tensors that have some kind of symmetry property. One symmetric tensor is the metric 'tensor' of an inner product: If $\mathcal{V}$ is a vector space  and v$_1$,v$_2$$\in$V, then g(v$_1$,v$_2$) = g(v$_2$,v$_1$). The following generalizes this property.\\
 \begin{defn}
 A tensor A is \textbf{symmetric} in the ith and jth variables if its value as a multilinear function is unchanged when these variables are interchanged.Clearly, the two variables must be of the same kind.
 \end{defn}
@@ -477,14 +544,21 @@ A tensor is \textbf{contravariant-symmetric} if it is symmetric in every pair of
 \end{defn}
 \hspace{1cm} An immediate consequence of this definition is the following theorem:
 \begin{thm}
-A tensor S of type(r,0) is symmetric if and only if for any permutation $\pi$ of 1,2,...r, and any $\tau^1,\tau^2,...,\tau^r$ in V$^*$ we have \begin{equation}
+A tensor S of type(r,0) is symmetric if and only if for any permutation $\pi$ of 1,2,...r, and any $\tau^1,\tau^2,...,\tau^r$ in $\mathcal{V}$$^*$ we have \begin{align*}
 S(\tau^{\pi(1)},\tau^{\pi(2)},...,\tau^{\pi(r)}) = S(\tau^1,\tau^2,...,\tau^n)
-\end{equation}
+\end{align*}
 \end{thm}
+\begin{proof}
+pl
+\end{proof}
 \begin{defn}
-A \textbf{symmetrizer} is an operator S:T$_0^r\to$S$^r$ given by:\begin{equation}
-[S(A)](\tau^1,...,\tau^r) = \dfrac{1}{r!}\sum_{\pi}A(\tau^{\pi(1)},...\tau^{\pi(r)}),
-\end{equation}
+A \textbf{symmetrizer} is an operator S:T$_0^r\to$S$^r$ given by:\\
+\begin{align*}
+[S(A)](\tau^1,...,\tau^r) = 
+\end{align*}
+\begin{align*}
+\dfrac{1}{r!}\sum_{\pi}A(\tau^{\pi(1)},...\tau^{\pi(r)}),
+\end{align*}
 where the sum is taken over the r! permutations of the integers 1, 2,...., r, and $\tau^1$,....$\tau^r$ are all in V$^*$. S(A) is often denoted by A$_s$.
 \end{defn}
 A$_s$ is a symmetric tensor. In fact,
