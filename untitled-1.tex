@@ -814,50 +814,62 @@ v_1 \wedge ... \wedge v_p \ne 0.
 \end{align*}
 \end{prop}
 \begin{proof}
-If \{v$_i$\}$^p_{i=1}$ are independent, then they span a p-dimensional subspace M of V. Considering M as a vector space in its own right, we have
-dim  $\Lambda^{p}(M^*)$ = 1. A basis for $\Lambda^{p}(M^*)$ is simply $v_1 \wedge ... \wedge v_p$ , which cannot
+If \{v$_i$\}$^p_{i=1}$ are independent, then they span a p-dimensional subspace $\mathcal{M}$ of $\mathcal{V}$.\\ Considering $\mathcal{M}$ as a vector space in its own right, we have
+\begin{align*}
+dim \ \Lambda^{p}(\mathcal{M}^*) = 1. 
+\end{align*}
+A basis for $\Lambda^{p}(\mathcal{M}^*)$ is simply $v_1 \wedge ... \wedge v_p$ , which cannot
 be zero. \\
-\indent Conversely, suppose that $\alpha_1 v_1 + ... \alpha_p v_p $= 0. Then taking the exterior
+\indent Conversely, suppose that $\alpha_1 v_1 + ... \alpha_p v_p $= 0. \\Then taking the exterior
 product of the left hand side with $v_2 \wedge v_3 \wedge ... \wedge v_p$ makes all terms vanish (because
 each will have two factors of a vector in the wedge product) except the first
 one. Thus, we have $\alpha_1 v_1 \wedge ... \wedge v_p $.  The fact that the wedge product is
-not zero forces $\alpha_1$ to be zero. Similarly, multiplying by $v_1 \wedge v_3 \wedge ... \wedge v_p$ shows that $\alpha_2$ = 0, and so on.
+not zero forces $\alpha_1$ to be zero. \\Similarly, multiplying by $v_1 \wedge v_3 \wedge ... \wedge v_p$ shows that $\alpha_2$ = 0, and so on.
 \end{proof}
 \begin{exmp}
-Let \{e$_i$\}$^N_{i=1}$ be a basis for V. Let $v_1 = e_1 + 2e_2 - e_3$ $v_2 = 3e_1 + e_2 + 2e_3$ , $v_3 = -e_1 - 3e_2 + 2 e_3$.
-\begin{eqnarray*}
-v_1 \wedge v_2 = ( e_1 + 2e_2 - e_3) \wedge (3e_1 + e_2 + 2e_3)\\
-= -5e_1 \wedge e_2 + 5e_1 \wedge e_3 + 5 e_2 \wedge e_3.
-\end{eqnarray*}	
+Let \{e$_i$\}$^N_{i=1}$ be a basis for $\mathcal{V}$. \\\\Let $v_1 = e_1 + 2e_2 - e_3$ $v_2 = 3e_1 + e_2 + 2e_3$ , $v_3 = -e_1 - 3e_2 + 2 e_3$.\\\\
+\begin{align*}
+v_1 \wedge v_2 = ( e_1 + 2e_2 - e_3) \wedge (3e_1 + e_2 + 2e_3)=
+\end{align*}
+\begin{align*}
+ -5e_1 \wedge e_2 + 5e_1 \wedge e_3 + 5 e_2 \wedge e_3.
+\end{align*}	
 All the wedge products that have repeated factors vanish. Now we multiply
 by $v_3$: 
-\begin{eqnarray*}
+\begin{align*}
 v_1 \wedge v_2 \wedge v_3 = -5e_1 \wedge e_2 \wedge ( -e_1 - 3e_2 + 2e_3) \\+ 5e_1 \wedge e_3 \wedge ( -e_1 -3e_2 + 2e_3)  \\+5e_2 \wedge
 e_3 \wedge (-e_1 - 3e_2 + 2e_3)\\
 = -10e_1 \wedge e_2 \wedge e_3 - 15e_1 \wedge e_3 \wedge e_2 - 5e_2 \wedge e_3 \wedge e_1 = 0.
-\end{eqnarray*}
+\end{align*}
 We conclude that the three vectors are linearly dependent.
 \end{exmp}
-As an aplication of Proposition 1 let us prove the following.
+As an aplication of Proposition 1 let us prove the following.\\
 \begin{thm}
-(Cartan’s lemma) Suppose that \{e$_i$\}$^p_{i=1}$ , p $\leq$ dim V form
-a linearly independent set of vectors in V and that  \{v$_i$\}$^p_{i=1}$ are also vectors
-in V such that $\sum^{p}_{i=1} e_i \wedge v_i$ = 0. Then all $v_i$ are linear combinations of only
-the set \{e$_i$\}$^p_{i=1}$. Furthermore, if $v_i$ = $\sum^p_{j=1} A_{ij}e_{j}$, then $A_{ij} = A_{ji}$.
+(Cartan’s lemma) Suppose that \{e$_i$\}$^p_{i=1}$ , p $\leq$ dim $\mathcal{V}$ form
+a linearly independent set of vectors in $\mathcal{V}$ and that  \{v$_i$\}$^p_{i=1}$ are also vectors
+in $\mathcal{V}$ such that $\sum^{p}_{i=1} e_i \wedge v_i$ = 0. \\
+Then all $v_i$ are linear combinations of only
+the set \{e$_i$\}$^p_{i=1}$. \\Furthermore, if $v_i$ = $\sum^p_{j=1} A_{ij}e_{j}$, then $A_{ij} = A_{ji}$.
 \end{thm}
 \begin{proof}
 Multiplying both sides of $\sum^{p}_{i=1} e_i \wedge v_i$ = 0 by $e_2 \wedge ... e_p$ gives
-\begin{eqnarray*}
+\begin{align*}
 -v_1 \wedge e_1 \wedge e_2 \wedge ... \wedge e_p = 0.
-\end{eqnarray*}
+\end{align*}
 By Proposition 1, $v_1$ and the $e_i$ are linearly dependent. Similarly, by
 multiplying $\sum^{p}_{i=1} e_i \wedge v_i$ = 0 by the wedge product with $e_k$  we
 show that $v_k$ and  the $e_i$ are linearly dependent. Thus, $v_k = \sum^p_{i=1} A_{ki} e_i$, for all k. Furthermore, we have\\
-\begin{eqnarray*}
- 0 = \sum^{p}_{k=1} e_k \wedge v_k  = \sum^{p}_{k=1} \sum^{p}_{i=1} e_k \wedge ( A_{ki} e_i) \\= \sum_{k<i} (A_{ki} - A_{ik}) e_k \wedge e_i
-\end{eqnarray*}
+\begin{align*}
+ 0 = \sum^{p}_{k=1} e_k \wedge v_k  = 
+ \end{align*}
+ \begin{align*}
+ \sum^{p}_{k=1} \sum^{p}_{i=1} e_k \wedge ( A_{ki} e_i) = 
+ \end{align*}
+ \begin{align*}
+ \sum_{k<i} (A_{ki} - A_{ik}) e_k \wedge e_i
+\end{align*}
 where the last sum is over both k and i with k<i. Clearly, \{$e_k \wedge e_i$\} with k <
-i are linearly independent . Therefore, their coefficients must
+i are linearly independent .\\ Therefore, their coefficients must
 vanish.
 \end{proof}
 \begin{defn}
@@ -872,8 +884,8 @@ all coordinate systems.
 \end{prop}
 \begin{defn}
 A U-valued p-form, is a linear machine that takes p
-vectors from V and produces a vector in U. The space of U-valued p-forms
-is denoted by $\Lambda^{p}(V, U)$.  In this new context $\Lambda^{p}(V)$ =  $\Lambda^{p}(V, \mathbb{R})$.
+vectors from $\mathcal{V}$ and produces a vector in $\mathcal{U}$. The space of U-valued p-forms
+is denoted by $\Lambda^{p}(\mathcal{V}, \mathcal{U})$. \\ In this new context $\Lambda^{p}(\mathcal{V})$ =  $\Lambda^{p}(\mathcal{V}, \mathbb{R})$.
 \end{defn}
 
 \subsubsection{Orientation}
@@ -881,9 +893,9 @@ is denoted by $\Lambda^{p}(V, U)$.  In this new context $\Lambda^{p}(V)$ =  $\La
 An $\textbf{oriented basis}$ of an N-dimensional vector space is
 an ordered collection of N linearly independent vectors.
 If \{v$_i$\}$^N_{i=1}$ is one oriented basis and \{u$_i$\}$^N_{i=1}$ is a second one, then\\
-\begin{eqnarray*}
+\begin{align*}
 u_1 \wedge u_2 \wedge ... \wedge u_N = (det R)v_1 \wedge v_2 \wedge ... \wedge v_n,
-\end{eqnarray*}
+\end{align*}
 where R is the transformation matrix and det R is a nonzero number (R is
 invertible), which can be positive or negative
 \end{defn}
@@ -894,119 +906,166 @@ space for which an orientation is specified is called an $\textbf{oriented}$ vec
 \end{defn}
 \indent Clearly, there are only two orientations in any vector space. Each oriented
 basis is positively related to any oriented basis belonging to the same orientation and negatively related to any oriented basis belonging to the other
-orientation. For example, in $\mathbb{R}^3$,  the bases \{$e_x, e_y, e_z$\} and \{$e_y, e_x, e_z$\} belong
+orientation. 
+ \begin{exmp}
+ In $\mathbb{R}^3$,  the bases \{$e_x, e_y, e_z$\} and \{$e_y, e_x, e_z$\} belong
 to different orientations because
-\begin{eqnarray*}
+\begin{align*}
 e_x \wedge e_y \wedge e_z = -e_y \wedge e_x \wedge e_z.
-\end{eqnarray*}
+\end{align*}
 
 The first basis is (by convention) called a right-handed coordinate system,
 and the second is called a left-handed coordinate system. Any other basis
 is either right-handed or left-handed. There is no third alternative!
-
+\end{exmp}
 \begin{defn}
-Let V be a vector space. Let V$^{*}$ have the oriented basis \{$\epsilon_i$\}$^N_{i=1}$. The oriented $\textbf{volume element}$ $\mu \in \Lambda^{N}(V)$ of V is defined as
-\begin{eqnarray*}
+Let $\mathcal{V}$ be a vector space. Let $\mathcal{V}$$^{*}$ have the oriented basis \{$\epsilon_i$\}$^N_{i=1}$. The oriented $\textbf{volume element}$ $\mu \in \Lambda^{N}(\mathcal{V})$ of V is defined as
+\begin{align*}
 \mu \equiv \epsilon^1 \wedge \epsilon^2 \wedge ... \wedge \epsilon^N.
-\end{eqnarray*}
+\end{align*}
 \end{defn}
 \indent Note that if \{$e_i$\} is as ordered as \{$\epsilon^j$\} then $\mu( e_1, e_2, ... , e_N) = +1/N!$ and we say that \{$e_i$\} is positively oriented with respect to $\mu$. In general, \{$v_i$\}  is
 positively oriented with respect to $\mu$ if $\mu(v_1, v_2, ... , v_N) > 0$. \\ The volume element of V is defined in terms of a basis for V$^*$
 \subsection{Symplectic Vector Spaces}
 
 \begin{defn}
-A 2-form $\omega \in \Lambda^{2}(V)$ is $\textbf{nondegenerate}$ if $\omega(v_1, v_2) = 0$ for all $v_1 \in V$ implies $v_2 = 0$. \\A $\textbf{symplectic form}$ on V is a nondegenerate
-2-form $\omega \in \Lambda^{2}(V)$. \\The pair(V,$\omega$) is called a $\textbf{symplectic vector space}$.\\
-If (V,$\omega$) and (W,$\rho$) are symplectic vector spaces, a linear transformation $T:V \to W$ is called a $\textbf{symplectic transformation}$ or a $\textbf{symplectic map}$ if T$^* \rho = \omega$.
+A 2-form $\omega \in \Lambda^{2}(\mathcal{V})$ is $\textbf{nondegenerate}$ if $\omega(v_1, v_2) = 0$ for all $v_1 \in \mathcal{V}$ implies $v_2 = 0$. \\
+A $\textbf{symplectic form}$ on $\mathcal{V}$ is a nondegenerate 2-form $\omega \in \Lambda^{2}(\mathcal{V})$. 
+\\The pair(V,$\omega$) is called a $\textbf{symplectic vector space}$.\\
+If ($\mathcal{V}$,$\omega$) and ($\mathcal{W}$,$\rho$) are symplectic vector spaces, a linear transformation $T:\mathcal{V} \to \mathcal{W}$ is called a $\textbf{symplectic transformation}$ or a $\textbf{symplectic map}$ if T$^* \rho = \omega$.
 \end{defn}
 
 Any 2-form (degenerate or nondegenerate) leads to other quantities that
-are also of interest. For instance, given any basis \{$v_i$\} in V, one defines the
-$\textbf{matrix}$ of the 2-form $\omega \in \Lambda^{2}(V)$ by $\omega_{ij} \equiv \omega$(v$_i$, v$_j$ ). Similarly, one can
-define the useful linear map $\omega^{\flat}$ : V$\to$ V$^*$ by
-\begin{eqnarray*}
+are also of interest. \\
+For instance, given any basis \{$v_i$\} in $\mathcal{V}$, one defines the
+$\textbf{matrix}$ of the 2-form $\omega \in \Lambda^{2}(\mathcal{V})$ by $\omega_{ij} \equiv \omega$(v$_i$, v$_j$ ). \\Similarly, one can
+define the useful linear map $\omega^{\flat}$ : $\mathcal{V}$$\to$ $\mathcal{V}$$^*$ by
+\begin{align*}
  [ \omega^{\flat} (v) ] v^{'} \equiv \omega(v, v^{'}).
-\end{eqnarray*}
-\indent where $ [ \omega^{\flat} (v) ] v^{'} \in \mathbb{R}$ and  $ [ \omega^{\flat} (v) ] \in V^{*}$\\
+\end{align*}
+ where $ [ \omega^{\flat} (v) ] v^{'} \in \mathbb{R}$ and  $ [ \omega^{\flat} (v) ] \in V^{*}$\\
 The rank of $\omega^{\flat}$ is called the $\textbf{rank}$ of $\omega$.
 \begin{rem}
 A 2-form $\omega$ is nondegenerate if and only if the determinant of ($\omega_{ij}$ ) is nonzero, if and only if $\omega^{\flat}$ is an isomorphism, in which
 case the inverse of $\omega^{\flat}$ is denoted by $\omega^{\sharp}$.
 \end{rem}
-%maybe add more stuff idk
 \begin{prop}
-Let (V,$\omega$) be a symplectic vector space. Then the set of
-symplectic mappings T : (V,$\omega$) $\to$ (V,$\omega$) forms a group under composition,
-called the $\textbf{symplectic group}$ and denoted by Sp(V,$\omega$).
+Let ($\mathcal{V}$,$\omega$) be a symplectic vector space. \\Then the set of
+symplectic mappings T : ($\mathcal{V}$,$\omega$) $\to$ ($\mathcal{V}$,$\omega$) forms a group under composition,
+called the $\textbf{symplectic group}$ and denoted by Sp($\mathcal{V}$,$\omega$).
 \end{prop}
 \subsection{Inner Product}
 \begin{defn}
-A $\textbf{symmetric bilinear form}$ b on V is a symmetric tensor of type (0, 2).
+A $\textbf{symmetric bilinear form}$ b on $\mathcal{V}$ is a symmetric tensor of type (0, 2).
 \end{defn}
-\indent If \{e$_j$\}$^N_{j=1}$ is a basis of V and \{$\epsilon^i$\}$^N_{i=1}$ is its dual basis, then b = $\dfrac{1}{2}b_{ij}\epsilon^i\epsilon^j$, because $\epsilon^i \epsilon^j $ = $\epsilon^i \otimes \epsilon^j$ + $\epsilon^j \otimes \epsilon^i$ form a basis of S$_2$(V). If v and u are any two vectors in V, then
-\begin{eqnarray*} \label{prop2}
-b(v,u) = \dfrac{1}{2}b_{ij}(\epsilon^i \otimes \epsilon^j + \epsilon^j \otimes \epsilon^i)(v^k e_k , u^m e_m)\\
-=\dfrac{1}{2}b_{ij}v^k u^m [ \epsilon^i (e_k) \epsilon^j (e_m) + \epsilon^j (e_k) + \epsilon^i (e_m)]\\
-=\dfrac{1}{2}b_{ij}v^k u^m [ \zeta_k^i \zeta_m^j + \zeta_k^j \zeta_m^i]\\
-= \dfrac{1}{2}b_{ij} ( v^i u ^j + v^j u^i) \\
-= b_{ij} v^i u^j\\
-\end{eqnarray*}
-For any vector v $\in$ V, we can write
-\begin{eqnarray*}
-b(v) = \dfrac{1}{2}b_{ij} \epsilon^i \epsilon^j (v) \\
-= \dfrac{1}{2}b_{ij}(\epsilon^i \otimes \epsilon^j + \epsilon^j \otimes \epsilon^i)(v^k e_k )\\
-=\dfrac{1}{2}b_{ij}v^k [ \epsilon^i \epsilon^j (e_k) \epsilon^j  \epsilon^i (e_k) ]\\
-=\dfrac{1}{2}b_{ij}v^k [ \epsilon^i \zeta_k^j (e_k) \epsilon^j  \zeta^i_k (e_k) ]\\
-=\dfrac{1}{2}b_{ij} [ v^j \epsilon ^i + v^i \epsilon^j]\\
-=b_{ij}v^j\epsilon^i\\
-=b_{ij}v^i\epsilon^j.
-\end{eqnarray*}
+\indent If \{e$_j$\}$^N_{j=1}$ is a basis of $\mathcal{V}$ and \{$\epsilon^i$\}$^N_{i=1}$ is its dual basis, then b = $\dfrac{1}{2}b_{ij}\epsilon^i\epsilon^j$, because $\epsilon^i \epsilon^j $ = $\epsilon^i \otimes \epsilon^j$ + $\epsilon^j \otimes \epsilon^i$ form a basis of S$_2$($\mathcal{V}$). \\
+If v and u are any two vectors in $\mathcal{V}$, then
+\begin{align*} \label{prop2}
+b(v,u) = \dfrac{1}{2}b_{ij}(\epsilon^i \otimes \epsilon^j + \epsilon^j \otimes \epsilon^i)(v^k e_k , u^m e_m)=
+\end{align*}
+\begin{align*}
+\dfrac{1}{2}b_{ij}v^k u^m [ \epsilon^i (e_k) \epsilon^j (e_m) + \epsilon^j (e_k) + \epsilon^i (e_m)]=
+\end{align*}
+\begin{align*}
+\dfrac{1}{2}b_{ij}v^k u^m [ \zeta_k^i \zeta_m^j + \zeta_k^j \zeta_m^i]=
+\end{align*}
+\begin{align*}
+\dfrac{1}{2}b_{ij} ( v^i u ^j + v^j u^i)  =
+\end{align*}
+\begin{align*}
+ b_{ij} v^i u^j\\
+\end{align*}
+For any vector v $\in$ $\mathcal{V}$, we can write
+\begin{align*}
+b(v) = \dfrac{1}{2}b_{ij} \epsilon^i \epsilon^j (v) =
+\end{align*}
+\begin{align*}
+ \dfrac{1}{2}b_{ij}(\epsilon^i \otimes \epsilon^j + \epsilon^j \otimes \epsilon^i)(v^k e_k )=
+ \end{align*}
+ \begin{align*}
+\dfrac{1}{2}b_{ij}v^k [ \epsilon^i \epsilon^j (e_k) \epsilon^j  \epsilon^i (e_k) ]=
+\end{align*}
+\begin{align*}
+\dfrac{1}{2}b_{ij}v^k [ \epsilon^i \zeta_k^j (e_k) \epsilon^j  \zeta^i_k (e_k) ]=
+\end{align*}
+\begin{align*}
+\dfrac{1}{2}b_{ij} [ v^j \epsilon ^i + v^i \epsilon^j]=
+\end{align*}
+\begin{align*}
+b_{ij}v^j\epsilon^i 
+\end{align*}
 
-Thus, b(v)$\in$ V$^*$. This shows that b can be thought of as a mapping from
-V to V$^*$, which we denote by $b_*$ and write $b_*$ : V $\to$ V$^*$. For this mapping
+
+Thus, b(v)$\in$ $\mathcal{V}$$^*$. \\This shows that b can be thought of as a mapping from
+$\mathcal{V}$ to $\mathcal{V}$$^*$, which we denote by $b_*$ and write $b_*$ : $\mathcal{V}$ $\to$ $\mathcal{V}$$^*$. 
+\\For this mapping
 to make sense, it should not matter which factor in the symmetric product v
 contracts with. But this is a trivial consequence of the symmetries b$_{ij}$ = b$_{ji}$
 and $\epsilon^i \epsilon^j = \epsilon^j \epsilon^i.$\\
-\\Let v and u be any two vectors in V. Let  \{e$_j$\}$^N_{j=1}$ be a basis of V and \{$\epsilon^i$\}$^N_{i=1}$ its dual basis. The natural pairing of v and b$_*$(u) is given by
-\begin{eqnarray*}
-\braket{b_*(u), v} = \\
-=\braket{b_{ij} u^j \epsilon^i, v^k e_k} \\
-= b_{ij}u^j v^k \braket{\epsilon^i, e_k}\\
-=b_{ij}u^j v^k \zeta^i_k\\
-=b_{ij}u^j v^i\\
-=b(u,v)\\
-=b(v,u)
-\end{eqnarray*}
-where we used Proposition $\ref{prop2}$ in the last step.\\
+\\Let v and u be any two vectors in $\mathcal{V}$. \\Let  \{e$_j$\}$^N_{j=1}$ be a basis of $\mathcal{V}$ and \{$\epsilon^i$\}$^N_{i=1}$ its dual basis. The natural pairing of v and b$_*$(u) is given by
+\begin{align*}
+\braket{b_*(u), v} = 
+\end{align*}
+\begin{align*}
+\braket{b_{ij} u^j \epsilon^i, v^k e_k} =
+\end{align*}
+\begin{align*}
+b_{ij}u^j v^k \braket{\epsilon^i, e_k}=
+\end{align*}
+\begin{align*}
+b_{ij}u^j v^k \zeta^i_k=
+\end{align*}
+\begin{align*}
+b_{ij}u^j v^i=
+\end{align*}
+\begin{align*}
+b(u,v)=
+\end{align*}
+\begin{align*}
+b(v,u)
+\end{align*}
 \\
-The components $b_{ij}v^{j}$ of $b_*$(v) in the basis of \{$\epsilon^i$\}$^N_{i=1}$ of $V^*$ are denoted by v$_i$, so
+The components $b_{ij}v^{j}$ of $b_*$(v) in the basis of \{$\epsilon^i$\}$^N_{i=1}$ of $\mathcal{V}^*$ are denoted by v$_i$, so
 \begin{exmp} \label{eq1}
-\begin{eqnarray*}
+We have:
+\begin{align*}
 b_*(v) = v_i \epsilon^i
-\end{eqnarray*}
+\end{align*}
 \end{exmp}
 where $v_i = b_{ij} v^j$.\\
 \\
 We have thus $\textbf{lowered}$ the index of v$^j$ by the use of the symmetric bilinear
 form b. In applications v$_i$ is uniquely defined; furthermore, there is a one-to-one correspondence between v$_i$ and v$^i$
 . This can happen if and only if the
-mapping b$_*$ : V $\to$ V$^*$ is invertible, in which case b is usually denoted by g.
-If g$_*$ is invertible, there must exist a unique $(g_*)^-1 \equiv (g^-1)_* : V^* \to V$, or $g^-1 \in S_2(V^*)= S_2(V)$, such that
-\begin{eqnarray*}
-v^j e_j = v = \\
-=(g_*)^{-1} g_*(v)\\
-=(g_*)^{-1} (v_i \epsilon^i)\\
-=v_i (g_*)^{-1}(\epsilon^i)\\
-=v_i [ (g^{-1})^{jk} e_j e_k ]( \epsilon^i)\\
-=v_i (g^{-1}) ^ {jk} e_j \underbrace{e_k (\epsilon^i)}_{= \zeta^i_k}\\
-=v_i (g^{-1})^{ji} e_j.
-\end{eqnarray*}
-\indent Comparison of the LHS and the RHS yield $v^j$ = $v_i(g^{-1})^{ji}$. It is customary
+mapping b$_*$ : $\mathcal{V}$ $\to$ $\mathcal{V}$$^*$ is invertible, in which case b is usually denoted by g.\\
+If g$_*$ is invertible, there must exist a unique $(g_*)^-1 \equiv (g^-1)_* : \mathcal{V}^* \to \mathcal{V}$, or $g^-1 \in S_2(\mathcal{V}^*)= S_2(\mathcal{V})$, such that
+\begin{align*}
+v^j e_j = v = 
+\end{align*}
+\begin{align*}
+(g_*)^{-1} g_*(v)=
+\end{align*}
+\begin{align*}
+(g_*)^{-1} (v_i \epsilon^i)=
+\end{align*}
+\begin{align*}
+v_i (g_*)^{-1}(\epsilon^i)=
+\end{align*}
+\begin{align*}
+v_i [ (g^{-1})^{jk} e_j e_k ]( \epsilon^i)=
+\end{align*}
+\begin{align*}
+v_i (g^{-1}) ^ {jk} e_j \underbrace{e_k (\epsilon^i)}_{= \zeta^i_k}=
+\end{align*}
+\begin{align*}
+v_i (g^{-1})^{ji} e_j.
+\end{align*}
+\indent Comparison of the LHS and the RHS yield $v^j$ = $v_i(g^{-1})^{ji}$. \\It is customary
 to omit the -1 and simply write \\
 \begin{exmp}\label{eq2}
-\begin{eqnarray*} 
+\begin{align*} 
 v^j = g ^ {ji} v_{i},
-\end{eqnarray*}
+\end{align*}
 \end{exmp}
 where it is understood that g with upper indices is the inverse of g (with
 lower indices). \\
@@ -1016,118 +1075,120 @@ An invertible bilinear form is called $\textbf{nondegenerate}$.
 \begin{defn}
 A symmetric bilinear form g that is nondegenerate is called an $\textbf{inner product}$. When there is no danger of confusion, we write $\braket{u, v}$ instead of g(u, v).
 \end{defn}
-% TODO add deffinitions
+
 We therefore see that the presence of a nondegenerate symmetric bilinear
-form (or an inner product) naturally connects the vectors in V and V$^*$in a
-unique way. For any vector v$\in$V there is a unique linear functional $\phi_u \in V^*$
-given by $\phi_u = g_*(v)$. An inner product
-makes a vector space self-dual. \\There exists a determinant function $\Delta_0$ such that
-\begin{eqnarray*}
+form (or an inner product) naturally connects the vectors in $\mathcal{V}$ and $\mathcal{V}$$^*$in a
+unique way. \\For any vector v $\in$ $\mathcal{V}$ there is a unique linear functional $\phi_u \in \mathcal{V}^*$
+given by $\phi_u = g_*(v)$. \\An inner product
+makes a vector space \textbf{self-dual}. \\There exists a determinant function $\Delta_0$ such that
+\begin{align*}
 \Delta_0 (v_1, ... , v_N) \Delta_0 ( u_1, ..., u_N) = \alpha det(g(v_i, u_j)).
-\end{eqnarray*}
+\end{align*}
 This is called the $\textbf{Lagrange identity}$\\
 \\
-Going from a vector in V to its unique image in $V^*$ is done by simply $\textbf{lowering the index}$ using Eq. $\ref{eq1}$, and going the other way involves using Eq. $\ref{eq2}$ to $\textbf{raise the index}$.\\
+Going from a vector in $\mathcal{V}$ to its unique image in $\mathcal{V}^*$ is done by simply $\textbf{lowering the index}$ using Eq. $\ref{eq1}$, and going the other way involves using Eq. $\ref{eq2}$ to $\textbf{raise the index}$.\\
 \\
-This process can be generalized to all tensors. For instance, although in general, there is no connection among T$^2_0(V), T^1_1(V),$ and $T_2^0$(V), the introduction of an inner product connects all
+This process can be generalized to all tensors. \\For instance, although in general, there is no connection among T$^2_0(\mathcal{V}), T^1_1(\mathcal{V}),$ and $T_2^0$($\mathcal{V}$), the introduction of an inner product connects all
 these spaces in a natural way and establishes a one-to-one correspondence
-among them. Thus, to a tensor in T$^2_0(V)$ with components $t^{ij}$ j there corresponds a unique tensor in $T^1_1(V)$ given, in component form, by $t_j^i$ = $g_{jk}t^{ik}$, and another unique tensor in $T_2^0$(V), given by $t_{ij} = g_{il} t^l_j = g_{il} g_{jk} t^{lk}$.\\\\
+among them. \\Thus, to a tensor in T$^2_0(\mathcal{V})$ with components $t^{ij}$ j there corresponds a unique tensor in $T^1_1(\mathcal{V})$ given, in component form, by $t_j^i$ = $g_{jk}t^{ik}$, and another unique tensor in $T_2^0$($\mathcal{V}$), given by $t_{ij} = g_{il} t^l_j = g_{il} g_{jk} t^{lk}$.\\\\
 Let us apply this technique to g$^{ij}$ , which is also a tensor and for which
 the lowering process is defined. We have
-\begin{eqnarray*}
+\begin{align*}
 g^i_j = g_{ik}g^{kj} = (g^{-1})^{ik} g_{kj} = \zeta_j^i.
-\end{eqnarray*}
+\end{align*}
 This relation holds in all bases.\\
 \\
-The inner product has been defined as a nondegenerate symmetric bilinear form. The important criterion of nondegeneracy has equivalences:
+The inner product has been defined as a nondegenerate symmetric bilinear form. \\The important criterion of nondegeneracy has equivalences:
 \begin{prop} \label{propdeg}
 A symmetric bilinear form g is nondegenerate if
 and only if\\ \\
 1. the matrix of components $g_{ij}$ has a nonvanishing determinant or,\\ \\
-2. for every nonzero v $\in$ V, there exists w $\in$ V such that g(v,w) $\ne$ 0.
+2. for every nonzero v $\in$ $\mathcal{V}$, there exists w $\in$ $\mathcal{V}$ such that g(v,w) $\ne$ 0.
 \end{prop}
 \begin{proof}
-The first part is a direct consequence of the definition of nondegeneracy. The second part follows from the fact that $g_*$ : V $\to$ V$^*$ is invertible if and only if the nullity of $g_*$ is zero.  It follows that if $v \in V$ is nonzero, then $g_*(v) \ne 0,$ i.e., $g_*(v)$ is not the zero functional. Thus, there must exist a
-vector w $\in$ V such that [ $g_*$(v)](w) $\ne$ 0. The proposition is proved once we
+The first part is a direct consequence of the definition of nondegeneracy. \\The second part follows from the fact that $g_*$ : $\mathcal{V}$ $\to$ $\mathcal{V}$$^*$ is invertible if and only if the nullity of $g_*$ is zero.  It follows that if $v \in \mathcal{V}$ is nonzero, then $g_*(v) \ne 0,$ i.e., $g_*(v)$ is not the zero functional. \\Thus, there must exist a
+vector w $\in$ $\mathcal{V}$ such that [ $g_*$(v)](w) $\ne$ 0. \\The proposition is proved once we
 note that [$g_*$(v)](w) $\equiv$ g(v,w).
 \end{proof}
-Let (V,g) and (U,h) be inner product spaces. Recall that an isometry is
-a linear transformation T : V $\to$ U which preserves the inner product, i.e.,
-\begin{eqnarray*}
+Let ($\mathcal{V}$,g) and ($\mathcal{U}$,h) be inner product spaces.\\ Recall that an isometry is
+a linear transformation T : $\mathcal{V}$ $\to$ $\mathcal{U}$ which preserves the inner product, i.e.,
+\begin{align*}
 g(v_1, v_2) = h(T v_1, T v_2).
-\end{eqnarray*}
+\end{align*}
 It was shown in Theorem $\ref{inj}$ that  an isometry is injective. However, the
 proof relied on the positive definiteness of the inner product. That is not
-necessary. In fact, suppose that Tv = 0. Then, for any x $\in$ V, we have
-\begin{eqnarray*}
+necessary. In fact, suppose that Tv = 0. Then, for any x $\in$ $\mathcal{V}$, we have
+\begin{align*}
 g(x, v) = h(Tx,Tv) = h(Tx,0) = 0.
-\end{eqnarray*}
+\end{align*}
 By proposition $\ref{propdeg}$ since g is nondegenerate. It follows that
 ker T = \{0\}, and we have
 \begin{thm}
 A linear isometry is injective for all inner products.
 \end{thm}
 \begin{defn}
-The $\textbf{g-transpose}$ of a linear endomorphism T : V $\to$ V is
+The $\textbf{g-transpose}$ of a linear endomorphism T : $\mathcal{V}$ $\to$ $\mathcal{V}$ is
 the endomorphism T$^t$ given by
-\begin{eqnarray*}
+\begin{align*}
 g(T^t u, v) = g(u, Tv).
-\end{eqnarray*}
+\end{align*}
 \end{defn}
 
 If T is an is isometry, then
-\begin{eqnarray*}
+\begin{align*}
 g(u, v) = g(Tu, Tv) = g(T^t Tu, v).
-\end{eqnarray*}
+\end{align*}
 Since this holds for arbitrary u and v, we must have T$^t$
-T = 1. Thus,
+T = 1.\\ Thus we have the following proposition
 \begin{prop}
-An endomorphism T : V$\to$V is an isometry if and only
+An endomorphism T : $\mathcal{V}$$\to$$\mathcal{V}$ is an isometry if and only
 if T$^t$ = T$^{-1}$.
 \end{prop}
 \begin{defn} 
 A symmetric bilinear form b can be categorized as follows:
 \\\\
 1. positive (negative) definite: b(v, v) > 0 [b(v, v) < 0] for every
-nonzero vector v;\\
-2. definite: b is either positive definite or negative definite;
-3. positive (negative) semidefinite: b(v, v) $\geq$ 0 [b(v, v) $\leq$ 0] for every v;
-4. semidefinite: b is either positive semidefinite or negative semidefinite;
-5. indefinite: b is not definite.
+nonzero vector v;\\\\
+2. definite: b is either positive definite or negative definite;\\\\
+3. positive (negative) semidefinite: b(v, v) $\geq$ 0 [b(v, v) $\leq$ 0] for every v;\\\\
+4. semidefinite: b is either positive semidefinite or negative semidefinite;\\\\
+5. indefinite: b is not definite.\\\\
 \end{defn}
-If b is a symmetric bilinear form on V, then the restriction b|$_W$ of b on a
-subspace W is also symmetric and bilinear, and if b is definite or semidefinite, then so is b|$_W$.
+If b is a symmetric bilinear form on $\mathcal{V}$, then the restriction b|$_\mathcal{W}$ of b on a
+subspace $\mathcal{W}$ is also symmetric and bilinear, and if b is definite or semidefinite, then so is b|$_\mathcal{W}$.
 \begin{defn}
-The $\textbf{index}$ v of a symmetric bilinear form b on V is the
-dimension of the largest subspace W of V on which b|$_W$ is negative definite.\\\\
-Sometimes v is referred to as the index of V.
+The $\textbf{index}$ v of a symmetric bilinear form b on $\mathcal{V}$ is the
+dimension of the largest subspace $\mathcal{W}$ of $\mathcal{V}$ on which b|$_\mathcal{W}$ is negative definite.\\\\
+Sometimes v is referred to as the index of $\mathcal{V}$.
 \end{defn}
 \begin{exmp}
 Some of the categories of the definition above can be illustrated in $\mathbb{R}^2$ with $v_1 = (x_1, y_1)$, $v_2 = (x_2, y_2)$, and v = (x, y).\\\\
-1. Positive definite: b$(v_1, v_2)$ = $x_1 x_2 + y_1 y_2$ because if v $\ne$ 0, then one of its components is nonzero and b(v, v) = $x^2$ + $y^2$ > 9. \\
+1. Positive definite: b$(v_1, v_2)$ = $x_1 x_2 + y_1 y_2$ because if v $\ne$ 0, then one of its components is nonzero and b(v, v) = $x^2$ + $y^2$ > 9. \\\\
 2. Negative definite: b($v_1, v_2)$ = $\dfrac{1}{2}(x_1 y_2 + x_2 y_1) - x_1 x_2 - y_1 y_2 $because 
-\begin{eqnarray*}
+\begin{align*}
 b(v, v) = x y - x^2 - y^2 = - \dfrac{1}{2}(x - y)^2 - \dfrac{1}{2}x^2 -\dfrac{1}{2} y^2,
-\end{eqnarray*}
+\end{align*}
 which is negative for nonzero v.
+\\\\
 3 . Indefinite: b($v_1,v_2$) = $x_1 x_2 - y_1 y_2$. For v = (x, x), b(v, v) = 0. However, b is nondegenerate, because it has the invertible matrix g = 
 $\begin{pmatrix}
 1 & 0 \\
 0 & -1 
 \end{pmatrix} $in the standard basis for $\mathbb{R}^2$.
-4. Positive semidefinite: b($v_1, v_2$) = $x_1 x_2$ $\Rightarrow$ b(v, v) = $x ^2$ and b(v, v) is never negative. However, b id degenerate because its matrix in the standard basis of $\mathbb(R)^2$ is b = 
+\\\\
+4. Positive semidefinite: b($v_1, v_2$) = $x_1 x_2$ $\Rightarrow$ b(v, v) = $x ^2$ and b(v, v) is never negative. However, b id degenerate because its matrix in the standard basis of $\mathbb{R}^2$ is b = 
 $\begin{pmatrix}
 1 & 0\\
 0 & 0
 \end{pmatrix}$
 which is not invertible.
 \end{exmp}
-Let g be an inner product on V. \\
-Two vectors u, v$\in$V are said to be
-g-orthogonal if g(u, v) = 0. A null or isotropic vector of g is a vector that
+Let g be an inner product on $\mathcal{V}$. \\
+Two vectors u, v$\in$$\mathcal{V}$ are said to be
+g-orthogonal if g(u, v) = 0. \\A null or isotropic vector of g is a vector that
 g-orthogonal and null or
 isotropic vectors
-is g-orthogonal to itself. If g is definite, then the only null vector is the zero
+is g-orthogonal to itself. \\If g is definite, then the only null vector is the zero
 vector. \\\\The converse is also true, as the following proposition shows
 
 \begin{prop}
@@ -1135,47 +1196,53 @@ If g is not definite, then there exists a nonzero
 isotropic vector.
 \end{prop}
 \begin{proof}
-That g is not positive definite implies that there exists a nonzero vector v$\in$V such that g(v, v) $\leq$ 0. Similarly, that g is not negative definite
-implies that there exists a nonzero vector w $\in$ V such that g(w, w) $\geq$ 0. Construct the vector u = $\alpha$v + (1 - $\alpha$)w and note that g(u,u) is a continuous function of $\alpha$. For $\alpha$ = 0 this function has the value g(w,w) $\geq$ 0, and for $\alpha$ = 1 it has the value g(v, v) $\leq$ 0. Thus, there must be some $\alpha$ for which g(u, u) = 0.
+That g is not positive definite implies that there exists a nonzero vector v$\in$$\mathcal{V}$ such that g(v, v) $\leq$ 0. \\Similarly, that g is not negative definite
+implies that there exists a nonzero vector w $\in$ $\mathcal{V}$ such that g(w, w) $\geq$ 0. \\Construct the vector u = $\alpha$v + (1 - $\alpha$)w and note that g(u,u) is a continuous function of $\alpha$. \\For $\alpha$ = 0 this function has the value g(w,w) $\geq$ 0, and for $\alpha$ = 1 it has the value g(v, v) $\leq$ 0. \\Thus, there must be some $\alpha$ for which g(u, u) = 0.
 \end{proof}
 \begin{defn}
-Let g be an inner product on V and y a non-null (nonisotropic) vector in V. The $\textbf{projection}$ $x_y$ of x along y is given by 
-\begin{eqnarray*}
+Let g be an inner product on $\mathcal{V}$ and y a non-null (nonisotropic) vector in $\mathcal{V}$. The $\textbf{projection}$ $x_y$ of x along y is given by 
+\begin{align*}
 x_y = \dfrac{g(x,y)}{g(y,y)} y
-\end{eqnarray*}
+\end{align*}
 \end{defn}
 \begin{defn}
-Let g be an inner product on V and y a non-null (nonisotropic) vector in V. The $\textbf{reflection}$ $x_{r,y}$ of x in a plane perpendicular to y are given by 
-\begin{eqnarray*}
+Let g be an inner product on $\mathcal{V}$ and y a non-null (nonisotropic) vector in $\mathcal{V}$. \\The $\textbf{reflection}$ $x_{r,y}$ of x in a plane perpendicular to y are given by 
+\begin{align*}
 x_{r,y} = x - 2 \dfrac{g(x,y)}{g(y,y)} y
-\end{eqnarray*}
+\end{align*}
 \end{defn}
 
 \subsubsection{Subspaces}
-Let V be a vector space with inner product g. Let W be a subspace of V.\\\\
-Let W$^\perp$ be all vectors in V which are g-orthogonal to all vectors in W.
-Ordinarily, we would call W$^\perp$ the orthogonal complement of W, but if g
+Let $\mathcal{V}$ be a vector space with inner product g. Let $\mathcal{W}$ be a subspace of $\mathcal{V}$.\\\\
+Let $\mathcal{W}$$^\perp$ be all vectors in $\mathcal{V}$ which are g-orthogonal to all vectors in $\mathcal{W}$.\\
+Ordinarily, we would call $\mathcal{W}$$^\perp$ the orthogonal complement of $\mathcal{W}$, but if g
 is not definite, we can’t.
 \begin{lem}
-Let W be a subspace of a finite-dimensional inner product
-space V. Then\\\\
-1. dim W + dim W$^\perp$ = dim V\\
-2. (W$^\perp$)$^\perp$ = W.
+Let $\mathcal{W}$ be a subspace of a finite-dimensional inner product
+space $\mathcal{V}$. Then\\\\
+1. dim $\mathcal{W}$ + dim $\mathcal{W}$$^\perp$ = dim $\mathcal{V}$\\\\
+2. ($\mathcal{W}$$^\perp$)$^\perp$ = $\mathcal{W}$.
 \end{lem}
 
 \begin{proof}
-1. Let \{e$_i$\}$^m_{i=1}$  be a basis of W with the dual basis \{$\epsilon$$_i$\}$^m_{i=1}$. Consider the linear operator $g_W$: V $\to$ W$^*$ given by
-\begin{eqnarray*}
-g_W(v) = \sum_{i=1}^{m} g(v, e_i)\epsilon^i
-\end{eqnarray*}
+1. Let \{e$_i$\}$^m_{i=1}$  be a basis of $\mathcal{W}$ with the dual basis \{$\epsilon$$_i$\}$^m_{i=1}$. \\Consider the linear operator $g_\mathcal{W}$: $\mathcal{V}$ $\to$ $\mathcal{W}$$^*$ given by
+\begin{align*}
+g_\mathcal{W}(v) = \sum_{i=1}^{m} g(v, e_i)\epsilon^i
+\end{align*}
  Using the dimension theorem ($\ref{dimthm}$) we can write
- \begin{eqnarray*}
-dim W^* + dim ker g_W = dim V.
-\end{eqnarray*}
-Since dim W$^*$ = dim W, all that is left to show is that dim ker$g_W$ = dim W$^\perp$. We show more than that; we prove that ker$g_W = W^\perp$. In fact,\\
-v $\in ker g_W$ \\
-$\Leftrightarrow \sum^m_{i=1} g(v, e_i) \epsilon^i = 0$\\
-$\Leftrightarrow g(v, e_i) = 0, i = 1, 2, ... , m. $\\
+ \begin{align*}
+dim \mathcal{W}^* + dim \ ker \ g_\mathcal{W} = dim \mathcal{V}.
+\end{align*}
+Since dim $\mathcal{W}$$^*$ = dim $\mathcal{W}$, all that is left to show is that dim ker$g_\mathcal{W}$ = dim $\mathcal{W}$$^\perp$. \\We show more than that, we prove that ker$g_\mathcal{W} = \mathcal{W}^\perp$. \\In fact,\\
+\begin{align*}
+v \in ker g_\mathcal{W} \Leftrightarrow
+\end{align*}
+\begin{align*}
+ \sum^m_{i=1} g(v, e_i) \epsilon^i = 0 \Leftrightarrow
+ \end{align*}
+\begin{align*}
+g(v, e_i) = 0, i = 1, 2, ... , m.
+\end{align*}
 The last equality follows from the linear independence of  \{$\epsilon$$_i$\}$^m_{i=1}$, and it holds if and only if v $\in$ W$^\perp$.\\\\
 2. If v $\in$ W, then v is orthogonal to all vectors in $W^\perp$, i.e., $v \in (W^\perp)^\perp$. Thus W $\subset$ (W$^\perp)^\perp$. Applying 1) to the subspace
 W$^\perp$, we get dim $W^\perp$ + dim (W$^\perp)^\perp$ = dim V. Hence, dim W = dim (W$^\perp)^\perp$, and W = ( W$^\perp)^\perp$.
