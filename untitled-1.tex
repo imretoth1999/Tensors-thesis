@@ -1243,80 +1243,89 @@ v \in ker g_\mathcal{W} \Leftrightarrow
 \begin{align*}
 g(v, e_i) = 0, i = 1, 2, ... , m.
 \end{align*}
-The last equality follows from the linear independence of  \{$\epsilon$$_i$\}$^m_{i=1}$, and it holds if and only if v $\in$ W$^\perp$.\\\\
-2. If v $\in$ W, then v is orthogonal to all vectors in $W^\perp$, i.e., $v \in (W^\perp)^\perp$. Thus W $\subset$ (W$^\perp)^\perp$. Applying 1) to the subspace
-W$^\perp$, we get dim $W^\perp$ + dim (W$^\perp)^\perp$ = dim V. Hence, dim W = dim (W$^\perp)^\perp$, and W = ( W$^\perp)^\perp$.
+The last equality follows from the linear independence of  \{$\epsilon$$_i$\}$^m_{i=1}$, and it holds if and only if v $\in$ $\mathcal{W}$$^\perp$.\\\\
+2. If v $\in$ $\mathcal{W}$, then v is orthogonal to all vectors in $\mathcal{W}^\perp$, i.e., $v \in (\mathcal{W}^\perp)^\perp$. Thus $\mathcal{W}$ $\subset$ $(\mathcal{W}^\perp)^\perp$. \\
+Applying 1) to the subspace
+$\mathcal{W}$$^\perp$, we get dim $W^\perp$ + dim (W$^\perp)^\perp$ = dim V. Hence, dim W = dim (W$^\perp)^\perp$, and W = ( W$^\perp)^\perp$.
 \end{proof}
-A subspace W of an inner product space (V,g) is called $\textbf{nondegenerate}$ if g|$_W$ is nondegenerate. When g is definite, any subspace of V inherits
-a definite inner product. Therefore, in this case every subspace is nondegenerate. However, when g is not definite, there will always be degenerate
-subspaces. For example, if v is null, then the span of v is clearly degenerate.
+A subspace $\mathcal{W}$ of an inner product space ($\mathcal{V}$,g) is called $\textbf{nondegenerate}$ if g|$_\mathcal{W}$ is nondegenerate. \\When g is definite, any subspace of $\mathcal{V}$ inherits
+a definite inner product. \\Therefore, in this case every subspace is nondegenerate. However, when g is not definite, there will always be degenerate
+subspaces.\\ For example, if v is null, then the span of v is clearly degenerate.
 
 \begin{prop}
-A subspace W of an inner product space V is nondegenerate if and only if W$\oplus$W$^\perp$ = V.
+A subspace $\mathcal{W}$ of an inner product space $\mathcal{V}$ is nondegenerate if and only if $\mathcal{W}$$\oplus$$\mathcal{W}$$^\perp$ = $\mathcal{V}$.
 \end{prop}
 
 \begin{cor}
-A subspace W of an inner product space is nondegenerate if and only if W$^\perp$ is nondegenerate.
+A subspace $\mathcal{W}$ of an inner product space is nondegenerate if and only if $\mathcal{W}$$^\perp$ is nondegenerate.
 \end{cor}
 \begin{lem}
-6 Let x and y be two vectors in V such that g(x, x) =
-g(y, y) $\ne$ 0. Then there is a reflection R such that R(x) = $\pm y$.
+6 Let x and y be two vectors in $\mathcal{V}$ such that g(x, x) =
+g(y, y) $\ne$ 0. \\Then there is a reflection R such that R(x) = $\pm y$.
 \end{lem}
 \begin{proof}
 Because of the relation
-\begin{eqnarray*}
+\begin{align*}
 g(x + y, x + y) + g(x -y, x - y) = 4g(x, x) \ne 0,
-\end{eqnarray*}
-at least one of the terms on the left is nonzero. Assume that g(x -y, x - y) $\ne$, and let z = x - y. Then the reflection operator
-\begin{eqnarray*}
+\end{align*}
+at least one of the terms on the left is nonzero. \\Assume that g(x -y, x - y) $\ne$, and let z = x - y. \\Then the reflection operator
+\begin{align*}
 R_z = 1 - 2P_z = 1 - 2z \dfrac{1}{g(z, z)} \phi_z
-\end{eqnarray*}
+\end{align*}
 is such that 
-\begin{eqnarray*}
-R_z(x) = x - 2z\dfrac{g(z,x)}{g(z,z)} = x - 2(x-y)\dfrac{g(x - y, x)}{g(x - y, x -y)}\\
-=x - 2(x-y)\dfrac{g(x,x) - g(x, y)}{2g(x,x) - 2g(x,y)} = y.
-\end{eqnarray*}
+\begin{align*}
+R_z(x) = x - 2z\dfrac{g(z,x)}{g(z,z)} = x - 2(x-y)\dfrac{g(x - y, x)}{g(x - y, x -y)}=
+\end{align*}
+\begin{align*}
+x - 2(x-y)\dfrac{g(x,x) - g(x, y)}{2g(x,x) - 2g(x,y)} = y.
+\end{align*}
 If g(x + y, x + y) $\neq$ 0, then let z = x + y. The reflection operator $R_z$, when acting on x, yields
-\begin{eqnarray*}
-R_z(x) = x - 2z\dfrac{g(z,x)}{g(z,z)} = x - 2(x + y)\dfrac{g(x+y,x)}{g(x+y, x+y)}\\
-= x - 2(x+y)\dfrac{g(x,x) + g(x,y)}{2g(x,x) + 2g(x,y)} = -y.
-\end{eqnarray*}
+\begin{align*}
+R_z(x) = x - 2z\dfrac{g(z,x)}{g(z,z)} = x - 2(x + y)\dfrac{g(x+y,x)}{g(x+y, x+y)}=
+\end{align*}
+\begin{align*}
+ x - 2(x+y)\dfrac{g(x,x) + g(x,y)}{2g(x,x) + 2g(x,y)} = -y.
+\end{align*}
 and the proof of the lemma is complete. 
 \end{proof}
 \begin{thm}
-Let V be an N-dimensional inner product space.
-Then any isometry T of V is the product of at most N + 1 reflections.
+Let $\mathcal{V}$ be an N-dimensional inner product space.
+Then any isometry T of $\mathcal{V}$ is the product of at most N + 1 reflections.
 \end{thm}
 \subsubsection{Orthonormal Basis}
 Whenever there is an inner product on a vector space, there is the possibility
-of orthogonal basis vectors. Since, in general, g(v, v) is allowed to be negative or zero, we have to redefine what we mean by a vector of norm 1. If
+of orthogonal basis vectors. \\Since, in general, g(v, v) is allowed to be negative or zero, we have to redefine what we mean by a vector of norm 1. \\If
 g(v, v) $\ne$ 0, we define the norm of v as ||v|| = |$\sqrt{g(v,v)}|$. A unit vector, or
 a vector of norm 1 obtained from v is simply v /||v||.
 \begin{thm}
-An inner product space V has an orthonormal basis.
+An inner product space $\mathcal{V}$ has an orthonormal basis.
 \end{thm}
 \begin{defn}
-Let B = \{e$_i$\}$^N_{i=1}$ be a basis of V and $\eta_{ij} \equiv g(e_i, e_j).$ \\\\
-We say B is g-orthonormal if $\eta_{ij}$ = 0 for i $\ne$ j, and $\eta_{ii}$ = $\pm$1. The $\eta_{ii}$ are called the $\textbf{diagonal components of g}$.\\\\
+Let B = \{e$_i$\}$^N_{i=1}$ be a basis of $\mathcal{V}$ and $\eta_{ij} \equiv g(e_i, e_j).$ \\\\
+We say B is g-orthonormal if $\eta_{ij}$ = 0 for i $\ne$ j, and $\eta_{ii}$ = $\pm$1. \\The $\eta_{ii}$ are called the $\textbf{diagonal components of g}$.\\\\
 We use $n_+$ and $n_-$ to denote
-the number of vectors $e_i$ for which $\eta_{ii}$ is, respectively, +1 and -1. The collection ($\eta_{11}, \eta_{22},..., \eta{NN}$) is called the $\textbf{signature of g}$
+the number of vectors $e_i$ for which $\eta_{ii}$ is, respectively, +1 and -1.\\ The collection ($\eta_{11}, \eta_{22},..., \eta{NN}$) is called the $\textbf{signature of g}.$
 \end{defn}
 \begin{thm}
-Sylvester's theorem. 
-The number $n_-$ of negative signs in ($\eta_{11}, \eta_{22},..., \eta{NN}$), the signature of any orthonormal basis \{e$_i$\}$^N_{i=1}$ of an inner product space V, is equal to v, the index of V.
+(Sylvester's theorem)
+The number $n_-$ of negative signs in ($\eta_{11}, \eta_{22},..., \eta{NN}$), the signature of any orthonormal basis \{e$_i$\}$^N_{i=1}$ of an inner product space $\mathcal{V}$, is equal to v, the index of $\mathcal{V}$.
 \end{thm}
 \begin{cor}
-Let W$^-$ denote the largest subspace of the inner product
-space V on which g is negative definite. Then V = $W^- \oplus W^+$. where W$^+$ is
-the orthogonal complement of $W^-$ and g is positive definite on $W^+$.
+Let $\mathcal{W}$$^-$ denote the largest subspace of the inner product
+space $\mathcal{V}$ on which g is negative definite. \\Then $\mathcal{V}$ = $\mathcal{W}^- \oplus \mathcal{W}^+$. where $\mathcal{W}$$^+$ is
+the orthogonal complement of $\mathcal{W}^-$ and g is positive definite on $\mathcal{W}^+$.
 \end{cor}
+\begin{exmp}
 Take the Euclidean n-space $\mathbb{R}^n$ and for some integer 0 $\leq$ v $\leq$ n, change
 the signs of the first v terms in the usual inner product of $\mathbb{R}^n$:
-\begin{eqnarray*}
-\braket{u, v} \equiv g(u,v) = \eta_{ij} u^i v^j = \sum^n_{i=1} \eta_{ij} u^i v^i\\
-=-\sum^v_{i=1} u^i v^i + \sum^n_{i=v+1} u^i v^i. 
-\end{eqnarray*} 
-The resulting inner product space, denoted by $\mathbb{R}^n_v$, is called the $\textbf{semi-Euclidean space}$. For $n \geq$ 2, $\mathbb{R}^n_1$ is called the $\textbf{Minkowski n-space}$.$\mathbb{R}^4_1$ is the space of the special theory of relativity.
+\begin{align*}
+\braket{u, v} \equiv g(u,v) = \eta_{ij} u^i v^j = \sum^n_{i=1} \eta_{ij} u^i v^i=
+\end{align*}
+\begin{align*}
+-\sum^v_{i=1} u^i v^i + \sum^n_{i=v+1} u^i v^i. 
+\end{align*} 
+The resulting inner product space, denoted by $\mathbb{R}^n_v$, is called the $\textbf{semi-Euclidean space}$. For $n \geq$ 2, $\mathbb{R}^n_1$ is called the $\textbf{Minkowski n-space}$.\\$\mathbb{R}^4_1$ is the space of the special theory of relativity.
+\end{exmp}
 \begin{prop}
 Let $\mathbb{R}^n_v$ and $\mathbb{R}^m_\mu$ be semi-Euclidean spaces.Then
 \begin{eqnarray*}
@@ -1324,63 +1333,81 @@ Let $\mathbb{R}^n_v$ and $\mathbb{R}^m_\mu$ be semi-Euclidean spaces.Then
 \end{eqnarray*}
 \end{prop}
 \begin{defn}
-The volume element of an inner product space (V,g)
+The volume element of an inner product space ($\mathcal{V}$,g)
 relative to g is a volume element obtained from any orthonormal basis
-of V$^*$
+of $\mathcal{V}$$^*$
 \end{defn}
-\subsubsection{Inner Product on $\Lambda^{p}(V, U)$}
-If (V,g) is an inner product space, then g induces an inner product $\widetilde{g}$ on $\Lambda^{p}(V)$ as follows. Extend the mapping $g_*^{-1}$ : $V^*$ $\to$ V to the space of p-forms by applying it to each factor (e.g., in the expansion of the p-form in a
-basis of $\Lambda^{p}(V)$). This extension makes $g_*^{-1}$a map $g_*^{-1}$ : $\Lambda^{p}(V)$ $\to$ $\Lambda^{p}(V^*)$ which takes a p-form $\beta$ and turns into a p-vector $g_*^{-1} (\beta)$. Then the pairing $\braket{\alpha, g_*^{-1}(\beta)}$, with $\alpha, \beta \in \Lambda^{p}(V)$ , is the desired induced inner product. More
-specifically, let \{e$_j$\}$^N_{j=1}$  be a basis of V and \{$\epsilon$$^i$\}$^N_{i=1}$ its dual basis. Then,
-\begin{eqnarray*}
-g_*^{-1} (\beta) \equiv g_*^{-1} ( \dfrac{1}{p!} \beta_{i_1, i_2,...,i_p} \epsilon^{i_1} \wedge \epsilon^{i_2} \wedge ... \epsilon^{i_p} ) \\
-= \dfrac{1}{p!} \beta_{i_1, i_2,...,i_p} (g_*^{-1}(\epsilon^{i_1}) \wedge g_*^{-1} (\epsilon^{i_2} \wedge ... \wedge g_*^{-1} (\epsilon^{i_p})))\\
-=\dfrac{1}{p!} \beta_{i_1, i_2,...,i_p} ( g^{i_1 j_1} e_{j_1} \wedge g^{i_2 j_2} e_{j_2} \wedge ... \wedge g^{i_p j_p} e_{j_p})\\
-=\dfrac{1}{p!} g^{i_1 j_1} g^{i_2 j_2} ... g^{i_p j_p}  \beta_{i_1, i_2,...,i_p} e_{j_1} \wedge e_{j_2} \wedge ... \wedge e_{j_p} \\
+\subsubsection{Inner Product on $\Lambda^{p}(\mathcal{V}, \mathcal{U})$}
+If ($\mathcal{V}$,g) is an inner product space, then g induces an inner product $\widetilde{g}$ on $\Lambda^{p}(\mathcal{V})$ as follows. \\Extend the mapping $g_*^{-1}$ : $\mathcal{V}^*$ $\to$ $\mathcal{V}$ to the space of p-forms by applying it to each factor (e.g., in the expansion of the p-form in a
+basis of $\Lambda^{p}(\mathcal{V})$).\\ This extension makes $g_*^{-1}$a map $g_*^{-1}$ : $\Lambda^{p}(\mathcal{V})$ $\to$ $\Lambda^{p}(\mathcal{V}^*)$ which takes a p-form $\beta$ and turns into a p-vector $g_*^{-1} (\beta)$. \\Then the pairing $\braket{\alpha, g_*^{-1}(\beta)}$, with $\alpha, \beta \in \Lambda^{p}(\mathcal{V})$ , is the desired induced inner product. \\More
+specifically, let \{e$_j$\}$^N_{j=1}$  be a basis of $\mathcal{V}$ and \{$\epsilon$$^i$\}$^N_{i=1}$ its dual basis. Then,
+\begin{align*}
+g_*^{-1} (\beta) \equiv g_*^{-1} ( \dfrac{1}{p!} \beta_{i_1, i_2,...,i_p} \epsilon^{i_1} \wedge \epsilon^{i_2} \wedge ... \epsilon^{i_p} ) =
+\end{align*}
+\begin{align*}
+\dfrac{1}{p!} \beta_{i_1, i_2,...,i_p} (g_*^{-1}(\epsilon^{i_1}) \wedge g_*^{-1} (\epsilon^{i_2} \wedge ... \wedge g_*^{-1} (\epsilon^{i_p})))=
+\end{align*}
+\begin{align*}
+\dfrac{1}{p!} \beta_{i_1, i_2,...,i_p} ( g^{i_1 j_1} e_{j_1} \wedge g^{i_2 j_2} e_{j_2} \wedge ... \wedge g^{i_p j_p} e_{j_p})=
+\end{align*}
+\begin{align*}
+\dfrac{1}{p!} g^{i_1 j_1} g^{i_2 j_2} ... g^{i_p j_p}  \beta_{i_1, i_2,...,i_p} e_{j_1} \wedge e_{j_2} \wedge ... \wedge e_{j_p} =
+\end{align*}
+\begin{align*}
 \equiv \dfrac{1}{p!} \beta^{j_1 j_2, ... , j_p}  e_{j_1} \wedge e_{j_2} \wedge ... \wedge e_{j_p} .
-\end{eqnarray*}
-Note how the indices of the components of $\beta$ have been raised by the components of the $g^{-1}$. Pairing this last expression with $\alpha$, we get
-\begin{eqnarray*}
-\widetilde{g} (\alpha, \beta) = \braket{\alpha, g_*^{-1}(\beta)}\\
-=\dfrac{1}{(p!)^2} \alpha_{i_1 i_2 .... i_p} \beta^{j_1 j_2 ... j_p} \braket{ \epsilon^{i_1} \wedge ... \wedge \epsilon^{i_p}, e_{j_1} \wedge e_{j_p}}  
-\equiv \dfrac{1}{(p!)^2} \alpha_{i_1 i_2 .... i_p} \beta^{j_1 j_2 ... j_p}  \epsilon^{i_1} \wedge \epsilon^{i_2} \wedge ... \wedge \epsilon^{i_p} (e_{j_1}, e_{j_2}, ..., e_{j_p})       \\
-= \dfrac{1}{(p!)^2} \sum_\pi \epsilon_\pi \zeta^{i_1}_{_\pi(j_1)} \zeta^{i_2}_{_\pi(j_2)} ... \zeta^{i_p}_{_\pi(j_p)} \alpha_{i_1 i_2 .... i_p} \beta^{j_1 j_2 ... j_p}
-\end{eqnarray*}
+\end{align*}
+Note how the indices of the components of $\beta$ have been raised by the components of the $g^{-1}$. \\Pairing this last expression with $\alpha$, we get
+\begin{align*}
+\widetilde{g} (\alpha, \beta) = \braket{\alpha, g_*^{-1}(\beta)}=
+\end{align*}
+\begin{align*}
+\dfrac{1}{(p!)^2} \alpha_{i_1 i_2 .... i_p} \beta^{j_1 j_2 ... j_p} \braket{ \epsilon^{i_1} \wedge ... \wedge \epsilon^{i_p}, e_{j_1} \wedge e_{j_p}}  
+\end{align*}
+\begin{align*}
+\equiv \dfrac{1}{(p!)^2} \alpha_{i_1 i_2 .... i_p} \beta^{j_1 j_2 ... j_p}  \epsilon^{i_1} \wedge \epsilon^{i_2} \wedge ... \wedge \epsilon^{i_p} (e_{j_1}, e_{j_2}, ..., e_{j_p})    =   
+\end{align*}
+\begin{align*}
+ \dfrac{1}{(p!)^2} \sum_\pi \epsilon_\pi \zeta^{i_1}_{_\pi(j_1)} \zeta^{i_2}_{_\pi(j_2)} ... \zeta^{i_p}_{_\pi(j_p)} \alpha_{i_1 i_2 .... i_p} \beta^{j_1 j_2 ... j_p}
+\end{align*}
 Therefore,
-\begin{eqnarray*}
-\widetilde{g} (\alpha, \beta) =  \dfrac{1}{(p!)^2} \sum_\pi \epsilon_\pi \zeta_{_\pi(j_1) _\pi(j_2)_\pi(j_p)} \beta^{j_1 j_2 ... j_p}\\
-=\dfrac{1}{p!} \alpha_{j_1 j_2... j_p} \beta^{j_1 j_2 ... j_p}
-\end{eqnarray*}
+\begin{align*}
+\widetilde{g} (\alpha, \beta) =  \dfrac{1}{(p!)^2} \sum_\pi \epsilon_\pi \zeta_{_\pi(j_1) _\pi(j_2)_\pi(j_p)} \beta^{j_1 j_2 ... j_p}=
+\end{align*}
+\begin{align*}
+\dfrac{1}{p!} \alpha_{j_1 j_2... j_p} \beta^{j_1 j_2 ... j_p}
+\end{align*}
 because $\alpha_{\pi (j_1) \pi (j_2) ... \pi (j_p)}$ = $\epsilon_\pi \alpha_{j_1 j_2 ... j_p}$ due to the antisymmetry of the components of p-forms.\\\\
 
-Having found $\widetilde{g}$, we can extend it further to  $\Lambda^{p}(V, U)$ if U has an inner product h. Let \{f$_a$\}$^{dim U}_{a=1}$ be a basis of U, and note that any $\alpha \in \Lambda^{p}(V, U)$ can be written as $\alpha = \sum^{dim U}_{a =1} \alpha^a f_a$, where $\alpha^a \in \Lambda^{p}(V)$. Denote the inner product of $\Lambda^{p}(V, U)$ as gh and, for 
+Having found $\widetilde{g}$, we can extend it further to  $\Lambda^{p}(\mathcal{V}, \ \mathcal{U})$ if $\mathcal{U}$ has an inner product h. \\Let \{f$_a$\}$^{dim \mathcal{U}}_{a=1}$ be a basis of $\mathcal{U}$, and note that any $\alpha \in \Lambda^{p}(\mathcal{V},\ \mathcal{U})$ can be written as $\alpha = \sum^{dim \mathcal{U}}_{a =1} \alpha^a f_a$, where $\alpha^a \in \Lambda^{p}(\mathcal{V})$. \\Denote the inner product of $\Lambda^{p}(\mathcal{V},\ \mathcal{U})$ as gh and, for 
 
-\begin{equation}
-\alpha = \sum^{dim U}_{a=1} \alpha^a f_a
-\end{equation}
-\begin{equation}
-\beta = \sum^{dim U}_{b=1} \beta^b f_b
-\end{equation}
+\begin{align*}
+\alpha = \sum^{dim \mathcal{U}}_{a=1} \alpha^a f_a
+\end{align*}
+\begin{align*}
+\beta = \sum^{dim \mathcal{U}}_{b=1} \beta^b f_b
+\end{align*}
 define it as 
-\begin{equation}
-\widetilde{gh} (\alpha, \beta) = \sum^{dim U}_{a, b =1} \widetilde{g} (\alpha^a, \beta^b) h(f_a, f_b)\\
-\equiv \sum^{dim U}_{a,b = 1} h_{ab} \widetilde{g} (\alpha^a, \beta^b).
-\end{equation}
+\begin{align*}
+\widetilde{gh} (\alpha, \beta) = \sum^{dim \mathcal{U}}_{a, b =1} \widetilde{g} (\alpha^a, \beta^b) h(f_a, f_b) \equiv
+\end{align*}
+\begin{align*}
+ \sum^{dim \mathcal{U}}_{a,b = 1} h_{ab} \widetilde{g} (\alpha^a, \beta^b).
+\end{align*}
 $\widetilde{gh}$ is basis-independent.
 
 \subsection{The Hodge Star Operator}
-All vectors spaces of the same dimension are isomorphic. Therefore, the two vector spaces $\Lambda^{p}(V)$ and $\Lambda^{N-p}(V^*)$ having the dimension, $\begin{pmatrix}
+All vectors spaces of the same dimension are isomorphic. Therefore, the two vector spaces $\Lambda^{p}(\mathcal{V})$ and $\Lambda^{N-p}(\mathcal{V}^*)$ having the dimension, $\begin{pmatrix}
 N\\
 p
 \end{pmatrix}$ = $\begin{pmatrix}
 N\\
 N-p
-\end{pmatrix}$, must be isomorphic. In fact, there is a natural isomorphism between the two spaces:
+\end{pmatrix}$, must be isomorphic. \\In fact, there is a natural isomorphism between the two spaces:
 \begin{defn} \label{star}
-Let g be an inner product and \{$\epsilon_i$\}$^N_{i=1}$  a g-orthonormal ordered basis of $V^*$. \\\\The $\textbf{Hodge star operator}$ is a linear mapping, $\ast$: $\Lambda^{p}(V)$ $\to$ $\Lambda^{N-p}(V)$, given by
-\begin{eqnarray*} 
-\ast (\epsilon^{i_1} \wedge ... \wedge \epsilon^{i_p}) \equiv \dfrac{1}{N - p)!} \epsilon^{i_1 i_2 ... i_p}_{j_{p+1}... j_N} \epsilon^{j_{p+1} }\wedge ... \wedge \epsilon^{j_n}.
-\end{eqnarray*} 
+Let g be an inner product and \{$\epsilon_i$\}$^N_{i=1}$  a g-orthonormal ordered basis of $\mathcal{V}^*$. \\\\The $\textbf{Hodge star operator}$ is a linear mapping, $\ast$: $\Lambda^{p}(\mathcal{V})$ $\to$ $\Lambda^{N-p}(\mathcal{V})$, given by
+\begin{align*} 
+\ast (\epsilon^{i_1} \wedge ... \wedge \epsilon^{i_p}) \equiv \dfrac{1}{(N - p)!} \epsilon^{i_1 i_2 ... i_p}_{j_{p+1}... j_N} \epsilon^{j_{p+1} }\wedge ... \wedge \epsilon^{j_n}.
+\end{align*} 
 A similar star operator can be defined on p-vectors $\epsilon^{i_1 i_2 ... i_p}_{j_{p+1}... j_N}$ is obtained
 from $\epsilon_{j_1...j_N}$ by raising its first p subscripts.\\
 \end{defn}
@@ -1390,35 +1417,36 @@ Let us apply Definition $\ref{star}$ to $\Lambda^p(\mathbb{R}^3*)$ for p = 0, 1,
 Let $\{e_1, e_2, e_3 \}$ be an oriented orthonormal basis of $\mathbb{R}^3$.
 \\\\
 a) For $\Lambda^0(\mathbb{R}^3*)$ = $\mathbb{R}$ a basis is 1, and $\ref{star}$ gives:
-\begin{eqnarray*}
-\ast 1 = \dfrac{1}{3!} \epsilon^{ijk} e_i \wedge e_j \wedge e_k \\
-= e_1 \wedge e_2 \wedge e_3.
-\end{eqnarray*}
+\begin{align*}
+\ast 1 = \dfrac{1}{3!} \epsilon^{ijk} e_i \wedge e_j \wedge e_k =
+\end{align*}
+\begin{align*}
+ e_1 \wedge e_2 \wedge e_3.
+\end{align*}
 b) For $\Lambda^1(\mathbb{R}^3*)$ = $\mathbb{R}^3$ a basis is $\{e_1, e_2, e_3 \}$ and $\ref{star}$ gives 
-\begin{eqnarray*}
+\begin{align*}
 \ast e_i = \dfrac{1}{2} \epsilon^{jk}_i e_j \wedge e_k
-\end{eqnarray*}
+\end{align*}
 or
-\begin{eqnarray*}
+\begin{align*}
 \ast e_1 = e_2 \wedge e_3\\
 \ast e_2 = e_3 \wedge e_1\\
 \ast e_3 = e_1 \wedge e_2
-\end{eqnarray*}
+\end{align*}
 c) For $\Lambda^2(\mathbb{R}^3*)$ a basis is $\{ e_1 \wedge e_2, e_1 \wedge e_3, e_2 \wedge e_3 \}$ and $\ref{star}$ gives
-\begin{eqnarray*}
+\begin{align*}
 \ast e_i \wedge e_j = \epsilon^k_{ij} e_k
-\end{eqnarray*}
+\end{align*}
 or
-\begin{eqnarray*}
+\begin{align*}
 \ast (e_1 \wedge e_2) = e_3\\
 \ast (e_1 \wedge e_3) = - e_2\\
 \ast(e_2 \wedge e_3) = e_1
-\end{eqnarray*}
+\end{align*}
 d) For $\Lambda^3(\mathbb{R}^3*)$ a basis is $\{ e_1 \wedge e_2 \wedge e_3 \}$ and $\ref{star}$ yields
-\begin{eqnarray*}
-\ast ( e_1 \wedge e_2 \wedge e_3) = \epsilon_{123}\\
-= 1.
-\end{eqnarray*}
+\begin{align*}
+\ast ( e_1 \wedge e_2 \wedge e_3) = \epsilon_{123}= 1.
+\end{align*}
 \end{exmp}
 The preceding example may suggest that applying the Hodge star operator twice (composition of $\ast$ with itself, or $\ast \circ \ast$) is equivalent to applying the
 identity operator. This is partially true. \\\\The following theorem is a precise
@@ -1426,49 +1454,49 @@ statement of this conjecture
 
 \begin{thm}
 Let V be an oriented space with an inner product g.\\
-For A $\in$ $\Lambda^{p}(V)$ we have
-\begin{eqnarray*}
+For A $\in$ $\Lambda^{p}(\mathcal{V})$ we have
+\begin{align*}
 \ast \circ \ast A \equiv \ast \ast A = (-1)^v(-1)^{p(N-p)}A
-\end{eqnarray*}
-where v is the index of g and N = dim V.
+\end{align*}
+where v is the index of g and N = dim $\mathcal{V}$.
 \end{thm}
 In particular, for Euclidean spaces with an odd number of dimensions
-(such as $\mathbb{R}^3$, $\ast \ast A = A.$\\
-One can extend the star operation to any A $\in \Lambda^{p}(V)$ by writing A as a linear combination of basis vectors of $\Lambda^{p}(V)$ constructed out of 
+(such as $\mathbb{R}^3, \ \mathbb{R}^5$ etc), $\ast \ast A = A.$\\
+One can extend the star operation to any A $\in \Lambda^{p}(\mathcal{V})$ by writing A as a linear combination of basis vectors of $\Lambda^{p}(\mathcal{V})$ constructed out of 
 \{e$_i$\}$^N_{i=1}$ and using linearity of $\ast$.\\
 The star operator creates an (N - p)-form out of a p-form. If we take
 the exterior product of a p-form and the star of another p-form, we get an
 N-form, which is proportional to a volume element.
-% TODO add  inner product revisited
 \begin{thm}
-Let (V, g) be an inner product space and $\mu$ a volume element relative to g. Let $\widetilde{g}$ be the inner product induced by g on $\in \Lambda^{p}(V)$  and given explicitly in $\ref{star}$. Then for $\alpha \beta \in \Lambda^{p}(V)$ , we have $\alpha \wedge \ast \beta = \widetilde{g}(\alpha, \beta) \mu.$
+Let ($\mathcal{V}$, g) be an inner product space and $\mu$ a volume element relative to g. \\Let $\widetilde{g}$ be the inner product induced by g on $\in \Lambda^{p}(\mathcal{V})$  and given explicitly in $\ref{star}$. \\Then for $\alpha \beta \in \Lambda^{p}(\mathcal{V})$ , we have $\alpha \wedge \ast \beta = \widetilde{g}(\alpha, \beta) \mu.$
 \end{thm}
 In the discussion of exterior algebra one encounters sums of the form
 
-\begin{eqnarray*}
+\begin{align*}
 A^{i_1 ... i_p} v_{i_1} \wedge ... \wedge v_{i_p}
-\end{eqnarray*}
-It is important to note that $A^{i_1 ... i_p}$ is assumed skew-symmetric. For example,
-if A = $e_1 \wedge e_2$, then in the sum A = $A^{ij} e_i \wedge e_j$, the nonzero components consist of $A^{12} = \dfrac{1}{2}$ and $A^{21} = -\dfrac{1}{2}$. Similarly, when B = $e_1 \wedge e_2 \wedge e_3$ is written in the form B = $B^{ijk} e_i \wedge e_j \wedge e_k$, it is understood that the nonzero components of B are not restricted to  $B^{123}$. Other components, such as $B^{132}$, $B^{231}$, and so on, are also nonzero. In fact we have\\
-\begin{eqnarray*}
+\end{align*}
+It is important to note that $A^{i_1 ... i_p}$ is assumed skew-symmetric. \\For example,
+if A = $e_1 \wedge e_2$, then in the sum A = $A^{ij} e_i \wedge e_j$, the nonzero components consist of $A^{12} = \dfrac{1}{2}$ and $A^{21} = -\dfrac{1}{2}$. \\Similarly, when B = $e_1 \wedge e_2 \wedge e_3$ is written in the form B = $B^{ijk} e_i \wedge e_j \wedge e_k$, it is understood that the nonzero components of B are not restricted to  $B^{123}$. \\Other components, such as $B^{132}$, $B^{231}$, and so on, are also nonzero.\\ In fact we have\\
+\begin{align*}
 B^{123} = -B^{132} = -B^{213} = B^{231} = B^{312} = -B^{231} = \dfrac{1}{6}
-\end{eqnarray*}
+\end{align*}
 This should be kept in mind when sums over exterior products with numerical coefficients are encountered.
 \begin{exmp}
 Let a, b $\in \mathbb{R}^3$ and $\{e_1, e_2, e_3\}$ an oriented orthonormal basis of $\mathbb{R}^3$. Then a = $a^i e_i$ and b = $b^j e_j$.\\
 Let us calculate  $a \wedge b$ and $\ast(a \wedge b)$.\\
 We assume a Euclidean g on $\mathbb{R}^3$. Then $a \wedge b$ = $( a^i e_i) \wedge (b^j e_j) = a^i b^j e_i \wedge e_j$ , and
-\begin{eqnarray*}
-\ast (a \wedge b) = \ast (a ^ i e_i) \wedge (b^j e_j) = a^i b^j \ast (e_i \wedge e_j)\\
-= a^i b^j ( \epsilon^k_{ij} e_k) = (\epsilon^k_{ij} a^i b^j) e_k.
-\end{eqnarray*}
+\begin{align*}
+\ast (a \wedge b) = \ast (a ^ i e_i) \wedge (b^j e_j) = a^i b^j \ast (e_i \wedge e_j)=
+\end{align*}
+\begin{align*}
+ a^i b^j ( \epsilon^k_{ij} e_k) = (\epsilon^k_{ij} a^i b^j) e_k.
+\end{align*}
 We see that $\ast (a \wedge b)$ is a vector with components [$\ast(a \wedge b)]^k$ = $\epsilon^k_{ij} a^i b^j,$ which are precisely the components of $a \times b$.
 \end{exmp}
-The correspondence between a$\wedge$ b and a$\times$b holds only in three dimensions, because dim $\Lambda^{1}(V)$ = dim $\Lambda^{2}(V)$ only if dim V = 3.
-
+The correspondence between a $\wedge$ b and a $\times$ b holds only in three dimensions, because dim $\Lambda^{1}(\mathcal{V})$ = dim $\Lambda^{2}(\mathcal{V})$ only if dim $\mathcal{V}$ = 3.
+\\We end the paper with the following proposition
 \begin{prop}
-When the product of two tensors is summed over a pair
-of indices in which one of the tensors is symmetric and the other antisymmetric, the result is zero.
+When the product of two tensors is summed over a pair of indices in which one of the tensors is symmetric and the other antisymmetric, the result is zero.
 \end{prop}
 
 \newpage
