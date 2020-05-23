@@ -702,86 +702,116 @@ T_a(\tau^1,\tau^2,\tau^3) =
 \end{exmp}
 
 \subsection{Exterior algebra}
-The following discussion will concentrate on tensors of type (r, 0). However, interchanging the roles of V and V$^*$ makes all definitions, theorems,
+The following discussion will concentrate on tensors of type (r, 0). However, interchanging the roles of $\mathcal{V}$ and $\mathcal{V}$$^*$ makes all definitions, theorems,
 propositions, and conclusions valid for tensors of type (0,s) as well. The set of all skew-symmetric tensors of type (p, 0) forms a subspace of T$^{p}_{0}$. This subspace is denoted by $\Lambda^{p}  (V^*)$ and its members are called \textbf{p-vectors} It is not, however, an algebra unless we define a skew-symmetric
 product analogous to that for the symmetric case. This is done in the following definition:
 \begin{defn}
-The \textbf{exterior product} (also called the wedge, Grassmann, alternating, or veck product) of two skew-symmetric tensors \textbf{A}$\in\Lambda^{p}(V^*)$ and  \textbf{B}$\in\Lambda^{q}(V^*)$ is a skew-symmetric tensor belonging to $\Lambda^{p+q}(V^*)$ and given by
-\begin{equation}
+The \textbf{exterior product} (also called the wedge, Grassmann, alternating, or veck product) of two skew-symmetric tensors \textbf{A}$\in\Lambda^{p}(\mathcal{V}^*)$ and  \textbf{B}$\in\Lambda^{q}(\mathcal{V}^*)$ is a skew-symmetric tensor belonging to $\Lambda^{p+q}(\mathcal{V}^*)$ and given by
+\begin{align*}
 A \wedge B \equiv \dfrac{(r+s)!}{r!s!} \mathbb{A} (A \otimes B ) =\dfrac{(r+s)!}{r!s!}(A \otimes B ) _{a}.
-\end{equation}
+\end{align*}
 \end{defn}
 
 More explicitly,\\
-A $\wedge$ B = ($\tau^1$,...,$\tau^{r+s}$)\\	
-= $\dfrac{1}{r!s!}\sum_{\pi}\epsilon_{\pi} A (\tau^{\pi(1)},...,\tau^{\pi(r)})B (\tau^{\pi(r+1)},...,\tau^{\pi(r+s)})$
+\begin{align*}
+A \wedge B = (\tau^1,...,\tau^{r+s})=
+\end{align*}
+\begin{align*}	
+\dfrac{1}{r!s!}\sum_{\pi}\epsilon_{\pi} A (\tau^{\pi(1)},...,\tau^{\pi(r)})B (\tau^{\pi(r+1)},...,\tau^{\pi(r+s)})
+\end{align*}
 
 %add example 
 \begin{thm}
 The exterior product is associative and distributive
 with respect to the addition of tensors. Furthermore, it satisfies the
 following anticommutativity property:
-\begin{eqnarray*}
+\begin{align*}
 A \wedge B = (-1)^{pq}B\wedge A
-\end{eqnarray*}
-whenever A $\in$ $\Lambda^{p} (V^*)$ and B $\in$ $\Lambda^{q} (V^*)$ .  In particular, v$_1$ $\wedge$ v$_2$ =
-   - v$_2$ $\wedge$ v$_1$ for v$_1$, v$_2$ $\in$ V
+\end{align*}
+whenever A $\in$ $\Lambda^{p} (\mathcal{V}^*)$ and B $\in$ $\Lambda^{q} (\mathcal{V}^*)$ .  \\In particular, v$_1$ $\wedge$ v$_2$ =
+   - v$_2$ $\wedge$ v$_1$ for v$_1$, v$_2$ $\in$ $\mathcal{V}$
 \end{thm}
-\begin{defn}
-The elements of $\Lambda^{p} (V^*)$ are called \textbf{p-forms} 
-\end{defn}
-A linear transformation T : V $\to$ W induces a transformation T$^*$ : $\Lambda^{p} (W)$  $\to$ $\Lambda^{p} (V)$ defined by
-\begin{eqnarray*}
-(T^{*} \rho (v_1,...,v_p) \equiv \rho (T v_1,...,T v_p) , \rho \in \Lambda^{p}(W), v_i \in V
-\end{eqnarray*}
 
+\begin{proof}
+We will now show that the exterior product is associative
+\begin{align*}
+(A \wedge B) \wedge C = \dfrac{(r+s)!}{r!s!}\mathbb{A}(A \otimes B ) \wedge C =
+\end{align*}
+\begin{align*}
+ \dfrac{1}{r!s!p!}\mathbb{A}((A \otimes B ) \otimes C)
+\end{align*}
+Now let's see the other way
+\begin{align*}
+A \wedge ( B \wedge C) =  A \wedge \dfrac{(s+p)!}{s!p!}\mathbb{A}(B \otimes C )   =
+\end{align*}
+\begin{align*}
+ \dfrac{1}{r!s!p!}\mathbb{A}(A \otimes (B  \otimes C))
+\end{align*}
+Since tensor product is associative, then we proved that the exterior product is associative.
+\end{proof}
+\begin{defn}
+The elements of $\Lambda^{p} (\mathcal{V}^*)$ are called \textbf{p-forms} 
+\end{defn}
+A linear transformation T : $\mathcal{V}$ $\to$ $\mathcal{W}$ induces a transformation T$^*$ : $\Lambda^{p} (\mathcal{W})$  $\to$ $\Lambda^{p} (\mathcal{V})$ defined by
+\begin{align*}
+(T^{*} \rho (v_1,...,v_p) \equiv \rho (T v_1,...,T v_p) , 
+\end{align*}
+$\rho \in \Lambda^{p}(W), v_i \in V$
+\\
 T$^*\rho$ is is called the \textbf{pullback } of $\rho$ by T. The most important properties of
 pullback maps are given in the following:\\
-Let T : V $\to$ W and  S : W $\to$ U. Then\\
+Let T : $\mathcal{V}$ $\to$ $\mathcal{W}$ and  S : $\mathcal{W}$ $\to$ $\mathcal{U}$. Then\\
 \\
-1. T$^* : \Lambda^{p} (W) \to \Lambda^{p} (V)$\\
+1. T$^* : \Lambda^{p} (\mathcal{W}) \to \Lambda^{p} (\mathcal{V})$\\
 2. (S $\circ$ T)$^*$ = $T^* \circ S^*$\\
 3. If T is the identity map, so is $T^*$\\
 4. If T is an isomorphism, so is $T^*$ and $(T^*)^{-1} = (T^{-1})^*$\\
-5. If $\rho \in \Lambda^{p} (W)$ and $\sigma \in \Lambda^{p} (W)$, then T$^*$( $\rho \wedge \sigma $) = $T^* \rho \wedge T^* \sigma$.
+5. If $\rho \in \Lambda^{p} (\mathcal{W})$ and $\sigma \in \Lambda^{p} (\mathcal{W})$, then T$^*$( $\rho \wedge \sigma $) = $T^* \rho \wedge T^* \sigma$.
 \\ \\
-If \{e$_i$\}$^N_{i=1}$ is a basis of V, we can form a basis for $\Lambda^{p}(V^*)$ by constructing all products of the form $e_{i_1} \wedge e_{i_2} \wedge ... \wedge e_{1_p}$.  \\The number of linearly independent such vectors, which is the dimension of  $\Lambda^{p}(V^*)$,  , is equal to the number
+If \{e$_i$\}$^N_{i=1}$ is a basis of $\mathcal{V}$, we can form a basis for $\Lambda^{p}(\mathcal{V}^*)$ by constructing all products of the form $e_{i_1} \wedge e_{i_2} \wedge ... \wedge e_{1_p}$.  \\The number of linearly independent such vectors, which is the dimension of  $\Lambda^{p}(\mathcal{V}^*)$,  , is equal to the number
 of ways p numbers can be chosen from among N distinct numbers in such
 a way that no two of them are equal. This is simply the combination of N
 objects taken p at a time. Thus, we have \\
-\begin{eqnarray*}
- dim (\Lambda^{p}(V^*)) =  \begin{pmatrix} N \\ p \end{pmatrix} = \dfrac{N!}{p!(N - p)!}
-\end{eqnarray*}
+\begin{align*}
+ dim (\Lambda^{p}(\mathcal{V}^*)) =  
+ \begin{pmatrix} N \\ p \end{pmatrix}
+  = \dfrac{N!}{p!(N - p)!}
+\end{align*}
 
 In particular dim ($\Lambda^{p}(V^*)$) = 1.\\
 \indent Any A $\in \Lambda^{p}(V^*)$ can be written as 
-\begin{eqnarray*}
-A = \sum^{N}_{i_1 < i_2 < ... < i_p} A^{i_1...i_p}  e_{i_1} \wedge e_{i_2} \wedge ... \wedge e_{1_p} \\
-= \dfrac{1}{p!} \sum^{N}_{i_1,i_2 ... i_p} A^{i_1...i_p}  e_{i_1} \wedge e_{i_2} \wedge ... \wedge e_{1_p}
-\end{eqnarray*}
+\begin{align*}
+A = \sum^{N}_{i_1 < i_2 < ... < i_p} A^{i_1...i_p}  e_{i_1} \wedge e_{i_2} \wedge ... \wedge e_{1_p} =
+\end{align*}
+\begin{align*}
+ \dfrac{1}{p!} \sum^{N}_{i_1,i_2 ... i_p} A^{i_1...i_p}  e_{i_1} \wedge e_{i_2} \wedge ... \wedge e_{1_p}
+\end{align*}
 where A$^{i_1...i_p}$ are the components of A, which are assumed completely antisymmetric in all $i_1,i_2 ... i_p$. In the second sum, all i’s run from 1 to N.\\
 \begin{thm}
-Set $\Lambda^{0}(V^*)$ = $\mathbb{R}$ and let $\Lambda(V^*)$ denote the direct
-sum of all  $\Lambda^{p}(V^*)$:
-\begin{eqnarray*}
-\Lambda(V^*)  = \oplus^{N}_{p = 0}  \Lambda(V^*) \equiv \mathbb{R} \oplus V \oplus \Lambda^{2}(V^*) \oplus \Lambda^{N}(V^*)
-\end{eqnarray*}
-Then $\Lambda(V^*)$ is a $2^N$-dimensional algebra with exterior product defining its multiplication rule.	
+Set $\Lambda^{0}(\mathcal{V}^*)$ = $\mathbb{R}$ and let $\Lambda(\mathcal{V}^*)$ denote the direct
+sum of all  $\Lambda^{p}(\mathcal{V}^*)$:
+\begin{align*}
+\Lambda(\mathcal{V}^*)  = \oplus^{N}_{p = 0}  \Lambda(\mathcal{V}^*) \equiv \mathbb{R} \oplus \mathcal{V} \oplus \Lambda^{2}(\mathcal{V}^*) \oplus \Lambda^{N}(\mathcal{V}^*)
+\end{align*}
+Then $\Lambda(\mathcal{V}^*)$ is a $2^N$-dimensional algebra with exterior product defining its multiplication rule.	
 \end{thm}
 
-\indent Given two vector spaces V and U, one can construct a tensor product
-of $\Lambda(V^*)$ and $\Lambda(U^*)$ and define a product $\odot$ on it as follows. Let $A_i \in \Lambda^{p_i}(V^*)$, i = 1, 2 and  $B_j \in \Lambda^{q_j}(U^*)$, j = 1, 2. Then \\
-\begin{eqnarray*}
+\indent Given two vector spaces $\mathcal{V}$ and $\mathcal{U}$, one can construct a tensor product
+of $\Lambda(\mathcal{V}^*)$ and $\Lambda(\mathcal{U}^*)$ and define a product $\odot$ on it as follows.\\\\ Let $A_i \in \Lambda^{p_i}(\mathcal{V}^*)$, i = 1, 2 and  $B_j \in \Lambda^{q_j}(\mathcal{U}^*)$, j = 1, 2. Then \\
+\begin{align*}
 (A_1 \otimes B_1) \odot (A_2 \otimes B_2) \equiv (-1)^{p_2 q_1}(A_1 \wedge A_2) \otimes ( B_1 \wedge B_2). 
-\end{eqnarray*}
+\end{align*}
 \begin{defn}
-The tensor product of the two vector spaces $\Lambda(V^*)$ and $\Lambda(U^*)$ together with the product given before is called $\textbf{skew tensor product}$ of  $\Lambda(V^*)$ and $\Lambda(U^*)$ and denoted by  $\Lambda(V^*) \overset{\wedge}{\otimes} \Lambda(U^*)$
+The tensor product of the two vector spaces $\Lambda(\mathcal{V}^*)$ and $\Lambda(\mathcal{U}^*)$ together with the product given before is called $\textbf{skew tensor product}$ of  $\Lambda(\mathcal{V}^*)$ and $\Lambda(\mathcal{U}^*)$ and denoted by  $\Lambda(\mathcal{V}^*) \overset{\wedge}{\otimes} \Lambda(\mathcal{U}^*)$
 \end{defn}
 An elegant way of determining the linear independence of vectors using
 the formalism developed so far is given in the following proposition.\\
 \begin{prop}\label{prop1}
 A set of vectors v$_1,...,v_p$ is linearly independent if
-and only if $v_1 \wedge ... \wedge v_p$ $\ne$ 0.
+and only if
+\begin{align*} 
+v_1 \wedge ... \wedge v_p \ne 0.
+\end{align*}
 \end{prop}
 \begin{proof}
 If \{v$_i$\}$^p_{i=1}$ are independent, then they span a p-dimensional subspace M of V. Considering M as a vector space in its own right, we have
