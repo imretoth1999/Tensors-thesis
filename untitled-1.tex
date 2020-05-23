@@ -68,10 +68,11 @@ My paper structures the tensors in two parts.\\The first part being the prelimin
 The second part of my paper consists of the actual stuff regarding tensors. This part consists of 6 subparts that contain important concepts about the tensors.\\The first part talks about the use of tensors as multilinear maps. The second part talks about the symmetry of tensors. The third part discusses about the exterior algebra by first introducing the important notion of am exterior product. The fourth part talks about sympletic vector spaces. The fifth part talks about the inner product revised in the context of tensors, we heard about the inner product of vectors but now we extend the concept to tensors. The sixth part introduces the concept of Hodge Star operator. This separation of concepts by parts is similar to the one used by Sadri Hassani in the book Mathematical Physics A Modern Introduction to Its Foundations, the book that is used in making this thesis. 
 \newpage 
 \section{Preliminaries}
-\subsection{Vector space}
-Before we dive into the notion of tensors, first we need to remember fundamental concepts that are necessary into understanding the tensors. For this notions I will use the chapter Vectors and Linear Maps from the book Mathematical Physics A Modern Introduction to Its Foundations by Sadri Hassani. \\Alongside definitions and proofs, I will give small examples of every concept because I strongly believe that an example is very useful in understanding concepts.
-
+Before we dive into the notion of tensors, first we need to remember fundamental concepts that are necessary into understanding the tensors. For this notions I will use the chapter Vectors and Linear Maps from the book Mathematical Physics A Modern Introduction to Its Foundations by Sadri Hassani. \\Alongside definitions and proofs, I will give small examples of every concept because I strongly believe that an example is very useful in understanding concepts.\\
 Let us begin with the definition of an abstract vector space.
+
+\subsection{Vector space}
+
 \begin{defn} A \textbf{vector space} $\mathcal{V}$ over $\mathbb{C}$ is a set of objects called \textbf{vectors}, with the following properties:
 \item[1.] To every pair of vectors x and y in $\mathcal{V}$ there corresponds a vector x + y also in $\mathcal{V}$, called the \textit{sum} of x and y such that:
 \item \hspace{1cm} a) x + y = y + x
@@ -227,17 +228,29 @@ The trace is a linear mapping. Furthermore, tr(AB) = tr(BA) and trA$^t$ = trA.
 \begin{proof}
 To prove the first identity, we use the definitions of trace and matrix product:\\\\
 \begin{align*}
-tr(AB) = \sum_{i=1}^{n}(AB)_{ii}  =  \\ =  \sum_{i=1}^{n} \sum_{j=1}^{n}(B)_{ji}(A)_{ij} \\= \sum_{j=1}^{n} ( \sum_{i=1}^{n}(B)_{ji}(A)_{ij}) \\= \sum_{j=1}^{n}(BA)_{jj} \\= tr(BA).
+tr(AB) = \sum_{i=1}^{n}(AB)_{ii} =
 \end{align*}
 \begin{align*}
-\sum_{i=1}^{n} \sum_{j=1}^{n}(A)_{ij}(B)_{ji}
+\sum_{i=1}^{n} \sum_{j=1}^{n}(A)_{ij}(B)_{ji} =
+\end{align*}
+\begin{align*}
+\sum_{i=1}^{n} \sum_{j=1}^{n}(B)_{ji}(A)_{ij} =
+\end{align*}
+\begin{align*}
+ \sum_{j=1}^{n} ( \sum_{i=1}^{n}(B)_{ji}(A)_{ij}) =
+ \end{align*}
+\begin{align*}
+\sum_{j=1}^{n}(BA)_{jj} =
+\end{align*}
+\begin{align*}
+tr(BA).
 \end{align*}
 The linearity of the trace and the second identity follow directly from the definition.
 \end{proof}
 
 \begin{thm} \label{inj0}
 A linear transformation is 1–1 (injective) iff its kernel is
-zero
+zero.
 \end{thm}
 \begin{proof}
 Suppose T |$a_1\rangle$ = T |$a_2\rangle$; \\\\Then linearity of T implies that T ($|a_1\rangle - |a_2\rangle)$ = 0. Since ker T = 0, we must have $|a_1\rangle = |a_2 \rangle$.
@@ -246,7 +259,7 @@ Suppose T |$a_1\rangle$ = T |$a_2\rangle$; \\\\Then linearity of T implies that 
 A linear isometric map is injective.
 \end{thm}
 \begin{proof}
-Let T : V $\to$ U be a linear isometry. Let |a$\rangle$ $\in$ kerT, then
+Let T : $\mathcal{V}$ $\to$ $\mathcal{U}$ be a linear isometry. Let |a$\rangle$ $\in$ kerT, then
 \begin{equation}
 \braket{a | a} = \braket{Ta | Ta} = \braket{0|0} = 0.
 \end{equation}
@@ -254,42 +267,86 @@ Therefore, |a$\rangle$ = |0$\rangle$.\\\\
 By Theorem $\ref{inj0}$, T is injective.
 \end{proof}
 \begin{thm} \label{dimthm}
-Let T : V $\to$ W be a linear transformation. Then
-\begin{equation}
-dim V = dim ker T + dim T(V)
-\end{equation}
+Let T : $\mathcal{V}$ $\to$ $\mathcal{W}$ be a linear transformation. Then
+\begin{align*}
+dim\ \mathcal{V} = dim\ ker\ T + dim\ T(\mathcal{V})
+\end{align*}
 This theorem is called the $\textbf{dimension theorem}$.
 \end{thm}
 \subsection{Multilinear maps}
 There is a very useful generalization of the linear functionals that becomes essential in the treatment of tensors. However, a limited version of its application is used in the discussion of determinants, which we shall start here.
 
 \begin{defn}
-Let V and U be vector spaces. Let V$^P$ denote the p-fold Cartesian product of V. A \textbf{p-linear map} from V to U is a map $\Theta$:V$^P$$\to$U which is linear with respect to each of its arguments:\\\\
-\begin{equation*}
-\Theta(x_1,...,\alpha x_j + \beta y_j,...,x_p) \\ = \alpha \Theta(x_1,....,x_j,....,x_p) + \beta \Theta(x_1,....,y_j,...,x_p).
-\end{equation*}
-A p-linear map from V to $\mathbb{C}$ or $\mathbb{R}$ is called a \textbf{p-linear function} in V.
+Let $\mathcal{V}$ and $\mathcal{U}$ be vector spaces. Let $\mathcal{V}$$^P$ denote the p-fold Cartesian product of $\mathcal{V}$. A \textbf{p-linear map} from $\mathcal{V}$ to $\mathcal{U}$ is a map $\Theta$:$\mathcal{V}$$^P$$\to$$\mathcal{U}$ which is linear with respect to each of its arguments:\\\\
+\begin{align*}
+\Theta(x_1,...,\alpha x_j + \beta y_j,...,x_p)  = 
+\end{align*}
+\begin{align*}
+ \alpha \Theta(x_1,....,x_j,....,x_p) + \beta \Theta(x_1,....,y_j,...,x_p).
+\end{align*}
+A p-linear map from $\mathcal{V}$ to $\mathbb{C}$ or $\mathbb{R}$ is called a \textbf{p-linear function} in $\mathcal{V}$.
 \begin{exmp}
-Let \{$\Phi$$_i$\}$^{p}_{i}$ be a linear functionals on V. Define $\Theta$ by $\Theta$(x$_1$,...,x$_p$) = $\Phi$$_1$(x$_1$),...,$\Phi$$_P$(x$_P$), x$_i$$\in$V.\\
+Let \{$\Phi$$_i$\}$^{p}_{i}$ be a linear functionals on $\mathcal{V}$. Define $\Theta$ by $\Theta$(x$_1$,...,x$_p$) = $\Phi$$_1$(x$_1$),...,$\Phi$$_P$(x$_P$), x$_i$$\in$$\mathcal{V}$.\\
 Clearly $\Theta$ is p-linear.
 \end{exmp}
 
-Let $\sigma$ denote the permutation of 1, 2,..., p. \\\\Define the p-linear map $\sigma$$\omega$ by $\sigma$$\omega$(x$_1$,...,x$_p$) = $\omega$(x$_{\sigma (1)}$,....,x$_{\sigma (p)}$)\\
+Let $\sigma$ denote the permutation of 1, 2,..., p. \\\\Define the p-linear map $\sigma$$\omega$ by 
+\begin{align*}
+\sigma\omega(x_1,...,x_p) =
+\end{align*}
+\begin{align*}
+\omega(x_{\sigma (1)},....,x_{\sigma (p)})
+\end{align*}
 \end{defn}
 \begin{defn}
-A p-linear map $\omega$ from V to U is \textbf{skew-symmetric} if $\sigma\omega$ = $\epsilon_{\sigma}$ if:\begin{equation}
-\omega(x_{\sigma(1)},...,x_{\sigma(p)}) = \epsilon_{\sigma}\omega(x_1,...,x_p)\end{equation}
-where $\epsilon_{\sigma}$ is the sign of $\sigma$, which is +1 if $\sigma$ is even and -1 if it is odd. The set of p-linear skew-symmetric maps from V to U is denoted by $\Lambda^{P}$(V,U). The set of p-linear skew-symmetric functions in V is denoted by $\Lambda^{P}$(V).\\\\
-\hspace{1cm} The permutation sign $\epsilon_{\omega}$ is sometimes written as \\ \begin{equation}
-\epsilon_{\sigma} = \epsilon_{\sigma(1)\sigma(2)...\sigma(p)} \equiv \epsilon_{i_{1}i_{2}...i_{p}}, where i_k \equiv \sigma(k).
-\end{equation}
+A p-linear map $\omega$ from $\mathcal{V}$ to $\mathcal{U}$ is \textbf{skew-symmetric} if $\sigma\omega$ = $\epsilon_{\sigma}$ if:
+\begin{align*}
+\omega(x_{\sigma(1)},...,x_{\sigma(p)}) = \epsilon_{\sigma}\omega(x_1,...,x_p)
+\end{align*}
+where $\epsilon_{\sigma}$ is the sign of $\sigma$, which is +1 if $\sigma$ is even and -1 if it is odd. The set of p-linear skew-symmetric maps from $\mathcal{V}$ to $\mathcal{U}$ is denoted by $\Lambda^{P}$($\mathcal{V},\ \mathcal{U}$). The set of p-linear skew-symmetric functions in $\mathcal{V}$ is denoted by $\Lambda^{P}$($\mathcal{V}$).\\\\
+\hspace{1cm} The permutation sign $\epsilon_{\omega}$ is sometimes written as \\ 
+\begin{align*}
+\epsilon_{\sigma} = \epsilon_{\sigma(1)\sigma(2)...\sigma(p)} \equiv \epsilon_{i_{1}i_{2}...i_{p}}
+\end{align*}
+ where $i_k \equiv \sigma(k)$.
 \\
 \end{defn}
+\hspace{1cm} Any p-linear map can be turned into a skew-symmetric p-linear map.\\ In
+fact, if $\theta$ is a p-linear map, then
+\begin{align*}
+\omega \equiv \sum_\pi \epsilon_\pi \cdot \pi \theta
+\end{align*}
+is skew-symmetric:
+\begin{align*}
+\sigma \omega = \sigma \sum_\pi \epsilon_\pi \cdot \pi \theta =
+\end{align*}
 
+\begin{align*}
+ \sum_\pi \epsilon_\pi \cdot (\sigma \pi) \theta =
+\end{align*}
 
+\begin{align*}
+(\epsilon_\sigma)^2 \sum_\pi \epsilon_\pi \cdot (\sigma \pi)\theta =
+\end{align*}
+
+\begin{align*}
+\epsilon_\sigma \sum_\pi (\epsilon_\sigma \epsilon_\pi) \cdot (\sigma \pi)\theta =
+\end{align*}
+
+\begin{align*}
+\epsilon_\sigma \sum_{\sigma \pi} \epsilon_{\sigma \pi} \cdot (\sigma \pi) \theta =
+\end{align*}
+
+\begin{align*}
+\epsilon_\sigma \cdot \omega
+\end{align*}
+
+where we have used the fact that the sign of the product is the product of the
+signs of two permutations, and if $\sum_\pi$ sums over all the permutations, then so does $\sum_{\sigma \pi}$.
 \begin{defn}
-A skew symmetric N-linear function in V,i.e., a member of $\Lambda^N$(V) is called a \textbf{determinant function} in V.\\\\
-Let B = \{|e$_k$\}$^{N}_{k=1}$ be a basis of V and B$^*$ = \{$\epsilon_k$\}$^N_{j=1}$ a basis of V$^*$, dual to B. For any set of N vector \{x$_k$\}$^N_{k=1}$ in V, define the N-linear function $\Theta$ by \begin{eqnarray*}
+A skew symmetric N-linear function in $\mathcal{V}$ ,i.e., a member of $\Lambda^N$(V) is called a \textbf{determinant function} in V.\\\\
+Let B = \{|e$_k$\}$^{N}_{k=1}$ be a basis of V and B$^*$ = \{$\epsilon_k$\}$^N_{j=1}$ a basis of V$^*$, dual to B. For any set of N vector \{x$_k$\}$^N_{k=1}$ in V, define the N-linear function $\Theta$ by 
+\begin{eqnarray*}
 	\Theta(x_1,...,x_N) = \epsilon_1(x_1)...\epsilon_N(x_N),
 \end{eqnarray*} 
 Now let $\Delta$ be defined by $\Delta$ $\equiv$ $\sum_{\pi}\epsilon_{\pi} \cdot \theta$ Then, $\Delta \in \Lambda^N(V)$,i.e., $\Delta$ is a determinant function.
