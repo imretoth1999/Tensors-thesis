@@ -1,6 +1,7 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage{amssymb,amsmath,amsfonts,amsthm, nccmath, amscd}
 \usepackage[utf8]{inputenc}
+\usepackage{calrsfs}
 \usepackage[romanian,english]{babel}
 \usepackage[T1]{fontenc} 
 \usepackage{fullpage}
@@ -64,21 +65,21 @@ The tensor mathematics used to model stresses in materials such as steel was dev
 The consequences of this can be staggering if you think that every time you drive over a large bridge or ride a tall elevator, that your life relies (at least in some small way) on these equations of mathematical physics and continuum mechanics. Engineering design calculations apply principles of tensors to ensure that the roof doesn’t fall in on our heads.\\
 Because I am a mathematics and informatics student, I can't neglect the use of tensors in deep learning. As we know modern data is often multi-dimensional. Tensors can play an important role in deep learning by encoding multi-dimensional data. For example, a picture is generally represented by three fields: width, height and color. It makes total sense to encode it as a 3D tensor.  Operations with tensors can simplify the process of creating neural networks used in algorithms to predict data.\\\\
 My paper structures the tensors in two parts.\\The first part being the preliminaries that are needed to understand the rest of the paper. It discusses concepts like vector space, multilinear maps, dimensions that are extremely important in understanding the tensors. This way if anyone reads the paper, they can refresh their memory about the basic stuffs so they can dive in confidently in the second part.\\
-The second part of my paper consists of the actual stuff regarding tensors. This part consists of 6 subparts that contain important concepts about the tensors.\\The first part talks about the use of tensors as multilinear maps. The second part talks about the symmetry of tensors. The third part discusses about the exterior algebra by first introducing the important notion of a exterior product. The forth part talks about sympletic vector spaces. The fifth part talks about the inner product revised in the context of tensors, we heard about the inner product of vectors but now we extend the concept to tensors. The sixth part introduces the concept of Hodge Star operator.
+The second part of my paper consists of the actual stuff regarding tensors. This part consists of 6 subparts that contain important concepts about the tensors.\\The first part talks about the use of tensors as multilinear maps. The second part talks about the symmetry of tensors. The third part discusses about the exterior algebra by first introducing the important notion of am exterior product. The fourth part talks about sympletic vector spaces. The fifth part talks about the inner product revised in the context of tensors, we heard about the inner product of vectors but now we extend the concept to tensors. The sixth part introduces the concept of Hodge Star operator. This separation of concepts by parts is similar to the one used by Sadri Hassani in the book Mathematical Physics A Modern Introduction to Its Foundations, the book that is used in making this thesis. 
 \newpage 
 \section{Preliminaries}
 \subsection{Vector space}
-Before we dive into the notion of tensors, first we need to remember fundamental concepts that are necessary into understanding the tensors.
+Before we dive into the notion of tensors, first we need to remember fundamental concepts that are necessary into understanding the tensors. For this notions I will use the chapter Vectors and Linear Maps from the book Mathematical Physics A Modern Introduction to Its Foundations by Sadri Hassani. \\Alongside definitions and proofs, I will give small examples of every concept because I strongly believe that an example is very useful in understanding concepts.
 
 Let us begin with the definition of an abstract vector space.
-\begin{defn} A \textbf{vector space} V over $\mathbb{C}$ is a set of objects called \textbf{vectors}, with the following properties:
-\item[1.] To every pair of vectors x and y in V there corresponds a vector x + y also in V, called the \textit{sum} of x and y such that:
+\begin{defn} A \textbf{vector space} $\mathcal{V}$ over $\mathbb{C}$ is a set of objects called \textbf{vectors}, with the following properties:
+\item[1.] To every pair of vectors x and y in $\mathcal{V}$ there corresponds a vector x + y also in $\mathcal{V}$, called the \textit{sum} of x and y such that:
 \item \hspace{1cm} a) x + y = y + x
-\item \hspace{1cm} b) x + (y + z) = (x + y) + z
-\item \hspace{1cm} c) There exists a unique vector 0 $\in$ V, called the \textbf{zero vector}, such that x + 0 = x for every vector x
-\item \hspace{1cm} d) To every vector x $\in$ V there corresponds a unique vector -x $\in$ V such that x + (-x) = 0
+\item \hspace{1cm} b) x + (y + z) = (x  + y) + z
+\item \hspace{1cm} c) There exists a unique vector 0 $\in$ $\mathcal{V}$, called the \textbf{zero vector}, such that x + 0 = x for every vector x
+\item \hspace{1cm} d) To every vector x $\in$ $\mathcal{V}$ there corresponds a unique vector -x $\in$ $\mathcal{V}$ such that x + (-x) = 0
 \\
-\item[2.] To every complex number $\alpha$(also called a \textbf{scalar}) and every vector x there corresponds a vector $\alpha$x in V such that:
+\item[2.] To every complex number $\alpha$(also called a \textbf{scalar}) and every vector x there corresponds a vector $\alpha$x in $\mathcal{V}$ such that:
 \item \hspace{1cm} a) $\alpha$($\beta$x) = ($\alpha$$\beta$)x
 \item \hspace{1cm} b) 1x = x
 \\
@@ -88,50 +89,149 @@ Let us begin with the definition of an abstract vector space.
 \end{defn}
 \begin{exmp}$\mathbb{C}^2$ is a vector space with multiplication and addition having their usual meaning.
 \end{exmp}
+\begin{exmp}$\mathbb{C}^2\setminus 0$ is $\textbf{not}$ a vector space. There does not exist a unique vector 0 such that x + 0 = x, where every vector x is in $\mathbb{C}^2$.\\
+Looking over the previous definition of vector spaces, we can see that 1. c) is not achieved.
+\end{exmp}
 Now we shall remember the inner product as it is defined, so we can revisit it later on when we talk about tensors.
 \begin{remark}
 The inner product generalizes the dot product to abstract vector spaces over a field of scalars, being either the field of real numbers $\mathbb{R}$ or the field of complex numbers $\mathbb{C}$. It is usually denoted by $\langle x, y\rangle$.
 \end{remark}
 \begin{defn}
-The \textbf{inner product} of two vectors, x and y, in a vector space V is a complex number, $\langle x, y\rangle \in \mathbb{C}$ such that\\
-\item[1.] $\langle x, y \rangle  = \langle y, x \rangle^*$
-\item[2.] $\langle x, (\beta y + \gamma z) \rangle = \beta \langle x, y\rangle + \gamma \langle x, z\rangle$
-\item[3.]$\langle x,x \rangle \geqslant 0 $ and $ \langle x, x \rangle = 0$ if and only if x = 0.\\ \\
+The \textbf{inner product} of two vectors, x and y, in a vector space $\mathcal{V}$ is a complex number, $\langle x, y\rangle \in \mathbb{C}$ such that\\
+\item \hspace{1cm} 1. $\langle x, y \rangle  = \langle y, x \rangle^*$
+\item \hspace{1cm} 2. $\langle x, (\beta y + \gamma z) \rangle = \beta \langle x, y\rangle + \gamma \langle x, z\rangle$
+\item \hspace{1cm} 3.$\langle x,x \rangle \geqslant 0 $ and $ \langle x, x \rangle = 0$ if and only if x = 0.\\ \\
 The last relation is called the \textbf{positive definite} property of the inner product. A positive definite real inner product is also called a \textbf{Euclidian} inner product, otherwise it is called \textbf{pseudo-Euclidian}.
 \end{defn}
+\begin{exmp} Let us consider the following two vectors in $\mathbb{C}^2$. x =$(1, 2)$ and y = $(3, 4)$\\
+The inner product is
+\begin{align*}
+ \langle x, y \rangle = 1 * 3 + 2 * 4 = 11
+\end{align*}
+\end{exmp}
+
 \begin{defn}
 The vectors x$_{1}$,x$_{2}$,....,x$_{n}$ are said to be \textbf{linearly independent} if for $\alpha_{i} $$\in$$\mathbb{C}$, the relation $\sum_{i=1}^{n}$$ \alpha_{i}$x$_{i} $= 0 implies $\alpha_{i}$ =0 for all i. The  vectors are called \textbf{linearly dependent} otherwise. 
 \end{defn}
+\begin{exmp} Let us consider the following two vectors in $\mathbb{R}^2$. x =$(-3, 2)$ and y = $(1, 1)$\\
+Let's show if the vectors are linearly independent or not
+\begin{align*}
+ \alpha_{1} * (-3, -2) + \alpha_{2} * (1, 1) = 0
+\end{align*}
+  implies  that $\alpha_{i}$= 0 for i $\in \{1,2\}$?\\
+If the determinant of the matrix formed by the vectors as its columns is non-zero, vectors are linearly independent.\\
+Let the matrix M be
+$\begin{pmatrix}
+-3 & 1\\
+-2 & 1
+\end{pmatrix}$
+\\
+\begin{align*}
+\det M = -3 * 1 - ( 1 * -2)  = -3 + 2 = -1 \ne 0
+\end{align*}
+Thus the vectors x and y are linearly independent
+\end{exmp}
 \begin{defn}
-A \textbf{subspace} W of a vector space V is a nonempty subset of V with the property that if x,y $\in$ W, then $\alpha$x + $\beta$y also belongs to W, $\forall$ $\alpha$,$\beta$ $\in$ $\mathbb{C}$
+A \textbf{subspace} $\mathcal{W}$ of a vector space $\mathcal{V}$ is a nonempty subset of $\mathcal{V}$ with the property that if x,y $\in$ $\mathcal{W}$, then $\alpha$x + $\beta$y also belongs to $\mathcal{W}$, $\forall$ $\alpha$,$\beta$ $\in$ $\mathbb{C}$
 \end{defn}
+\begin{exmp}
+The set {0} containing the zero vector (only) is a subspace of $\mathbb{R}$.
+\end{exmp}
 \begin{remark}
 The subspace is a vector space in its own right and the intersection of two subspaces is also a subspace.
 \end{remark}
+\begin{proof}
+Let us begin by proving that a subspace of a vector space is also a vector space. \\By looking of the definition of the subspace, we can see that by the property
+that if x,y $\in$ $\mathcal{W}$, then $\alpha$x + $\beta$y also belongs to $\mathcal{W}$, $\forall$ $\alpha$,$\beta$ $\in$ $\mathbb{C}$ includes in itself all the properties found in the first definition of vector spaces. The property is basically the definition of a vector space in a simpler form.\\
+Let's see if the intersection of two subspaces is also a subspace.\\
+Let's take two subspaces of $\mathcal{V}$ called $\mathcal{W}$ and $\mathcal{U}$. We denote the intersection as $\mathcal{W} \cap \mathcal{U}$\
+We will use the following three criteria for the subspaces
+\item \hspace{1cm} 1. The zero vector is in the union.
+\item \hspace{1cm} 2. $\forall$ a,b $\in \mathcal{W} \cap \mathcal{U}$,  a + b $\in \mathcal{W} \cap \mathcal{U}$.
+\item \hspace{1cm} 3. $\forall$ a $\in \mathcal{W} \cap \mathcal{U}$, and a scalar $\alpha$, $\alpha$ a $\in  \mathcal{W} \cap \mathcal{U}$.
+\\The first proposition is true since both of them are subspaces (that contain the zero vector by default) so the union also contains the zero vector.\\
+Let's suppose that  a,b $\in \mathcal{W} \cap \mathcal{U}$.\\
+We see that this implies that $\textbf{a}$ is both a vector in $\mathcal{W}$ and $\mathcal{U}$(by the definition of an intersection).\\
+Also we can say the same thing about the vector $\textbf{b}$.
+Following the premise, we know that $\mathcal{W}$ is a subspace and $\textbf{a}$ and $\textbf{b}$ are vectors in $\mathcal{W}$ so a + b is in $\mathcal{W}$.\\
+Following the premise, we know that $\mathcal{U}$ is a subspace and $\textbf{a}$ and $\textbf{b}$ are vectors in $\mathcal{U}$ so a + b is in $\mathcal{U}$.\\
+Thus, a + b is a vector both in $\mathcal{W}$ and $\mathcal{U}$. \\
+The second proposition is true.\\
+The third proposition is also true because both $\mathcal{W}$ and $\mathcal{U}$ are subspaces and the scalar multiplication is closed in $\mathcal{W}$ and $\mathcal{U}$ respectively.
+\\Thus we can say that the intersection of two subspaces is also a subspace.
+\end{proof}
 \begin{defn}
-A \textbf{basis} of a vector space V is a set B of linearly independent vectors that spans all of V. \\A vector space that has a finite basis is called \textbf{finite-dimensional} and \textbf{infinite-dimensional} otherwise. \\We call the cardinality of the set B the \textbf{dimension} of V.
+A \textbf{basis} of a vector space $\mathcal{V}$ is a set B of linearly independent vectors that spans all of $\mathcal{V}$. \\A vector space that has a finite basis is called \textbf{finite-dimensional} and \textbf{infinite-dimensional} otherwise. \\We call the cardinality of the set B the \textbf{dimension} of $\mathcal{V}$.
 \end{defn}
+\begin{exmp}
+The standard basis for $\mathbb{R}^n$ is:
+\begin{align*}
+\{ e_1 = (1, 0, 0, ... , 0), e_2 = (0, 1, ... , 0), ... , e_n=(0,0,..,0, 1) \}
+\end{align*}
+The cardinality is the dimension of $\mathbb{R}^n$ and that is $\textbf{n}$.
+\end{exmp}
 \begin{defn}
-A \textbf{linear map}(or \textbf{transformation}) from the complex vector space V to the complex vector space W is a mapping \textbf{T}:V$\to$W such that:\\
-\hspace{1cm} \textbf{T}($\alpha$x + $\beta$y) = $\alpha$\textbf{T}(x) + $\beta$\textbf{T}(y) $\forall$ x,y$\in$ V and $\alpha$,$\beta$$\in$$\mathbb{C}$\\
-A linear transformation \textbf{T}:V$\to$V is called an \textbf{endomorphism} of V or a \textbf{linear operator} on V.
+A \textbf{linear map}(or \textbf{transformation}) from the complex vector space $\mathcal{V}$ to the complex vector space $\mathcal{W}$ is a mapping \textbf{T}:$\mathcal{V}$$\to$$\mathcal{W}$ such that:\\
+\hspace{1cm} \textbf{T}($\alpha$x + $\beta$y) = $\alpha$\textbf{T}(x) + $\beta$\textbf{T}(y) $\forall$ x,y$\in$ $\mathcal{V}$ and $\alpha$,$\beta$$\in$$\mathbb{C}$\\
+A linear transformation \textbf{T}:$\mathcal{V}$$\to$$\mathcal{V}$ is called an \textbf{endomorphism} of $\mathcal{V}$ or a \textbf{linear operator} on $\mathcal{V}$.
 \end{defn}
-An important example of linear transformations occurs when the second vector space W, happens to be the set of scalars, $\mathbb{C}$ or $\mathbb{R}$, in which case the linear transformation is called a \textbf{linear functional}. The set of linear functionals $\mathcal{L}$(V,$\mathbb{C}$) or $\mathcal{L}$(V,$\mathbb{R}$) if V is a real vector space is denoted by V$^*$ and is called the \textbf{dual space} of V.
+\begin{exmp}
+The identity map is a linear operator.
+\end{exmp}
 \begin{defn}
-A vector space V is said to be isomorphic to another vector space W and written V ${\cong}$W, if there exists a bijective linear map \textbf{T}:
-V $\to$ W. Then \textbf{T} is called an \textbf{isomorphism}. \\ \\A bijective linear map of V onto itself is called an \textbf{automorphism} of V. \\An automorphism is also called an \textbf{invertible} linear map. 
+An important example of linear transformations occurs when the second vector space $\mathcal{W}$, happens to be the set of scalars, $\mathbb{C}$ or $\mathbb{R}$, in which case the linear transformation is called a \textbf{linear functional}. The set of linear functionals $\mathcal{L}$($\mathcal{V}$,$\mathbb{C}$) or $\mathcal{L}$($\mathcal{V}$,$\mathbb{R}$) if $\mathcal{V}$ is a real vector space is denoted by $\mathcal{V}$$^*$ and is called the \textbf{dual space} of $\mathcal{V}$.
 \end{defn}
+\begin{exmp}
+Let $\mathcal{M}$ be the set of all 2x2 matrices.\\
+Then the trace map Tr: $\mathcal{M} \to \mathbb{R}$ is linear functional. Let x, y $\in \mathbb{R}$ real scalars and A, B matrices.
+\begin{align*}
+Tr(xA + yB) = xTr(A) + yTr(B).
+\end{align*}
+\end{exmp}
 \begin{defn}
-Let A be an N $\times$ N matrix. The mapping tr:M$^{(N\times N)}$$\to$$\mathbb{C}$ (or $\mathbb{R}$) given by tr A = $\sum_{i=1}^{n}$$ \alpha_{ii} $ is called the \textbf{trace} of A.
+A vector space $\mathcal{V}$ is said to be isomorphic to another vector space $\mathcal{W}$ and written $\mathcal{V}$ ${\cong}$$\mathcal{W}$, if there exists a bijective linear map \textbf{T}:
+$\mathcal{V}$ $\to$ $\mathcal{W}$. Then \textbf{T} is called an \textbf{isomorphism}. \\ \\A bijective linear map of $\mathcal{V}$ onto itself is called an \textbf{automorphism} of $\mathcal{V}$. \\An automorphism is also called an \textbf{invertible} linear map. 
+\end{defn}
+\begin{exmp}
+For the example, I will use an example that I found while researching on the website mathonline.wikidot.com. I found this example very conclusive that I couldn't not include in this paper.\\
+Let $\mathcal{U}_1, \mathcal{U}_2,$ and $\mathcal{W}$ be subspaces of the finite-dimensional vector space $\mathcal{V}$ where $\mathcal{U}_1 + \mathcal{W} = \mathcal{U}_2 + \mathcal{W}$ and where $\mathcal{U}_1 \cap \mathcal{W} = \mathcal{U}_2 \cap \mathcal{W}$. Prove that then $\mathcal{U}_1$ is isomorphic to $\mathcal{U}_2$.
+\\
+To show that $\mathcal{U}_1$ is isomorphic to $\mathcal{U}_2$, we want to show that dim($\mathcal{U}_1$) = dim($\mathcal{U}_2$).\\
+Since $\mathcal{V}$ is a finite-dimensional vector space then the subspaces $\mathcal{U}_1, \mathcal{U}_2$ and $\mathcal{W}$ are all finite-dimensional. We will apply the dimension formula for the sum of subspaces to get the following two equalities:
+\begin{align*}
+dim(\mathcal{U}_1 + \mathcal{W}) = dim(\mathcal{U}_1) + dim(\mathcal{W}) - dim(\mathcal{U}_1 \cap \mathcal{W})
+\end{align*}
+\begin{align*}
+dim(\mathcal{U}_2 + \mathcal{W}) = dim(\mathcal{U}_2) + dim(\mathcal{W}) - dim(\mathcal{U}_2 \cap \mathcal{W})
+\end{align*}
+
+Since $\mathcal{U}_1 + \mathcal{W} = \mathcal{U}_2 + \mathcal{W}$ we have that $dim(\mathcal{U}_1 + \mathcal{W}) = dim(\mathcal{U}_2 + \mathcal{W})$ and so:
+\begin{align*}
+dim(\mathcal{U}_1) + dim(\mathcal{W}) - dim(\mathcal{U}_1 \cap \mathcal{W}) = dim(\mathcal{U}_2) + dim(\mathcal{W}) - dim(\mathcal{U}_2 \cap \mathcal{W}) 
+\end{align*}
+\begin{align*}
+dim(\mathcal{U}_1) - dim(\mathcal{U}_1 \cap \mathcal{W}) = dim(\mathcal{U}_2) - dim(\mathcal{U}_2 \cap \mathcal{W})
+\end{align*}
+Since $\mathcal{U}_1 \cap \mathcal{W} = \mathcal{U}_2 \cap \mathcal{W}$ we have that $dim(\mathcal{U}_1 \cap \mathcal{W}) = dim(\mathcal{U}_2 \cap \mathcal{W})$ and so that implies that:
+\begin{align*}
+dim(\mathcal{U}_1) = dim(\mathcal{U}_2)
+\end{align*}
+Therefore $\mathcal{U}_1$ is isomorphic to $\mathcal{U}_2$.
+\end{exmp}
+\begin{defn}
+Let A be an N $\times$ N matrix. \\The mapping tr:$\mathcal{M}$$^{(N\times N)}$$\to$$\mathbb{C}$ (or $\mathbb{R}$) given by tr A = $\sum_{i=1}^{n}$$ \alpha_{ii} $ is called the \textbf{trace} of A.
 \end{defn}
 \begin{thm}
 The trace is a linear mapping. Furthermore, tr(AB) = tr(BA) and trA$^t$ = trA.
 \end{thm}
 \begin{proof}
 To prove the first identity, we use the definitions of trace and matrix product:\\\\
-\begin{eqnarray*}
-tr(AB) = \sum_{i=1}^{n}(AB)_{ii}  = \sum_{i=1}^{n} \sum_{j=1}^{n}(A)_{ij}(B)_{ji} \\ =  \sum_{i=1}^{n} \sum_{j=1}^{n}(B)_{ji}(A)_{ij} \\= \sum_{j=1}^{n} ( \sum_{i=1}^{n}(B)_{ji}(A)_{ij}) \\= \sum_{j=1}^{n}(BA)_{jj} \\= tr(BA).
-\end{eqnarray*}
+\begin{align*}
+tr(AB) = \sum_{i=1}^{n}(AB)_{ii}  =  \\ =  \sum_{i=1}^{n} \sum_{j=1}^{n}(B)_{ji}(A)_{ij} \\= \sum_{j=1}^{n} ( \sum_{i=1}^{n}(B)_{ji}(A)_{ij}) \\= \sum_{j=1}^{n}(BA)_{jj} \\= tr(BA).
+\end{align*}
+\begin{align*}
+\sum_{i=1}^{n} \sum_{j=1}^{n}(A)_{ij}(B)_{ji}
+\end{align*}
 The linearity of the trace and the second identity follow directly from the definition.
 \end{proof}
 
@@ -165,9 +265,9 @@ There is a very useful generalization of the linear functionals that becomes ess
 
 \begin{defn}
 Let V and U be vector spaces. Let V$^P$ denote the p-fold Cartesian product of V. A \textbf{p-linear map} from V to U is a map $\Theta$:V$^P$$\to$U which is linear with respect to each of its arguments:\\\\
-\begin{eqnarray*}
+\begin{equation*}
 \Theta(x_1,...,\alpha x_j + \beta y_j,...,x_p) \\ = \alpha \Theta(x_1,....,x_j,....,x_p) + \beta \Theta(x_1,....,y_j,...,x_p).
-\end{eqnarray*}
+\end{equation*}
 A p-linear map from V to $\mathbb{C}$ or $\mathbb{R}$ is called a \textbf{p-linear function} in V.
 \begin{exmp}
 Let \{$\Phi$$_i$\}$^{p}_{i}$ be a linear functionals on V. Define $\Theta$ by $\Theta$(x$_1$,...,x$_p$) = $\Phi$$_1$(x$_1$),...,$\Phi$$_P$(x$_P$), x$_i$$\in$V.\\
@@ -206,7 +306,8 @@ Let A $\in$ End(V). Let $\Delta$ be a nonzero determinant function in V, and let
 defines the \textbf{determinant of A}.\end{defn}
 \newpage
 \section{Tensors}
-From here on,we will consider only real vector spaces and the basis vectors of a vector space V will be distinguished by a subscript and those of its dual space by a superscript.\\\\For example, if \{e$_i$\}$^N_{i=1}$ is a basis in V, then the basis in V$^*$ will be \{$\epsilon^j$\}$^N_{j=1}$ so we can avoid confusions.\textbf{ Einstein's summation convention} will also be used:\\
+For this notions I will use the chapter 26 Tensors from the book Mathematical Physics A Modern Introduction to Its Foundations by Sadri Hassani.\\
+From here on, we will consider only real vector spaces and the basis vectors of a vector space V will be distinguished by a subscript and those of its dual space by a superscript.\\\\For example, if \{e$_i$\}$^N_{i=1}$ is a basis in V, then the basis in V$^*$ will be \{$\epsilon^j$\}$^N_{j=1}$ so we can avoid confusions.\textbf{ Einstein's summation convention} will also be used:\\
 Repeated indices, of which one is an upper and the other a lower index, are assumed to be summed over: a$^k_i$b$^i_j$ means $\sum^N_{i=1}$a$^k_i$b$^i_j$.\\
 It is more natural to label the elements of a matrix representation of an operator \textbf{A} by $\alpha^i_j$ (rather than $\alpha_{ji}$, because then Ae$_i$= $\alpha^j_i$e$_j$.
 \subsection{Tensors as Multilinear Maps}
@@ -1084,8 +1185,10 @@ of indices in which one of the tensors is symmetric and the other antisymmetric,
  
 \bibitem{2}  Keith Contrad,
 
-  \emph{Tensor products}  Cambridge University Press, Year: 2013
+  \emph{Tensor products}  https://kconrad.math.uconn.edu/blurbs/linmultialg/tensorprod.pdf
 
+\bibitem{3} Mathonline.wikidot.com
+  \emph{Vector space Isomorphisms examples 1} http://mathonline.wikidot.com/vector-space-isomorphisms-examples-1
 
 
 \end{thebibliography}
