@@ -24,22 +24,22 @@
 \begin{titlepage}
 \begin{center}
 
-\textsc{ \large UNIVERSITATEA BABEŞ-BOLYAI CLUJ-NAPOCA}\\\medskip
+\textsc{ \large BABEŞ-BOLYAI UNIVERSITY CLUJ-NAPOCA}\\\medskip
 
-\textsc{\large FACULTATEA DE MATEMATICĂ ŞI INFORMATICĂ}\\\medskip
-\textsc{\large SPECIALIZAREA MATEMATICĂ }\\[4 cm]
+\textsc{\large FACULTY OF MATHEMATICS AND COMPUTER SCIENCE}\\\medskip
+\textsc{\large SPECIALIZATION MATHEMATICS AND COMPUTER SCIENCE }\\[4 cm]
 
-\textsc{\LARGE\textbf{GRADUATION THESIS} }\\[1 cm]
+\textsc{\LARGE\textbf{DIPLOMA THESIS} }\\[1 cm]
 \textsc{\LARGE\textbf{Tensors}}\\[7 cm]
 \begin{flushleft}
-\textsc{\Large Conducător ştiinţific}\\
+\textsc{\Large Supervisor}\\
 \textsc{\Large Prof. Dr. Andrei Mărcuş }\\[2 cm]
 \end{flushleft}
 \begin{flushright}
-\textsc{\Large Absolvent}\\
+\textsc{\Large Author}\\
 \textsc{\Large Toth Imre}\\[3 cm]
 \end{flushright}
-\textsc{\Large Cluj Napoca\\ 2020}
+\textsc{\Large 2020}
 \end{center}
 \end{titlepage}
 \renewcommand{\contentsname}{Cuprins}
@@ -50,47 +50,45 @@
 \section*{Introduction}
 \addcontentsline{toc}{section}{Introduction}
 \ \ \ \ 
-Tensor comes from the Latin tendere, which means "to stretch."The concept of tensor arose in 19th century physics when it was observed that a force (a 3-dimensional vector) applied to a medium (a deformable crystal, a polarizable dielectric, etc.) may give rise to a response, a 3-dimensional vector, that is not parallel to the applied force. \\ One of the first examples was treated by Cauchy (1827) in the case of stress. Some crystalline materials deform in a direction that is not parallel to the applied stress; this is a property of the material; such material is said to be mechanically anisotropic. An electric field applied to an electrically anisotropic material gives a polarization with a direction that is not parallel to the field. \\The existence of anisotropic materials was considered to be remarkable, because it required revision of Newton's third law (action is minus reaction): apparently reaction can have a direction that is not along and opposite the action that causes it. In these early days the linear space V mentioned above was invariably the real 3-dimensional Euclidean space. The rank k of the early tensors was almost always equal to two, so that for a long time tensors were represented solely by real 3$\times$3 matrices.
+The etymology of the word tensor comes from the latin word tendere, which means "to stretch". The concept of tensor arose in 19th century physics when it was observed that a force (a 3-dimensional vector) applied to a medium (a deformable crystal, a polarizable dielectric, etc.) may give rise to a response, a 3-dimensional vector, that is not parallel to the applied force. \\ One of the first examples was treated by Cauchy (1827) in the case of stress. Some crystalline materials deform in a direction that is not parallel to the applied stress; this is a property of the material; such material is said to be mechanically anisotropic. An electric field applied to an electrically anisotropic material gives a polarization with a direction that is not parallel to the field. \\The existence of anisotropic materials was considered to be remarkable, because it required revision of Newton's third law (action is minus reaction): apparently reaction can have a direction that is not along and opposite the action that causes it. In these early days the linear space $V$ mentioned above was invariably the real 3-dimensional Euclidean space. The rank $k$ of the early tensors was almost always equal to two, so that for a long time tensors were represented solely by real 3$\times$3 matrices.
 \\It is, parenthetically, illuminating to observe that the prototype model of a cause-effect relation is Newton's second law (1687),
-\begin{equation}
+\begin{align*}
 F = ma
-\end{equation}
-This law does not show a tensor behavior at all. The force F causes the acceleration a of a particle; effect and cause are parallel and connected by a scale factor (single real number) m, the mass of the particle; a and F have the same direction.\\
- In 1884, Gibbs introduced the tensor product of vectors in $\mathbb{R}^3$ under the label "indeterminate product" and applied it to the study of strain on a body. Gibbs extended the indeterminante product to n dimensions two years later . \\Voigt used tensors for a description of stress and strain on crystals in 1898, and the term tensor first appeared with its modern meaning in his work.\\ In mathematics, Ricci applied tensors to differential geometry during the 1880s and 1890s. A paper from 1901 that Ricci wrote with Levi-Civita  was crucial in Einstein's work on general relativity, and the widespread adoption of the term "tensor" in physics and mathematics comes from Einstein's usage; Ricci and Levi-Civita referred to tensors by the bland name "systems." In all of this work, tensor products were built out of vector spaces. The first step in extending tensor products to modules is due to Hassler Whitney, who defined $A \otimes_z B$ for any abelian groups A and B in 1938. A few years later Bourbaki's volume on algebra contained a definition of tensor products of modules in the form that it has essentially had ever since (within pure mathematics).
-
-\newpage
+\end{align*}
+This law does not show a tensor behavior at all. The force $F$ causes the acceleration a of a particle; effect and cause are parallel and connected by a scale factor (single real number) $m$, the mass of the particle; $a$ and $F$ have the same direction.\\ In the following breakdown of tensors in history, I will use Keith Conrad's brief history found in the tensor product paper.
+ In 1884, Gibbs introduced the tensor product of vectors in $\mathbb{R}^3$ under the label "indeterminate product" and applied it to the study of strain on a body. Gibbs extended the indeterminante product to n dimensions two years later . \\Voigt used tensors for a description of stress and strain on crystals in 1898, and the term tensor first appeared with its modern meaning in his work.\\ In mathematics, Ricci applied tensors to differential geometry during the 1880s and 1890s. A paper from 1901 that Ricci wrote with Levi-Civita  was crucial in Einstein's work on general relativity, and the widespread adoption of the term "tensor" in physics and mathematics comes from Einstein's usage; Ricci and Levi-Civita referred to tensors by the bland name "systems." In all of this work, tensor products were built out of vector spaces. The first step in extending tensor products to modules is due to Hassler Whitney, who defined $A \otimes_z B$ for any abelian groups $A$ and $B$ in 1938. A few years later Bourbaki's volume on algebra contained a definition of tensor products of modules in the form that it has essentially had ever since (within pure mathematics).
 I choosed to talk in this paper about tensors only because of my fascination about them. The development of mathematics to model physical forces has allowed humans to make tremendous leaps in technological progress.\\
 Let’s consider that for most of civilization, the tallest structures created by human were piles of stones — pyramids and eventually cathedrals.
 The tensor mathematics used to model stresses in materials such as steel was developed in the mid 1800’s by Augustin-Louis Cauchy. These tensor equations helped advance humanity’s engineering from tall piles of stones to the Eiffel Tower, and far beyond.
 The consequences of this can be staggering if you think that every time you drive over a large bridge or ride a tall elevator, that your life relies (at least in some small way) on these equations of mathematical physics and continuum mechanics. Engineering design calculations apply principles of tensors to ensure that the roof doesn’t fall in on our heads.\\
-Because I am a mathematics and informatics student, I can't neglect the use of tensors in deep learning. As we know modern data is often multi-dimensional. Tensors can play an important role in deep learning by encoding multi-dimensional data. For example, a picture is generally represented by three fields: width, height and color. It makes total sense to encode it as a 3D tensor.  Operations with tensors can simplify the process of creating neural networks used in algorithms to predict data.\\\\
-My paper structures the tensors in two parts.\\The first part being the preliminaries that are needed to understand the rest of the paper. It discusses concepts like vector space, multilinear maps, dimensions that are extremely important in understanding the tensors. This way if anyone reads the paper, they can refresh their memory about the basic stuffs so they can dive in confidently in the second part.\\
-The second part of my paper consists of the actual stuff regarding tensors. This part consists of 6 subparts that contain important concepts about the tensors.\\The first part talks about the use of tensors as multilinear maps. The second part talks about the symmetry of tensors. The third part discusses about the exterior algebra by first introducing the important notion of am exterior product. The fourth part talks about sympletic vector spaces. The fifth part talks about the inner product revised in the context of tensors, we heard about the inner product of vectors but now we extend the concept to tensors. The sixth part introduces the concept of Hodge Star operator. This separation of concepts by parts is similar to the one used by Sadri Hassani in the book Mathematical Physics A Modern Introduction to Its Foundations, the book that is used in making this thesis. 
+Because I am a mathematics and informatics student, I can't neglect the use of tensors in deep learning. As we know modern data is often multi-dimensional. Tensors can play an important role in deep learning by encoding multi-dimensional data. For example, a picture is generally represented by three fields: width, height and color. It makes total sense to encode it as a 3D tensor.  Operations with tensors can simplify the process of creating neural networks used in algorithms to predict data.\\
+My paper structures the tensors in two parts.\\The first part being the preliminaries that are needed to understand the rest of the paper. It discusses concepts like vector space, multilinear maps, dimensions that are extremely important in understanding the tensors. This way if anyone reads the paper, they can refresh their memory about the basic concepts so they can dive in confidently in the second part.\\
+The second part of my paper consists of the actual concepts regarding tensors. This part consists of 6 subparts that contain important concepts about the tensors.\\The first part talks about the use of tensors as multilinear maps. The second part talks about the symmetry of tensors. The third part discusses about the exterior algebra by first introducing the important notion of am exterior product. The fourth part talks about sympletic vector spaces. The fifth part talks about the inner product revised in the context of tensors, we heard about the inner product of vectors but now we extend the concept to tensors. The sixth part introduces the concept of Hodge Star operator. This separation of concepts by parts is similar to the one used by Sadri Hassani in the book Mathematical Physics A Modern Introduction to Its Foundations, the book that is used in making this thesis. 
 \newpage 
 \section{Preliminaries}
 Before we dive into the notion of tensors, first we need to remember fundamental concepts that are necessary into understanding the tensors. For this notions I will use the chapter Vectors and Linear Maps from the book Mathematical Physics A Modern Introduction to Its Foundations by Sadri Hassani. \\Alongside definitions and proofs, I will give small examples of every concept because I strongly believe that an example is very useful in understanding concepts.\\
 Let us begin with the definition of an abstract vector space.
 
-\subsection{Vector space}
+\subsection{Vector spaces}
 
 \begin{defn} A \textbf{vector space} $\mathcal{V}$ over $\mathbb{C}$ is a set of objects called \textbf{vectors}, with the following properties:
-\item[1.] To every pair of vectors x and y in $\mathcal{V}$ there corresponds a vector x + y also in $\mathcal{V}$, called the \textit{sum} of x and y such that:
-\item \hspace{1cm} a) x + y = y + x
-\item \hspace{1cm} b) x + (y + z) = (x  + y) + z
-\item \hspace{1cm} c) There exists a unique vector 0 $\in$ $\mathcal{V}$, called the \textbf{zero vector}, such that x + 0 = x for every vector x
-\item \hspace{1cm} d) To every vector x $\in$ $\mathcal{V}$ there corresponds a unique vector -x $\in$ $\mathcal{V}$ such that x + (-x) = 0
+\item[1.] To every pair of vectors x and y in $\mathcal{V}$ there corresponds a vector $x + y$ also in $\mathcal{V}$, called the \textit{sum} of x and y such that:
+\item \hspace{1cm} a) $x + y = y + x$
+\item \hspace{1cm} b) $x + (y + z) = (x  + y) + z$
+\item \hspace{1cm} c) There exists a unique vector 0 $\in$ $\mathcal{V}$, called the \textbf{zero vector}, such that $x + 0 = x $ for every vector $x$
+\item \hspace{1cm} d) To every vector x $\in$ $\mathcal{V}$ there corresponds a unique vector -x $\in$ $\mathcal{V}$ such that $x + (-x) = 0$
 \\
-\item[2.] To every complex number $\alpha$(also called a \textbf{scalar}) and every vector x there corresponds a vector $\alpha$x in $\mathcal{V}$ such that:
-\item \hspace{1cm} a) $\alpha$($\beta$x) = ($\alpha$$\beta$)x
-\item \hspace{1cm} b) 1x = x
+\item[2.] To every complex number $\alpha$(also called a \textbf{scalar}) and every vector $x$ there corresponds a vector $\alpha$$x$ in $\mathcal{V}$ such that:
+\item \hspace{1cm} a) $\alpha(\beta x) = (\alpha\beta)x$
+\item \hspace{1cm} b) $1x = x$
 \\
 \item[3.] Multiplication involving vectors and scalars is distributive:
-\item \hspace{1cm} a) $\alpha$(x + y) = $\alpha$x + $\alpha$y
+\item \hspace{1cm} a) $\alpha$$(x + y)$ = $\alpha$x + $\alpha$y
 \item \hspace{1cm} b) ($\alpha$ + $\beta$)x = $\alpha$x + $\beta$x
 \end{defn}
 \begin{exmp}$\mathbb{C}^2$ is a vector space with multiplication and addition having their usual meaning.
 \end{exmp}
-\begin{exmp}$\mathbb{C}^2\setminus 0$ is $\textbf{not}$ a vector space. There does not exist a unique vector 0 such that x + 0 = x, where every vector x is in $\mathbb{C}^2$.\\
+\begin{exmp}$\mathbb{C}^2\setminus 0$ is $\textbf{not}$ a vector space. There does not exist a unique vector $0$ such that $x + 0 = x$, where every vector $x$ is in $\mathbb{C}^2$.\\
 Looking over the previous definition of vector spaces, we can see that 1. c) is not achieved.
 \end{exmp}
 Now we shall remember the inner product as it is defined, so we can revisit it later on when we talk about tensors.
@@ -98,13 +96,13 @@ Now we shall remember the inner product as it is defined, so we can revisit it l
 The inner product generalizes the dot product to abstract vector spaces over a field of scalars, being either the field of real numbers $\mathbb{R}$ or the field of complex numbers $\mathbb{C}$. It is usually denoted by $\langle x, y\rangle$.
 \end{remark}
 \begin{defn}
-The \textbf{inner product} of two vectors, x and y, in a vector space $\mathcal{V}$ is a complex number, $\langle x, y\rangle \in \mathbb{C}$ such that\\
+The \textbf{inner product} of two vectors, $x$ and $y$, in a vector space $\mathcal{V}$ is a complex number, $\langle x, y\rangle \in \mathbb{C}$ such that\\
 \item \hspace{1cm} 1. $\langle x, y \rangle  = \langle y, x \rangle^*$
 \item \hspace{1cm} 2. $\langle x, (\beta y + \gamma z) \rangle = \beta \langle x, y\rangle + \gamma \langle x, z\rangle$
-\item \hspace{1cm} 3.$\langle x,x \rangle \geqslant 0 $ and $ \langle x, x \rangle = 0$ if and only if x = 0.\\ \\
+\item \hspace{1cm} 3.$\langle x,x \rangle \geqslant 0 $ and $ \langle x, x \rangle = 0$ if and only if $x = 0$.\\ \\
 The last relation is called the \textbf{positive definite} property of the inner product. A positive definite real inner product is also called a \textbf{Euclidian} inner product, otherwise it is called \textbf{pseudo-Euclidian}.
 \end{defn}
-\begin{exmp} Let us consider the following two vectors in $\mathbb{C}^2$. x =$(1, 2)$ and y = $(3, 4)$\\
+\begin{exmp} Let us consider the following two vectors in $\mathbb{C}^2$. $x$ =$(1, 2)$ and $y$ = $(3, 4)$\\
 The inner product is
 \begin{align*}
  \langle x, y \rangle = 1 * 3 + 2 * 4 = 11
@@ -112,7 +110,7 @@ The inner product is
 \end{exmp}
 
 \begin{defn}
-The vectors x$_{1}$,x$_{2}$,....,x$_{n}$ are said to be \textbf{linearly independent} if for $\alpha_{i} $$\in$$\mathbb{C}$, the relation $\sum_{i=1}^{n}$$ \alpha_{i}$x$_{i} $= 0 implies $\alpha_{i}$ =0 for all i. The  vectors are called \textbf{linearly dependent} otherwise. 
+The vectors $x_{1},x_{2},....,x_{n}$ are said to be \textbf{linearly independent} if for $\alpha_{i} $$\in$$\mathbb{C}$, the relation $\sum_{i=1}^{n}$$ \alpha_{i}$x$_{i} $= 0 implies $\alpha_{i}$ =0 for all i. The  vectors are called \textbf{linearly dependent} otherwise. 
 \end{defn}
 \begin{exmp} Let us consider the following two vectors in $\mathbb{R}^2$. x =$(-3, 2)$ and y = $(1, 1)$\\
 Let's show if the vectors are linearly independent or not
@@ -130,10 +128,10 @@ $\begin{pmatrix}
 \begin{align*}
 \det M = -3 * 1 - ( 1 * -2)  = -3 + 2 = -1 \ne 0
 \end{align*}
-Thus the vectors x and y are linearly independent
+Thus the vectors $x$ and $y$ are linearly independent
 \end{exmp}
 \begin{defn}
-A \textbf{subspace} $\mathcal{W}$ of a vector space $\mathcal{V}$ is a nonempty subset of $\mathcal{V}$ with the property that if x,y $\in$ $\mathcal{W}$, then $\alpha$x + $\beta$y also belongs to $\mathcal{W}$, $\forall$ $\alpha$,$\beta$ $\in$ $\mathbb{C}$
+A \textbf{subspace} $\mathcal{W}$ of a vector space $\mathcal{V}$ is a nonempty subset of $\mathcal{V}$ with the property that if $x, y$ $\in$ $\mathcal{W}$, then $\alpha$x + $\beta$y also belongs to $\mathcal{W}$, $\forall$ $\alpha$,$\beta$ $\in$ $\mathbb{C}$
 \end{defn}
 \begin{exmp}
 The set {0} containing the zero vector (only) is a subspace of $\mathbb{R}$.
@@ -143,26 +141,26 @@ The subspace is a vector space in its own right and the intersection of two subs
 \end{remark}
 \begin{proof}
 Let us begin by proving that a subspace of a vector space is also a vector space. \\By looking of the definition of the subspace, we can see that by the property
-that if x,y $\in$ $\mathcal{W}$, then $\alpha$x + $\beta$y also belongs to $\mathcal{W}$, $\forall$ $\alpha$,$\beta$ $\in$ $\mathbb{C}$ includes in itself all the properties found in the first definition of vector spaces. The property is basically the definition of a vector space in a simpler form.\\
+that if $x, y$ $\in$ $\mathcal{W}$, then $\alpha$x + $\beta$y also belongs to $\mathcal{W}$, $\forall$ $\alpha$,$\beta$ $\in$ $\mathbb{C}$ includes in itself all the properties found in the first definition of vector spaces. The property is basically the definition of a vector space in a simpler form.\\
 Let's see if the intersection of two subspaces is also a subspace.\\
 Let's take two subspaces of $\mathcal{V}$ called $\mathcal{W}$ and $\mathcal{U}$. We denote the intersection as $\mathcal{W} \cap \mathcal{U}$\
 We will use the following three criteria for the subspaces
 \item \hspace{1cm} 1. The zero vector is in the union.
-\item \hspace{1cm} 2. $\forall$ a,b $\in \mathcal{W} \cap \mathcal{U}$,  a + b $\in \mathcal{W} \cap \mathcal{U}$.
-\item \hspace{1cm} 3. $\forall$ a $\in \mathcal{W} \cap \mathcal{U}$, and a scalar $\alpha$, $\alpha$ a $\in  \mathcal{W} \cap \mathcal{U}$.
+\item \hspace{1cm} 2. $\forall a,b \in \mathcal{W} \cap \mathcal{U},  a + b \in \mathcal{W} \cap \mathcal{U}$.
+\item \hspace{1cm} 3. $\forall a \in \mathcal{W} \cap \mathcal{U}$, and a scalar $\alpha, \alpha a \in  \mathcal{W} \cap \mathcal{U}$.
 \\The first proposition is true since both of them are subspaces (that contain the zero vector by default) so the union also contains the zero vector.\\
-Let's suppose that  a,b $\in \mathcal{W} \cap \mathcal{U}$.\\
+Let's suppose that  $a, b$ $\in \mathcal{W} \cap \mathcal{U}$.\\
 We see that this implies that $\textbf{a}$ is both a vector in $\mathcal{W}$ and $\mathcal{U}$(by the definition of an intersection).\\
 Also we can say the same thing about the vector $\textbf{b}$.
-Following the premise, we know that $\mathcal{W}$ is a subspace and $\textbf{a}$ and $\textbf{b}$ are vectors in $\mathcal{W}$ so a + b is in $\mathcal{W}$.\\
-Following the premise, we know that $\mathcal{U}$ is a subspace and $\textbf{a}$ and $\textbf{b}$ are vectors in $\mathcal{U}$ so a + b is in $\mathcal{U}$.\\
-Thus, a + b is a vector both in $\mathcal{W}$ and $\mathcal{U}$. \\
+Following the premise, we know that $\mathcal{W}$ is a subspace and $\textbf{a}$ and $\textbf{b}$ are vectors in $\mathcal{W}$ so $a + b$ is in $\mathcal{W}$.\\
+Following the premise, we know that $\mathcal{U}$ is a subspace and $\textbf{a}$ and $\textbf{b}$ are vectors in $\mathcal{U}$ so $a + b$ is in $\mathcal{U}$.\\
+Thus, $a + b$ is a vector both in $\mathcal{W}$ and $\mathcal{U}$. \\
 The second proposition is true.\\
 The third proposition is also true because both $\mathcal{W}$ and $\mathcal{U}$ are subspaces and the scalar multiplication is closed in $\mathcal{W}$ and $\mathcal{U}$ respectively.
 \\Thus we can say that the intersection of two subspaces is also a subspace.
 \end{proof}
 \begin{defn}
-A \textbf{basis} of a vector space $\mathcal{V}$ is a set B of linearly independent vectors that spans all of $\mathcal{V}$. \\A vector space that has a finite basis is called \textbf{finite-dimensional} and \textbf{infinite-dimensional} otherwise. \\We call the cardinality of the set B the \textbf{dimension} of $\mathcal{V}$.
+A \textbf{basis} of a vector space $\mathcal{V}$ is a set $B$ of linearly independent vectors that spans all of $\mathcal{V}$. \\A vector space that has a finite basis is called \textbf{finite-dimensional} and \textbf{infinite-dimensional} otherwise. \\We call the cardinality of the set $B$ the \textbf{dimension} of $\mathcal{V}$.
 \end{defn}
 \begin{exmp}
 The standard basis for $\mathbb{R}^n$ is:
@@ -183,15 +181,15 @@ The identity map is a linear operator.
 An important example of linear transformations occurs when the second vector space $\mathcal{W}$, happens to be the set of scalars, $\mathbb{C}$ or $\mathbb{R}$, in which case the linear transformation is called a \textbf{linear functional}. The set of linear functionals $\mathcal{L}$($\mathcal{V}$,$\mathbb{C}$) or $\mathcal{L}$($\mathcal{V}$,$\mathbb{R}$) if $\mathcal{V}$ is a real vector space is denoted by $\mathcal{V}$$^*$ and is called the \textbf{dual space} of $\mathcal{V}$.
 \end{defn}
 \begin{exmp}
-Let $\mathcal{M}$ be the set of all 2x2 matrices.\\
-Then the trace map Tr: $\mathcal{M} \to \mathbb{R}$ is linear functional. Let x, y $\in \mathbb{R}$ real scalars and A, B matrices.
+Let $\mathcal{M}$ be the set of all 2$\times$2 matrices.\\
+Then the trace map Tr: $\mathcal{M} \to \mathbb{R}$ is linear functional. Let $x, y$ $\in \mathbb{R}$ real scalars and $A, B$ matrices.
 \begin{align*}
 Tr(xA + yB) = xTr(A) + yTr(B).
 \end{align*}
 \end{exmp}
 \begin{defn}
 A vector space $\mathcal{V}$ is said to be isomorphic to another vector space $\mathcal{W}$ and written $\mathcal{V}$ ${\cong}$$\mathcal{W}$, if there exists a bijective linear map \textbf{T}:
-$\mathcal{V}$ $\to$ $\mathcal{W}$. Then \textbf{T} is called an \textbf{isomorphism}. \\ \\A bijective linear map of $\mathcal{V}$ onto itself is called an \textbf{automorphism} of $\mathcal{V}$. \\An automorphism is also called an \textbf{invertible} linear map. 
+$\mathcal{V}$ $\to$ $\mathcal{W}$. Then \textbf{T} is called an \textbf{isomorphism}.  \\A bijective linear map of $\mathcal{V}$ onto itself is called an \textbf{automorphism} of $\mathcal{V}$. \\An automorphism is also called an \textbf{invertible} linear map. 
 \end{defn}
 \begin{exmp}
 For the example, I will use an example that I found while researching on the website mathonline.wikidot.com. I found this example very conclusive that I couldn't not include in this paper.\\
@@ -220,10 +218,10 @@ dim(\mathcal{U}_1) = dim(\mathcal{U}_2)
 Therefore $\mathcal{U}_1$ is isomorphic to $\mathcal{U}_2$.
 \end{exmp}
 \begin{defn}
-Let A be an N $\times$ N matrix. \\The mapping tr:$\mathcal{M}$$^{(N\times N)}$$\to$$\mathbb{C}$ (or $\mathbb{R}$) given by tr A = $\sum_{i=1}^{n}$$ \alpha_{ii} $ is called the \textbf{trace} of A.
+Let $A$ be an $N$ $\times$ $N$ matrix. \\The mapping tr:$\mathcal{M}$$^{(N\times N)}$$\to$$\mathbb{C}$ (or $\mathbb{R}$) given by tr A = $\sum_{i=1}^{n}$$ \alpha_{ii} $ is called the \textbf{trace} of $A$.
 \end{defn}
 \begin{thm}
-The trace is a linear mapping. Furthermore, tr(AB) = tr(BA) and trA$^t$ = trA.
+The trace is a linear mapping. Furthermore, $tr(AB) = tr(BA)$ and $trA^t = trA$.
 \end{thm}
 \begin{proof}
 To prove the first identity, we use the definitions of trace and matrix product:\\\\
@@ -253,21 +251,21 @@ A linear transformation is 1–1 (injective) iff its kernel is
 zero.
 \end{thm}
 \begin{proof}
-Suppose T |$a_1\rangle$ = T |$a_2\rangle$; \\\\Then linearity of T implies that T ($|a_1\rangle - |a_2\rangle)$ = 0. Since ker T = 0, we must have $|a_1\rangle = |a_2 \rangle$.
+Suppose $T$ |$a_1\rangle$ = T |$a_2\rangle$; \\\\Then linearity of $T$ implies that $T$ ($|a_1\rangle - |a_2\rangle)$ = 0. Since $ker T = 0$, we must have $|a_1\rangle = |a_2 \rangle$.
 \end{proof}
 \begin{thm} \label{inj}
 A linear isometric map is injective.
 \end{thm}
 \begin{proof}
-Let T : $\mathcal{V}$ $\to$ $\mathcal{U}$ be a linear isometry. Let |a$\rangle$ $\in$ kerT, then
+Let T : $\mathcal{V}$ $\to$ $\mathcal{U}$ be a linear isometry. Let |a$\rangle$ $\in kerT$ , then
 \begin{equation}
 \braket{a | a} = \braket{Ta | Ta} = \braket{0|0} = 0.
 \end{equation}
-Therefore, |a$\rangle$ = |0$\rangle$.\\\\
+Therefore, |a$\rangle = |0 \rangle$.\\\\
 By Theorem $\ref{inj0}$, T is injective.
 \end{proof}
 \begin{thm} \label{dimthm}
-Let T : $\mathcal{V}$ $\to$ $\mathcal{W}$ be a linear transformation. Then
+Let $T$ : $\mathcal{V}$ $\to$ $\mathcal{W}$ be a linear transformation. Then
 \begin{align*}
 dim\ \mathcal{V} = dim\ ker\ T + dim\ T(\mathcal{V})
 \end{align*}
@@ -277,20 +275,20 @@ This theorem is called the $\textbf{dimension theorem}$.
 There is a very useful generalization of the linear functionals that becomes essential in the treatment of tensors. However, a limited version of its application is used in the discussion of determinants, which we shall start here.
 
 \begin{defn}
-Let $\mathcal{V}$ and $\mathcal{U}$ be vector spaces. Let $\mathcal{V}$$^P$ denote the p-fold Cartesian product of $\mathcal{V}$. A \textbf{p-linear map} from $\mathcal{V}$ to $\mathcal{U}$ is a map $\Theta$:$\mathcal{V}$$^P$$\to$$\mathcal{U}$ which is linear with respect to each of its arguments:\\\\
+Let $\mathcal{V}$ and $\mathcal{U}$ be vector spaces. Let $\mathcal{V}$$^P$ denote the $p$-fold Cartesian product of $\mathcal{V}$. A \textbf{p-linear map} from $\mathcal{V}$ to $\mathcal{U}$ is a map $\Theta$:$\mathcal{V}$$^P$$\to$$\mathcal{U}$ which is linear with respect to each of its arguments:\\\\
 \begin{align*}
 \Theta(x_1,...,\alpha x_j + \beta y_j,...,x_p)  = 
 \end{align*}
 \begin{align*}
  \alpha \Theta(x_1,....,x_j,....,x_p) + \beta \Theta(x_1,....,y_j,...,x_p).
 \end{align*}
-A p-linear map from $\mathcal{V}$ to $\mathbb{C}$ or $\mathbb{R}$ is called a \textbf{p-linear function} in $\mathcal{V}$.
+A $p$-linear map from $\mathcal{V}$ to $\mathbb{C}$ or $\mathbb{R}$ is called a \textbf{p-linear function} in $\mathcal{V}$.
 \begin{exmp}
-Let \{$\Phi$$_i$\}$^{p}_{i}$ be a linear functionals on $\mathcal{V}$. Define $\Theta$ by $\Theta$(x$_1$,...,x$_p$) = $\Phi$$_1$(x$_1$),...,$\Phi$$_P$(x$_P$), x$_i$$\in$$\mathcal{V}$.\\
+Let $\{\Phi_i\}^{p}_{i}$ be a linear functionals on $\mathcal{V}$. Define $\Theta$ by $\Theta$(x$_1$,...,x$_p$) = $\Phi$$_1$(x$_1$),...,$\Phi$$_P$(x$_P$), x$_i$$\in$$\mathcal{V}$.\\
 Clearly $\Theta$ is p-linear.
 \end{exmp}
 
-Let $\sigma$ denote the permutation of 1, 2,..., p. \\\\Define the p-linear map $\sigma$$\omega$ by 
+Let $\sigma$ denote the permutation of 1, 2,..., p. \\\\Define the $p$-linear map $\sigma$$\omega$ by 
 \begin{align*}
 \sigma\omega(x_1,...,x_p) =
 \end{align*}
@@ -299,11 +297,11 @@ Let $\sigma$ denote the permutation of 1, 2,..., p. \\\\Define the p-linear map 
 \end{align*}
 \end{defn}
 \begin{defn}
-A p-linear map $\omega$ from $\mathcal{V}$ to $\mathcal{U}$ is \textbf{skew-symmetric} if $\sigma\omega$ = $\epsilon_{\sigma}$ if:
+A $p$-linear map $\omega$ from $\mathcal{V}$ to $\mathcal{U}$ is \textbf{skew-symmetric} if $\sigma\omega$ = $\epsilon_{\sigma}$ if:
 \begin{align*}
 \omega(x_{\sigma(1)},...,x_{\sigma(p)}) = \epsilon_{\sigma}\omega(x_1,...,x_p)
 \end{align*}
-where $\epsilon_{\sigma}$ is the sign of $\sigma$, which is +1 if $\sigma$ is even and -1 if it is odd. The set of p-linear skew-symmetric maps from $\mathcal{V}$ to $\mathcal{U}$ is denoted by $\Lambda^{P}$($\mathcal{V},\ \mathcal{U}$). The set of p-linear skew-symmetric functions in $\mathcal{V}$ is denoted by $\Lambda^{P}$($\mathcal{V}$).\\\\
+where $\epsilon_{\sigma}$ is the sign of $\sigma$, which is +1 if $\sigma$ is even and -1 if it is odd. The set of p-linear skew-symmetric maps from $\mathcal{V}$ to $\mathcal{U}$ is denoted by $\Lambda^{P}$($\mathcal{V},\ \mathcal{U}$). The set of $p$-linear skew-symmetric functions in $\mathcal{V}$ is denoted by $\Lambda^{P}$($\mathcal{V}$).\\\\
 \hspace{1cm} The permutation sign $\epsilon_{\omega}$ is sometimes written as \\ 
 \begin{align*}
 \epsilon_{\sigma} = \epsilon_{\sigma(1)\sigma(2)...\sigma(p)} \equiv \epsilon_{i_{1}i_{2}...i_{p}}
@@ -311,8 +309,8 @@ where $\epsilon_{\sigma}$ is the sign of $\sigma$, which is +1 if $\sigma$ is ev
  where $i_k \equiv \sigma(k)$.
 \\
 \end{defn}
-\hspace{1cm} Any p-linear map can be turned into a skew-symmetric p-linear map.\\ In
-fact, if $\theta$ is a p-linear map, then
+\hspace{1cm} Any $p$-linear map can be turned into a skew-symmetric $p$-linear map.\\ In
+fact, if $\theta$ is a $p$-linear map, then
 \begin{align*}
 \omega \equiv \sum_\pi \epsilon_\pi \cdot \pi \theta
 \end{align*}
@@ -344,8 +342,8 @@ is skew-symmetric:
 where we have used the fact that the sign of the product is the product of the
 signs of two permutations, and if $\sum_\pi$ sums over all the permutations, then so does $\sum_{\sigma \pi}$.
 \begin{defn}
-A skew symmetric N-linear function in $\mathcal{V}$ ,i.e., a member of $\Lambda^N$($\mathcal{V}$) is called a \textbf{determinant function} in $\mathcal{V}$.\\\\
-Let B = \{|e$_k$\}$^{N}_{k=1}$ be a basis of $\mathcal{V}$ and B$^*$ = \{$\epsilon_k$\}$^N_{j=1}$ a basis of $\mathcal{V}$$^*$, dual to B. For any set of N vector \{x$_k$\}$^N_{k=1}$ in $\mathcal{V}$, define the N-linear function $\Theta$ by 
+A skew symmetric $N$-linear function in $\mathcal{V}$ ,i.e., a member of $\Lambda^N$($\mathcal{V}$) is called a \textbf{determinant function} in $\mathcal{V}$.\\\\
+Let $B$ = \{|e$_k$\}$^{N}_{k=1}$ be a basis of $\mathcal{V}$ and $B$$^*$ = \{$\epsilon_k$\}$^N_{j=1}$ a basis of $\mathcal{V}$$^*$, dual to $B$. For any set of $N$ vector \{x$_k$\}$^N_{k=1}$ in $\mathcal{V}$, define the $N$-linear function $\Theta$ by 
 \begin{align*}
 	\Theta(x_1,...,x_N) = \epsilon_1(x_1)...\epsilon_N(x_N),
 \end{align*}
@@ -369,12 +367,12 @@ Therefore we have the following:
 \begin{remark}
 In every finite-dimensional vector space, there are determinant functions which are not identically zero.
 \end{remark}
-Let \textbf{A} be a linear operator on an N-dimensional vector space $\mathcal{V}$. \\ \\Choose a nonzero determinant function $\Delta$. For a basis \{v$_i$\}$^{N}_{i=1}$ define the function $\Delta_A$ by \\ 
+Let \textbf{A} be a linear operator on an $N$-dimensional vector space $\mathcal{V}$. \\ \\Choose a nonzero determinant function $\Delta$. For a basis \{v$_i$\}$^{N}_{i=1}$ define the function $\Delta_A$ by \\ 
 \begin{align*}
 \Delta_A(v_1,...,v_N) \equiv \Delta(Av_1,...,Av_N). \\
 \end{align*}
 \begin{defn}
-Let A $\in$ End($\mathcal{V}$). Let $\Delta$ be a nonzero determinant function in V, and let $\Delta_A$ be as mentioned before. Then
+Let $A$ $\in$ End($\mathcal{V}$). Let $\Delta$ be a nonzero determinant function in $\mathcal{V}$, and let $\Delta_A$ be as mentioned before. Then
  \begin{align*}
 \Delta_A = det A\cdot \Delta
 \end{align*}
@@ -397,21 +395,21 @@ A map \textbf{T}:$\mathcal{V}$$_1\times$ $\mathcal{V}$$_2\times $...$\times$ $\m
 \begin{align*}
 \alpha\textbf{T}(v_1,....,v_i,....,v_r) + \alpha'\textbf{T}(v_1,....,v'_i,....,v_r)
 \end{align*}
-for all i.
+for all $i$.
 \end{defn}
 \begin{defn}
 Let $\tau_1\in \mathcal{V}^*_1$ and $\tau_2\in \mathcal{V}^*_2$. \\
 We construct the bilinear map $\tau_1\otimes \tau_2:\mathcal{V}_1\times \mathcal{V}_2\to \mathbb{R}$ by $\tau_1\otimes \tau_2$(v$_1$,v$_2$) = $\tau_1$(v$_1$)$\tau_2$(v$_2$). \\\\The expression $\tau_1\otimes \tau_2$ is called the \textbf{tensor product} of $\tau_1$ and $\tau_2$
 \end{defn}
-An r-linear map can be multiplied by a scalar, and two r-linear maps can
-be added; in each case the result is an r-linear map. Thus, the set of r-linear
+An $r$-linear map can be multiplied by a scalar, and two $r$-linear maps can
+be added; in each case the result is an $r$-linear map. Thus, the set of $r$-linear
 maps from $\mathcal{V}$$_1$ $\times$···$\times$ $\mathcal{V}$$_r$ into $\mathcal{W}$ forms a vector space that is denoted by
 $\mathcal{L}$($\mathcal{V}$$_1$,...,$\mathcal{V}$$_r$;$\mathcal{W}$).\\
 
 We can also construct multilinear maps on the dual space. First, we note
 that we can define a natural linear functional on $\mathcal{V}$$^*$ as follows. We let $\tau \in \mathcal{V}^* $
-and v $\in$ $\mathcal{V}$; then $\tau$(v) $\in$ $\mathbb{R}$. Now we twist this around and define a mapping
-v : $\mathcal{V}$$^*$ $\to$ $\mathbb{R}$ given by v($\tau$) $\equiv$ $\tau$(v). We have naturally constructed a linear functional on $\mathcal{V}$$^*$ by
+and $v$ $\in$ $\mathcal{V}$; then $\tau$(v) $\in$ $\mathbb{R}$. Now we twist this around and define a mapping
+$v$ : $\mathcal{V}$$^*$ $\to$ $\mathbb{R}$ given by v($\tau$) $\equiv$ $\tau$(v). We have naturally constructed a linear functional on $\mathcal{V}$$^*$ by
 identifying ($\mathcal{V}$$^*)^*$ with $\mathcal{V}$.
 \begin{defn}
 There is a bilinear map \textbf{h} : $\mathcal{V}^* \times \mathcal{V} \to \mathbb{R}$ that naturally pairs $\mathcal{V} \ and \ \mathcal{V}^*$.\\
@@ -426,25 +424,25 @@ Let $\mathcal{V}$ be a vector space with dual space $\mathcal{V}$$^*$. Then a \t
 \begin{align*}
 \textbf{T} ^r_s:\underbrace{\mathcal{V}^*\times \mathcal{V}^*\times ... \times \mathcal{V}^*}_{r\ times}\times\underbrace{\mathcal{V}\times \mathcal{V}\times...\times \mathcal{V}}_{s\ times} \to \mathbb{R}
 \end{align*}
-The set of all such mappings for fixed r and s forms a vector space denoted
-by T$^r_s$ ($\mathcal{V}$). \\The number r is called the \textbf{contravariant degree} of the tensor,
-and s is called the \textbf{covariant degree} of the tensor.\\\\
+The set of all such mappings for fixed $r$ and $s$ forms a vector space denoted
+by T$^r_s$ ($\mathcal{V}$). \\The number $r$ is called the \textbf{contravariant degree} of the tensor,
+and $s$ is called the \textbf{covariant degree} of the tensor.\\\\
 \end{defn}
 
 \begin{exmp}
-\item[a)]A tensor of type (0, 0) is defined to be a scalar, so T$^0_0$(V) = $\mathbb(R)$.
+\item[a)]A tensor of type (0, 0) is defined to be a scalar, so $T^0_0$(V) = $\mathbb(R)$.
 \item[b]) A tensor of type (1, 0), an ordinary vector, is called a contravariant vector, and one
 of type (0, 1), a dual vector (or a linear functional), is called a covariant
 vector.
-\item[c)] A tensor of type (r, 0) is called a contravariant tensor of rank r,
-and one of type (0,s) is called a covariant tensor of rank s.
+\item[c)] A tensor of type ($r$, 0) is called a contravariant tensor of rank $r$,
+and one of type (0,$s$) is called a covariant tensor of rank $s$.
 \end{exmp}
-The union of T$^r_s$ ($\mathcal{V}$) for all possible r and s can be made into an (infinite-dimensional) algebra called \textbf{algebra of tensors}.\\\\
+The union of $T^r_s$ ($\mathcal{V}$) for all possible $r$ and $s$ can be made into an (infinite-dimensional) algebra called \textbf{algebra of tensors}.\\\\
 First we define the following product on it:
 \begin{defn}
-The \textbf{tensor product} of a tensor \textbf{T} of type (r,s) and a tensor \textbf{U} of type (k,l) is a tensor \textbf{T}$\otimes$\textbf{U} of type (r+k,s+l),defined, as an operator on ($\mathcal{V}$$^*$)$^{r+k}\times \mathcal{V}^{s+l}$, by 
+The \textbf{tensor product} of a tensor \textbf{T} of type $(r, s)$ and a tensor \textbf{U} of type $(k, l)$ is a tensor \textbf{T}$\otimes$\textbf{U} of type $(r+k, s+l)$ ,defined, as an operator on ($\mathcal{V}$$^*$)$^{r+k}\times \mathcal{V}^{s+l}$, by 
 \begin{align*}
-\textbf{T}\otimes\textbf{U}(\theta^1,...,\theta^{r+k},u_1,...,u_{s+l}) = \textbf{T}(\theta^1,...,\theta^r,u_1,....,u_s)\textbf{U}(\theta^{r+1},....,\theta^{r+k},u_{s+l},...,u_{s+l}).
+(\textbf{T}\otimes\textbf{U})(\theta^1,...,\theta^{r+k},u_1,...,u_{s+l}) = \textbf{T}(\theta^1,...,\theta^r,u_1,....,u_s)\textbf{U}(\theta^{r+1},....,\theta^{r+k},u_{s+l},...,u_{s+l}).
 \end{align*}
 This product turns the (infinite-dimensional) vector space of all tensors into an associative algebra called a \textbf{tensor algebra}.
 \end{defn}
@@ -457,8 +455,8 @@ Using the formula from above, we can compute the tensor product\\
 
 \end{exmp}
 \textbf{Difference between direct sum and tensor product}\\
-We'll assume $\mathcal{V}$ and $\mathcal{W}$ are finite dimensional vector spaces. \\That means we can think of $\mathcal{V}$ as $\mathbb{R}^n$ and $\mathcal{W}$ as $\mathbb{R}^m$ for some positive integers n and m. I will use the following simple example to show the difference between direct sum and tensor product:\\
-Let x, y be two vectors, x $\in\mathbb{R}^3$ and y $\in\mathbb{R}^2$
+We'll assume $\mathcal{V}$ and $\mathcal{W}$ are finite dimensional vector spaces. \\That means we can think of $\mathcal{V}$ as $\mathbb{R}^n$ and $\mathcal{W}$ as $\mathbb{R}^m$ for some positive integers $n$ and $m$. I will use the following simple example to show the difference between direct sum and tensor product:\\
+Let x, y be two vectors, $x$ $\in\mathbb{R}^3$ and $y$ $\in\mathbb{R}^2$
 \[x = 
 \begin{pmatrix}
 1\\2\\3
@@ -468,7 +466,7 @@ Let x, y be two vectors, x $\in\mathbb{R}^3$ and y $\in\mathbb{R}^2$
 4\\5
 \end{pmatrix}
 \]
-We call x $\oplus$ y the \textbf{direct sum} .In this case, x$\oplus$y is:
+We call $x$ $\oplus$ $y$ the \textbf{direct sum} .In this case, $x$$\oplus$$y$ is:
 \[x = 
 \begin{pmatrix}
 1\\2\\3
@@ -481,9 +479,9 @@ We call x $\oplus$ y the \textbf{direct sum} .In this case, x$\oplus$y is:
 1\\2\\3\\4\\5
 \end{pmatrix}
 \]
-We shall see that the direct sum give a list of m + n numbers, this gives us a way to build a space where the dimensions \textbf{add}.\\
-Now lets see the tensor product of x and y, denoted x$\otimes$y.
-\[x = 
+We shall see that the direct sum give a list of $m + n$ numbers, this gives us a way to build a space where the dimensions \textbf{add}.\\
+Now let's see the tensor product of $x$ and $y$, denoted x$\otimes$y.
+\[xT = 
 \begin{pmatrix}
 1\\2\\3
 \end{pmatrix}
@@ -495,7 +493,7 @@ Now lets see the tensor product of x and y, denoted x$\otimes$y.
 1 \cdot 4 \\ 1 \cdot 5\\2 \cdot 4\\2 \cdot 5\\3 \cdot 4\\3 \cdot 5
 \end{pmatrix}
 \]
-We see that the tensor product gives a list of m * n numbers, this gives us a way to build a space where the dimensions \textbf{multiply}.
+We see that the tensor product gives a list of $m * n$ numbers, this gives us a way to build a space where the dimensions \textbf{multiply}.
 
 \begin{exmp}
 Show that the components of a tensor product are products of the components of factors:
@@ -521,7 +519,7 @@ Now by changing the notation we get\\
 Which proves that the components of a tensor product are the products of components of factors by definition.
 \end{exmp}
 \begin{defn}
-A \textbf{contraction} of a tensor A$\in T^r_s$($\mathcal{V}$) with respect to a contravariant index at position p and covariant index at position q is a linear mapping C$^p_q$($\mathcal{V}$)$\to$T$^{r-1}_{s-1}$($\mathcal{V}$) given in \textit{component form} by
+A \textbf{contraction} of a tensor A$\in T^r_s$($\mathcal{V}$) with respect to a contravariant index at position $p$ and covariant index at position $q$ is a linear mapping C$^p_q$($\mathcal{V}$)$\to$T$^{r-1}_{s-1}$($\mathcal{V}$) given in \textit{component form} by
 \begin{align*}
 	[C^p_q(A)]^{i_1...i_{r-1}}_{j_1...j_{s-1}} = 
 \end{align*}
@@ -536,32 +534,32 @@ A ^{i_1...i_{p-1}ki_{p+1}...i_r}_{j_1...j_{q-1}kj_{q+1}...j_s}  \equiv
 \subsection{Symmetries of Tensors}
 Many applications demand tensors that have some kind of symmetry property. One symmetric tensor is the metric 'tensor' of an inner product: If $\mathcal{V}$ is a vector space  and v$_1$,v$_2$$\in$V, then g(v$_1$,v$_2$) = g(v$_2$,v$_1$). The following generalizes this property.\\
 \begin{defn}
-A tensor A is \textbf{symmetric} in the ith and jth variables if its value as a multilinear function is unchanged when these variables are interchanged.Clearly, the two variables must be of the same kind.
+A tensor A is \textbf{symmetric} in the $i$th and $j$th variables if its value as a multilinear function is unchanged when these variables are interchanged.Clearly, the two variables must be of the same kind.
 \end{defn}
-\hspace{1cm} From this definition. it follows that in any basis, the components of a symmetric tensor do not change when the ith and jth indices are interchanged.
+\hspace{1cm} From this definition. it follows that in any basis, the components of a symmetric tensor do not change when the $i$th and $j$th indices are interchanged.
 \begin{defn}
 A tensor is \textbf{contravariant-symmetric} if it is symmetric in every pair of its covariant indices. A tensor is \textbf{symmetric} if it is both contravariant-symmetric and covariant-symmetric.
 \end{defn}
 \hspace{1cm} An immediate consequence of this definition is the following theorem:
 \begin{thm}
-A tensor S of type(r,0) is symmetric if and only if for any permutation $\pi$ of 1,2,...r, and any $\tau^1,\tau^2,...,\tau^r$ in $\mathcal{V}$$^*$ we have \begin{align*}
+A tensor $S$ of type$(r,0)$ is symmetric if and only if for any permutation $\pi$ of $1,2,...r$ and any $\tau^1,\tau^2,...,\tau^r$ in $\mathcal{V}$$^*$ we have \begin{align*}
 S(\tau^{\pi(1)},\tau^{\pi(2)},...,\tau^{\pi(r)}) = S(\tau^1,\tau^2,...,\tau^n)
 \end{align*}
 \end{thm}
 \begin{proof}
 By looking over Definition 28, we see that a tensor is symmetric if it is both contravariant-symmetric and covariant-symmetric. \\
-By using this fact we show that if the condition holds, the tensor S is symmetric.\\
-If by all the permutations $\pi$ of any $\tau$, the tensor S remains unchaged, it means that in all of it's variables the value of the multilinear function remains unchaged which is the definition of a symmetric tensor.
+By using this fact we show that if the condition holds, the tensor $S$ is symmetric.\\
+If by all the permutations $\pi$ of any $\tau$, the tensor $S$ remains unchanged, it means that in all of it's variables the value of the multilinear function remains unchanged which is the definition of a symmetric tensor.
 \end{proof}
 \begin{defn}
-A \textbf{symmetrizer} is an operator S:T$_0^r\to$S$^r$ given by:\\
+A \textbf{symmetrizer} is an operator $S:T$$_0^r\to$S$^r$ given by:\\
 \begin{align*}
 [S(A)](\tau^1,...,\tau^r) = 
 \end{align*}
 \begin{align*}
 \dfrac{1}{r!}\sum_{\pi}A(\tau^{\pi(1)},...\tau^{\pi(r)}),
 \end{align*}
-where the sum is taken over the r! permutations of the integers 1, 2,...., r, and $\tau^1$,....$\tau^r$ are all in $\mathcal{V}$$^*$.\\\\ S(A) is often denoted by A$_s$.
+where the sum is taken over the $r!$ permutations of the integers $1, 2,...., r$ and $\tau^1$,....$\tau^r$ are all in $\mathcal{V}$$^*$.\\\\ S(A) is often denoted by A$_s$.
 \end{defn}
 A$_s$ is a symmetric tensor. In fact,\\
 \begin{align*}
@@ -577,7 +575,7 @@ A_s (\tau^{\sigma(1)},...,\tau^{\sigma(r)}) =
 \begin{align*}
 = A_s(\tau^1,\tau^2,...\tau^r),
 \end{align*}
-where we have used the fact that the sum over $\pi$ is equal to the sum over the product (or composition) $\pi\sigma$, because they both include all permutations. \\\\Furthermore,if A is symmetric, then S(A) = A:
+where we have used the fact that the sum over $\pi$ is equal to the sum over the product (or composition) $\pi\sigma$, because they both include all permutations. \\\\Furthermore, if $A$ is symmetric, then $S(A) = A$:
 \begin{align*}
 [S(A)](\tau^{1},....,\tau^{r}) = 
 \end{align*}
@@ -593,13 +591,13 @@ where we have used the fact that the sum over $\pi$ is equal to the sum over the
 \begin{align*}
 = A(\tau^1,...,\tau^r).
 \end{align*}
-\hspace{1cm} A similar definition gives the symmetrizer S:T$_s^0\to$S$_s$. Instead of $\tau^1,...\tau^r$ in the definition, we would have v$_1$,...,v$_s$.
+\hspace{1cm} A similar definition gives the symmetrizer $S:T$$_s^0\to$S$_s$. Instead of $\tau^1,...\tau^r$ in the definition, we would have v$_1$,...,v$_s$.
 \begin{exmp}
-For r = 2, we only have two permutations, and
+For $r = 2$, we only have two permutations, and
  \begin{align*}
 A_s(\tau^1,\tau^2) = \dfrac{1}{2} [A(\tau^1,\tau^2) + A(\tau^2,\tau^1)].
 \end{align*}
-For r = 3, we have six permutations 1, 2, 3, and the definition gives
+For $r = 3$, we have six permutations $1, 2, 3$ and the definition gives
 \begin{align*}
 A_s(\tau^1,\tau^2,\tau^3) = 
 \end{align*}
@@ -610,12 +608,12 @@ It is clear that the interchanging any pair of $\tau$'s on the right hand side o
 \end{exmp}
 \hspace{1cm} We are now ready to define a product on the collection of symmetric tensors and make it an algebra, called the \textbf{symmetric algebra}.
 \begin{defn}
-The \textbf{symmetric product} of symmetric tensors A$\in S^r$($\mathcal{V}$) and B$\in S^s$($\mathcal{V}$) is denoted by AB and defined as\\
+The \textbf{symmetric product} of symmetric tensors A$\in S^r$($\mathcal{V}$) and B$\in S^s$($\mathcal{V}$) is denoted by $AB$ and defined as\\
 \begin{align*}
-AB(\tau^1,...,\tau^{r+s})\equiv \dfrac{(r+s)!}{r!s!}S(A\otimes B)(\tau^1,...,\tau^{r+s})\\
+(AB)(\tau^1,...,\tau^{r+s})\equiv \dfrac{(r+s)!}{r!s!}S(A\otimes B)(\tau^1,...,\tau^{r+s})\\
 = \dfrac{1}{r!s!}\sum_{\pi}A(\tau^{\pi(1)},...,\tau^{\pi(r)})B(\tau^{\pi(r+1)},...,\tau^{\pi(r+s)}), 
 \end{align*} 
-where the sum is over all permutations of 1 2,...,r+s. The symmetric product of A$\in S_{r}$($\mathcal{V}$) and B$\in S_{s}$($\mathcal{V}$) is defined similarly.
+where the sum is over all permutations of $1 2,...,r+s$. The symmetric product of A$\in S_{r}$($\mathcal{V}$) and B$\in S_{s}$($\mathcal{V}$) is defined similarly.
 \end{defn}
 \begin{exmp}
 Let us construct the symmetric tensor products of vectors. First we find the symmetric product of v$_1$ and v$_2$ both belonging to $\mathcal{V}$ = T$_0^1$($\mathcal{V}$):
@@ -641,23 +639,23 @@ A \textbf{covariant} (\textbf{contravariant}) skew-symmetric (or anti-symmetric)
 and contravariant skew-symmetric.
 \end{defn}
 \begin{thm}
-A tensor A of type(r, 0) is skew if and only if for any permutations $\pi$ of 1, 2, ... r, and any $\tau^1,\tau^2, ..., \tau^r$ in $\mathcal{V}$$^*$. we have
+A tensor $A$ of type$(r, 0)$ is skew if and only if for any permutations $\pi$ of $1, 2, ... r$ and any $\tau^1,\tau^2, ..., \tau^r$ in $\mathcal{V}$$^*$. we have
 \begin{align*}
 A(\tau^{\pi(1)},\tau^{\pi(2)},....,\tau^{\pi(r)} = \epsilon_\pi A(\tau^1,\tau^2,...,\tau^r).
 \end{align*}
 \end{thm}
 \begin{proof}
 By looking over definition, we see that a tensor is skew if it is both contravariant skew-symmetric and covariant skew-symmetric. \\
-By using this fact we show that if the condition holds, the tensor A is skew.\\
-If by all the permutations $\pi$ of any $\tau$, the tensor A changes it's sign (i.e is multiplied with $\epsilon_\pi$ which is +1 if $\pi$ is even or -1 if not), then by definition the tensor is skew.
+By using this fact we show that if the condition holds, the tensor $A$ is skew.\\
+If by all the permutations $\pi$ of any $\tau$, the tensor $A$ changes it's sign (i.e is multiplied with $\epsilon_\pi$ which is +1 if $\pi$ is even or -1 if not), then by definition the tensor is skew.
 \end{proof}
 \begin{defn}
-An \textbf{antisymmetrizer} is a linear operator A on T$^r_0$, given by 
+An \textbf{antisymmetrizer} is a linear operator $A$ on T$^r_0$, given by 
 \begin{align*}
 [A(T)](\tau^1,...,\tau^r) = \dfrac{1}{r!}\sum_{\pi}T(\tau^{\pi(1)},....,\tau^{\pi(r)}).
 \end{align*}
 \end{defn}
-A(T) is denoted by T$_a$.\\\\
+$A(T)$ is denoted by $T$$_a$.\\\\
 \hspace{1cm} T$_a$ is an antisymmetric tensor. \\In fact, using ($\epsilon_\sigma$)$^2$ = 1, which holds for any permutation, we have\\
 \begin{align*}
 T_a \tau^{\sigma(1)},....,\tau^{\sigma(r)} = [A(T)](\tau^{\sigma(1)},...,\tau^{\sigma(r)})=
@@ -672,7 +670,7 @@ T_a \tau^{\sigma(1)},....,\tau^{\sigma(r)} = [A(T)](\tau^{\sigma(1)},...,\tau^{\
 =\epsilon_\sigma T_a(\tau^1,\tau^2,....\tau^r).
 \end{align*}
 where we used the fact that $\epsilon_\pi \epsilon_\sigma$ = $\epsilon_{\pi\sigma}$. \\
-\hspace{1cm} If T is antisymmetric, then A(T) = T:\\
+\hspace{1cm} If $T$ is antisymmetric, then $A(T) = T:$\\
 \begin{align*}
 [A(T)](\tau^1,...,\tau^r) = \dfrac{1}{r!}\sum_{\pi}\epsilon_\pi T(\tau^{\pi(1)},...,\tau^{\pi(r)})=
 \end{align*}
@@ -685,10 +683,10 @@ where we used the fact that $\epsilon_\pi \epsilon_\sigma$ = $\epsilon_{\pi\sigm
 \begin{align*}
  T(\tau^1,...\tau^r).
 \end{align*}
-\hspace{1cm} A similar definition gives the antisymmetrizer A on T$_s^0$. Instead of $\tau^1,...\tau^r$ we would have used $v_1,...v_s$.
+\hspace{1cm} A similar definition gives the antisymmetrizer $A$ on $T_s^0$. Instead of $\tau^1,...\tau^r$ we would have used $v_1,...v_s$.
 
 \begin{exmp}
-Let us write the equation of an antisymmetrizer for r = 3.\\
+Let us write the equation of an antisymmetrizer for $r = 3$.\\
 \begin{align*}
 T_a(\tau^1,\tau^2,\tau^3) =
 \end{align*}
@@ -702,8 +700,8 @@ T_a(\tau^1,\tau^2,\tau^3) =
 \end{exmp}
 
 \subsection{Exterior algebra}
-The following discussion will concentrate on tensors of type (r, 0). However, interchanging the roles of $\mathcal{V}$ and $\mathcal{V}$$^*$ makes all definitions, theorems,
-propositions, and conclusions valid for tensors of type (0,s) as well. The set of all skew-symmetric tensors of type (p, 0) forms a subspace of T$^{p}_{0}$. This subspace is denoted by $\Lambda^{p}  (V^*)$ and its members are called \textbf{p-vectors} It is not, however, an algebra unless we define a skew-symmetric
+The following discussion will concentrate on tensors of type $(r, 0)$. However, interchanging the roles of $\mathcal{V}$ and $\mathcal{V}$$^*$ makes all definitions, theorems,
+propositions, and conclusions valid for tensors of type $(0, s)$ as well. The set of all skew-symmetric tensors of type $(p, 0)$ forms a subspace of T$^{p}_{0}$. This subspace is denoted by $\Lambda^{p}  (V^*)$ and its members are called \textbf{p-vectors} It is not, however, an algebra unless we define a skew-symmetric
 product analogous to that for the symmetric case. This is done in the following definition:
 \begin{defn}
 The \textbf{exterior product} (also called the wedge, Grassmann, alternating, or veck product) of two skew-symmetric tensors \textbf{A}$\in\Lambda^{p}(\mathcal{V}^*)$ and  \textbf{B}$\in\Lambda^{q}(\mathcal{V}^*)$ is a skew-symmetric tensor belonging to $\Lambda^{p+q}(\mathcal{V}^*)$ and given by
@@ -752,25 +750,25 @@ Since tensor product is associative, then we proved that the exterior product is
 \begin{defn}
 The elements of $\Lambda^{p} (\mathcal{V}^*)$ are called \textbf{p-forms} 
 \end{defn}
-A linear transformation T : $\mathcal{V}$ $\to$ $\mathcal{W}$ induces a transformation T$^*$ : $\Lambda^{p} (\mathcal{W})$  $\to$ $\Lambda^{p} (\mathcal{V})$ defined by
+A linear transformation $T$ : $\mathcal{V}$ $\to$ $\mathcal{W}$ induces a transformation T$^*$ : $\Lambda^{p} (\mathcal{W})$  $\to$ $\Lambda^{p} (\mathcal{V})$ defined by
 \begin{align*}
 (T^{*} \rho (v_1,...,v_p) \equiv \rho (T v_1,...,T v_p) , 
 \end{align*}
 $\rho \in \Lambda^{p}(W), v_i \in V$
 \\
-T$^*\rho$ is is called the \textbf{pullback } of $\rho$ by T. The most important properties of
+$T$$^*\rho$ is is called the \textbf{pullback } of $\rho$ by $T$. The most important properties of
 pullback maps are given in the following:\\
-Let T : $\mathcal{V}$ $\to$ $\mathcal{W}$ and  S : $\mathcal{W}$ $\to$ $\mathcal{U}$. Then\\
+Let $T$ : $\mathcal{V}$ $\to$ $\mathcal{W}$ and  $S$ : $\mathcal{W}$ $\to$ $\mathcal{U}$. Then\\
 \\
 1. T$^* : \Lambda^{p} (\mathcal{W}) \to \Lambda^{p} (\mathcal{V})$\\
 2. (S $\circ$ T)$^*$ = $T^* \circ S^*$\\
-3. If T is the identity map, so is $T^*$\\
-4. If T is an isomorphism, so is $T^*$ and $(T^*)^{-1} = (T^{-1})^*$\\
+3. If $T$ is the identity map, so is $T^*$\\
+4. If $T$ is an isomorphism, so is $T^*$ and $(T^*)^{-1} = (T^{-1})^*$\\
 5. If $\rho \in \Lambda^{p} (\mathcal{W})$ and $\sigma \in \Lambda^{p} (\mathcal{W})$, then T$^*$( $\rho \wedge \sigma $) = $T^* \rho \wedge T^* \sigma$.
 \\ \\
 If \{e$_i$\}$^N_{i=1}$ is a basis of $\mathcal{V}$, we can form a basis for $\Lambda^{p}(\mathcal{V}^*)$ by constructing all products of the form $e_{i_1} \wedge e_{i_2} \wedge ... \wedge e_{1_p}$.  \\The number of linearly independent such vectors, which is the dimension of  $\Lambda^{p}(\mathcal{V}^*)$,  , is equal to the number
-of ways p numbers can be chosen from among N distinct numbers in such
-a way that no two of them are equal. This is simply the combination of N
+of ways $p$ numbers can be chosen from among $N$ distinct numbers in such
+a way that no two of them are equal. This is simply the combination of $N$
 objects taken p at a time. Thus, we have \\
 \begin{align*}
  dim (\Lambda^{p}(\mathcal{V}^*)) =  
@@ -786,7 +784,7 @@ A = \sum^{N}_{i_1 < i_2 < ... < i_p} A^{i_1...i_p}  e_{i_1} \wedge e_{i_2} \wedg
 \begin{align*}
  \dfrac{1}{p!} \sum^{N}_{i_1,i_2 ... i_p} A^{i_1...i_p}  e_{i_1} \wedge e_{i_2} \wedge ... \wedge e_{1_p}
 \end{align*}
-where A$^{i_1...i_p}$ are the components of A, which are assumed completely antisymmetric in all $i_1,i_2 ... i_p$. In the second sum, all i’s run from 1 to N.\\
+where A$^{i_1...i_p}$ are the components of $A$, which are assumed completely antisymmetric in all $i_1,i_2 ... i_p$. In the second sum, all i’s run from $1$ to $N$.\\
 \begin{thm}
 Set $\Lambda^{0}(\mathcal{V}^*)$ = $\mathbb{R}$ and let $\Lambda(\mathcal{V}^*)$ denote the direct
 sum of all  $\Lambda^{p}(\mathcal{V}^*)$:
@@ -868,8 +866,8 @@ show that $v_k$ and  the $e_i$ are linearly dependent. Thus, $v_k = \sum^p_{i=1}
  \begin{align*}
  \sum_{k<i} (A_{ki} - A_{ik}) e_k \wedge e_i
 \end{align*}
-where the last sum is over both k and i with k<i. Clearly, \{$e_k \wedge e_i$\} with k <
-i are linearly independent .\\ Therefore, their coefficients must
+where the last sum is over both k and i with $k < i$. Clearly, \{$e_k \wedge e_i$\} with$ k <
+i $are linearly independent .\\ Therefore, their coefficients must
 vanish.
 \end{proof}
 \begin{defn}
@@ -883,20 +881,20 @@ The Levi-Civita tensor $\epsilon_{i_1, i_2, ... , i_n}$ takes the same value in
 all coordinate systems.
 \end{prop}
 \begin{defn}
-A U-valued p-form, is a linear machine that takes p
-vectors from $\mathcal{V}$ and produces a vector in $\mathcal{U}$. The space of U-valued p-forms
+A $U$-valued $p$-form, is a linear machine that takes $p$
+vectors from $\mathcal{V}$ and produces a vector in $\mathcal{U}$. The space of $U$-valued $p$-forms
 is denoted by $\Lambda^{p}(\mathcal{V}, \mathcal{U})$. \\ In this new context $\Lambda^{p}(\mathcal{V})$ =  $\Lambda^{p}(\mathcal{V}, \mathbb{R})$.
 \end{defn}
 
 \subsubsection{Orientation}
 \begin{defn}
-An $\textbf{oriented basis}$ of an N-dimensional vector space is
-an ordered collection of N linearly independent vectors.
+An $\textbf{oriented basis}$ of an $N$-dimensional vector space is
+an ordered collection of $N$ linearly independent vectors.
 If \{v$_i$\}$^N_{i=1}$ is one oriented basis and \{u$_i$\}$^N_{i=1}$ is a second one, then\\
 \begin{align*}
 u_1 \wedge u_2 \wedge ... \wedge u_N = (det R)v_1 \wedge v_2 \wedge ... \wedge v_n,
 \end{align*}
-where R is the transformation matrix and det R is a nonzero number (R is
+where $R$ is the transformation matrix and det $R$ is a nonzero number ($R$ is
 invertible), which can be positive or negative
 \end{defn}
  \indent Accordingly, we have the following definition
@@ -919,19 +917,19 @@ and the second is called a left-handed coordinate system. Any other basis
 is either right-handed or left-handed. There is no third alternative!
 \end{exmp}
 \begin{defn}
-Let $\mathcal{V}$ be a vector space. Let $\mathcal{V}$$^{*}$ have the oriented basis \{$\epsilon_i$\}$^N_{i=1}$. The oriented $\textbf{volume element}$ $\mu \in \Lambda^{N}(\mathcal{V})$ of V is defined as
+Let $\mathcal{V}$ be a vector space. Let $\mathcal{V}$$^{*}$ have the oriented basis \{$\epsilon_i$\}$^N_{i=1}$. The oriented $\textbf{volume element}$ $\mu \in \Lambda^{N}(\mathcal{V})$ of $\mathcal{V}$ is defined as
 \begin{align*}
 \mu \equiv \epsilon^1 \wedge \epsilon^2 \wedge ... \wedge \epsilon^N.
 \end{align*}
 \end{defn}
 \indent Note that if \{$e_i$\} is as ordered as \{$\epsilon^j$\} then $\mu( e_1, e_2, ... , e_N) = +1/N!$ and we say that \{$e_i$\} is positively oriented with respect to $\mu$. In general, \{$v_i$\}  is
-positively oriented with respect to $\mu$ if $\mu(v_1, v_2, ... , v_N) > 0$. \\ The volume element of V is defined in terms of a basis for V$^*$
+positively oriented with respect to $\mu$ if $\mu(v_1, v_2, ... , v_N) > 0$. \\ The volume element of $\mathcal{V}$ is defined in terms of a basis for $\mathcal{V}^*$
 \subsection{Symplectic Vector Spaces}
 
 \begin{defn}
 A 2-form $\omega \in \Lambda^{2}(\mathcal{V})$ is $\textbf{nondegenerate}$ if $\omega(v_1, v_2) = 0$ for all $v_1 \in \mathcal{V}$ implies $v_2 = 0$. \\
 A $\textbf{symplectic form}$ on $\mathcal{V}$ is a nondegenerate 2-form $\omega \in \Lambda^{2}(\mathcal{V})$. 
-\\The pair(V,$\omega$) is called a $\textbf{symplectic vector space}$.\\
+\\The pair($V$,$\omega$) is called a $\textbf{symplectic vector space}$.\\
 If ($\mathcal{V}$,$\omega$) and ($\mathcal{W}$,$\rho$) are symplectic vector spaces, a linear transformation $T:\mathcal{V} \to \mathcal{W}$ is called a $\textbf{symplectic transformation}$ or a $\textbf{symplectic map}$ if T$^* \rho = \omega$.
 \end{defn}
 
@@ -951,12 +949,12 @@ case the inverse of $\omega^{\flat}$ is denoted by $\omega^{\sharp}$.
 \end{rem}
 \begin{prop}
 Let ($\mathcal{V}$,$\omega$) be a symplectic vector space. \\Then the set of
-symplectic mappings T : ($\mathcal{V}$,$\omega$) $\to$ ($\mathcal{V}$,$\omega$) forms a group under composition,
-called the $\textbf{symplectic group}$ and denoted by Sp($\mathcal{V}$,$\omega$).
+symplectic mappings $T$ : ($\mathcal{V}$,$\omega$) $\to$ ($\mathcal{V}$,$\omega$) forms a group under composition,
+called the $\textbf{symplectic group}$ and denoted by $Sp$($\mathcal{V}$,$\omega$).
 \end{prop}
 \subsection{Inner Product}
 \begin{defn}
-A $\textbf{symmetric bilinear form}$ b on $\mathcal{V}$ is a symmetric tensor of type (0, 2).
+A $\textbf{symmetric bilinear form}$ b on $\mathcal{V}$ is a symmetric tensor of type $(0, 2)$.
 \end{defn}
 \indent If \{e$_j$\}$^N_{j=1}$ is a basis of $\mathcal{V}$ and \{$\epsilon^i$\}$^N_{i=1}$ is its dual basis, then b = $\dfrac{1}{2}b_{ij}\epsilon^i\epsilon^j$, because $\epsilon^i \epsilon^j $ = $\epsilon^i \otimes \epsilon^j$ + $\epsilon^j \otimes \epsilon^i$ form a basis of S$_2$($\mathcal{V}$). \\
 If v and u are any two vectors in $\mathcal{V}$, then
@@ -996,13 +994,13 @@ b_{ij}v^j\epsilon^i
 \end{align*}
 
 
-Thus, b(v)$\in$ $\mathcal{V}$$^*$. \\This shows that b can be thought of as a mapping from
+Thus, $b(v)$$\in$ $\mathcal{V}$$^*$. \\This shows that b can be thought of as a mapping from
 $\mathcal{V}$ to $\mathcal{V}$$^*$, which we denote by $b_*$ and write $b_*$ : $\mathcal{V}$ $\to$ $\mathcal{V}$$^*$. 
 \\For this mapping
-to make sense, it should not matter which factor in the symmetric product v
+to make sense, it should not matter which factor in the symmetric product $v$
 contracts with. But this is a trivial consequence of the symmetries b$_{ij}$ = b$_{ji}$
 and $\epsilon^i \epsilon^j = \epsilon^j \epsilon^i.$\\
-\\Let v and u be any two vectors in $\mathcal{V}$. \\Let  \{e$_j$\}$^N_{j=1}$ be a basis of $\mathcal{V}$ and \{$\epsilon^i$\}$^N_{i=1}$ its dual basis. The natural pairing of v and b$_*$(u) is given by
+\\Let $v$ and $u$ be any two vectors in $\mathcal{V}$. \\Let  \{e$_j$\}$^N_{j=1}$ be a basis of $\mathcal{V}$ and \{$\epsilon^i$\}$^N_{i=1}$ its dual basis. The natural pairing of v and b$_*$(u) is given by
 \begin{align*}
 \braket{b_*(u), v} = 
 \end{align*}
@@ -1035,9 +1033,9 @@ b_*(v) = v_i \epsilon^i
 where $v_i = b_{ij} v^j$.\\
 \\
 We have thus $\textbf{lowered}$ the index of v$^j$ by the use of the symmetric bilinear
-form b. In applications v$_i$ is uniquely defined; furthermore, there is a one-to-one correspondence between v$_i$ and v$^i$
+form $b$. In applications v$_i$ is uniquely defined; furthermore, there is a one-to-one correspondence between v$_i$ and v$^i$
 . This can happen if and only if the
-mapping b$_*$ : $\mathcal{V}$ $\to$ $\mathcal{V}$$^*$ is invertible, in which case b is usually denoted by g.\\
+mapping b$_*$ : $\mathcal{V}$ $\to$ $\mathcal{V}$$^*$ is invertible, in which case b is usually denoted by $g$.\\
 If g$_*$ is invertible, there must exist a unique $(g_*)^-1 \equiv (g^-1)_* : \mathcal{V}^* \to \mathcal{V}$, or $g^-1 \in S_2(\mathcal{V}^*)= S_2(\mathcal{V})$, such that
 \begin{align*}
 v^j e_j = v = 
@@ -1067,18 +1065,18 @@ to omit the -1 and simply write \\
 v^j = g ^ {ji} v_{i},
 \end{align*}
 \end{exmp}
-where it is understood that g with upper indices is the inverse of g (with
+where it is understood that $g$ with upper indices is the inverse of $g$ (with
 lower indices). \\
 \begin{defn}
 An invertible bilinear form is called $\textbf{nondegenerate}$.
 \end{defn}
 \begin{defn}
-A symmetric bilinear form g that is nondegenerate is called an $\textbf{inner product}$. When there is no danger of confusion, we write $\braket{u, v}$ instead of g(u, v).
+A symmetric bilinear form g that is nondegenerate is called an $\textbf{inner product}$. When there is no danger of confusion, we write $\braket{u, v}$ instead of $g(u, v)$.
 \end{defn}
 
 We therefore see that the presence of a nondegenerate symmetric bilinear
 form (or an inner product) naturally connects the vectors in $\mathcal{V}$ and $\mathcal{V}$$^*$in a
-unique way. \\For any vector v $\in$ $\mathcal{V}$ there is a unique linear functional $\phi_u \in \mathcal{V}^*$
+unique way. \\For any vector $v$ $\in$ $\mathcal{V}$ there is a unique linear functional $\phi_u \in \mathcal{V}^*$
 given by $\phi_u = g_*(v)$. \\An inner product
 makes a vector space \textbf{self-dual}. \\There exists a determinant function $\Delta_0$ such that
 \begin{align*}
@@ -1108,7 +1106,7 @@ and only if\\ \\
 \begin{proof}
 The first part is a direct consequence of the definition of nondegeneracy. \\The second part follows from the fact that $g_*$ : $\mathcal{V}$ $\to$ $\mathcal{V}$$^*$ is invertible if and only if the nullity of $g_*$ is zero.  It follows that if $v \in \mathcal{V}$ is nonzero, then $g_*(v) \ne 0,$ i.e., $g_*(v)$ is not the zero functional. \\Thus, there must exist a
 vector w $\in$ $\mathcal{V}$ such that [ $g_*$(v)](w) $\ne$ 0. \\The proposition is proved once we
-note that [$g_*$(v)](w) $\equiv$ g(v,w).
+note that [$g_*$(v)](w) $\equiv$ $g(v, w)$.
 \end{proof}
 Let ($\mathcal{V}$,g) and ($\mathcal{U}$,h) be inner product spaces.\\ Recall that an isometry is
 a linear transformation T : $\mathcal{V}$ $\to$ $\mathcal{U}$ which preserves the inner product, i.e.,
@@ -1117,7 +1115,7 @@ g(v_1, v_2) = h(T v_1, T v_2).
 \end{align*}
 It was shown in Theorem $\ref{inj}$ that  an isometry is injective. However, the
 proof relied on the positive definiteness of the inner product. That is not
-necessary. In fact, suppose that Tv = 0. Then, for any x $\in$ $\mathcal{V}$, we have
+necessary. In fact, suppose that $Tv = 0$. Then, for any $x$ $\in$ $\mathcal{V}$, we have
 \begin{align*}
 g(x, v) = h(Tx,Tv) = h(Tx,0) = 0.
 \end{align*}
@@ -1134,27 +1132,27 @@ g(T^t u, v) = g(u, Tv).
 \end{align*}
 \end{defn}
 
-If T is an is isometry, then
+If $T$ is an is isometry, then
 \begin{align*}
 g(u, v) = g(Tu, Tv) = g(T^t Tu, v).
 \end{align*}
 Since this holds for arbitrary u and v, we must have T$^t$
-T = 1.\\ Thus we have the following proposition
+$T = 1$.\\ Thus we have the following proposition
 \begin{prop}
-An endomorphism T : $\mathcal{V}$$\to$$\mathcal{V}$ is an isometry if and only
+An endomorphism $T$ : $\mathcal{V}$$\to$$\mathcal{V}$ is an isometry if and only
 if T$^t$ = T$^{-1}$.
 \end{prop}
 \begin{defn} 
 A symmetric bilinear form b can be categorized as follows:
 \\\\
-1. positive (negative) definite: b(v, v) > 0 [b(v, v) < 0] for every
-nonzero vector v;\\\\
+1. positive (negative) definite: $b(v, v) > 0$ [b(v, v) < 0] for every
+nonzero vector $v$;\\\\
 2. definite: b is either positive definite or negative definite;\\\\
 3. positive (negative) semidefinite: b(v, v) $\geq$ 0 [b(v, v) $\leq$ 0] for every v;\\\\
-4. semidefinite: b is either positive semidefinite or negative semidefinite;\\\\
-5. indefinite: b is not definite.\\\\
+4. semidefinite: $b$ is either positive semidefinite or negative semidefinite;\\\\
+5. indefinite: $b$ is not definite.\\\\
 \end{defn}
-If b is a symmetric bilinear form on $\mathcal{V}$, then the restriction b|$_\mathcal{W}$ of b on a
+If $b$ is a symmetric bilinear form on $\mathcal{V}$, then the restriction b|$_\mathcal{W}$ of $b$ on a
 subspace $\mathcal{W}$ is also symmetric and bilinear, and if b is definite or semidefinite, then so is b|$_\mathcal{W}$.
 \begin{defn}
 The $\textbf{index}$ v of a symmetric bilinear form b on $\mathcal{V}$ is the
@@ -1183,30 +1181,30 @@ $\begin{pmatrix}
 \end{pmatrix}$
 which is not invertible.
 \end{exmp}
-Let g be an inner product on $\mathcal{V}$. \\
-Two vectors u, v$\in$$\mathcal{V}$ are said to be
-g-orthogonal if g(u, v) = 0. \\A null or isotropic vector of g is a vector that
-g-orthogonal and null or
+Let $g$ be an inner product on $\mathcal{V}$. \\
+Two vectors $u, v$$\in$$\mathcal{V}$ are said to be
+$g$-orthogonal if $g(u, v) = 0$. \\A null or isotropic vector of g is a vector that
+$g$-orthogonal and null or
 isotropic vectors
-is g-orthogonal to itself. \\If g is definite, then the only null vector is the zero
+is $g$-orthogonal to itself. \\If g is definite, then the only null vector is the zero
 vector. \\\\The converse is also true, as the following proposition shows
 
 \begin{prop}
-If g is not definite, then there exists a nonzero
+If $g$ is not definite, then there exists a nonzero
 isotropic vector.
 \end{prop}
 \begin{proof}
-That g is not positive definite implies that there exists a nonzero vector v$\in$$\mathcal{V}$ such that g(v, v) $\leq$ 0. \\Similarly, that g is not negative definite
-implies that there exists a nonzero vector w $\in$ $\mathcal{V}$ such that g(w, w) $\geq$ 0. \\Construct the vector u = $\alpha$v + (1 - $\alpha$)w and note that g(u,u) is a continuous function of $\alpha$. \\For $\alpha$ = 0 this function has the value g(w,w) $\geq$ 0, and for $\alpha$ = 1 it has the value g(v, v) $\leq$ 0. \\Thus, there must be some $\alpha$ for which g(u, u) = 0.
+That $g$ is not positive definite implies that there exists a nonzero vector v$\in$$\mathcal{V}$ such that $g(v, v)$ $\leq$ 0. \\Similarly, that g is not negative definite
+implies that there exists a nonzero vector w $\in$ $\mathcal{V}$ such that $g(w, w)$ $\geq$ 0. \\Construct the vector $u $= $\alpha$v + (1 - $\alpha$)w and note that $g(u, u)$ is a continuous function of $\alpha$. \\For $\alpha$ = 0 this function has the value$g(w, w)$ $\geq$ 0, and for $\alpha$ = 1 it has the value $g(v, v) $$\leq$ 0. \\Thus, there must be some $\alpha$ for which $g(u, u) = 0.$
 \end{proof}
 \begin{defn}
-Let g be an inner product on $\mathcal{V}$ and y a non-null (nonisotropic) vector in $\mathcal{V}$. The $\textbf{projection}$ $x_y$ of x along y is given by 
+Let $g$ be an inner product on $\mathcal{V}$ and y a non-null (nonisotropic) vector in $\mathcal{V}$. The $\textbf{projection}$ $x_y$ of $x$ along $y$ is given by 
 \begin{align*}
 x_y = \dfrac{g(x,y)}{g(y,y)} y
 \end{align*}
 \end{defn}
 \begin{defn}
-Let g be an inner product on $\mathcal{V}$ and y a non-null (nonisotropic) vector in $\mathcal{V}$. \\The $\textbf{reflection}$ $x_{r,y}$ of x in a plane perpendicular to y are given by 
+Let $g$ be an inner product on $\mathcal{V}$ and y a non-null (nonisotropic) vector in $\mathcal{V}$. \\The $\textbf{reflection}$ $x_{r,y}$ of x in a plane perpendicular to y are given by 
 \begin{align*}
 x_{r,y} = x - 2 \dfrac{g(x,y)}{g(y,y)} y
 \end{align*}
@@ -1244,7 +1242,7 @@ v \in ker g_\mathcal{W} \Leftrightarrow
 g(v, e_i) = 0, i = 1, 2, ... , m.
 \end{align*}
 The last equality follows from the linear independence of  \{$\epsilon$$_i$\}$^m_{i=1}$, and it holds if and only if v $\in$ $\mathcal{W}$$^\perp$.\\\\
-2. If v $\in$ $\mathcal{W}$, then v is orthogonal to all vectors in $\mathcal{W}^\perp$, i.e., $v \in (\mathcal{W}^\perp)^\perp$. Thus $\mathcal{W}$ $\subset$ $(\mathcal{W}^\perp)^\perp$. \\
+2. If $v$ $\in$ $\mathcal{W}$, then v is orthogonal to all vectors in $\mathcal{W}^\perp$, i.e., $v \in (\mathcal{W}^\perp)^\perp$. Thus $\mathcal{W}$ $\subset$ $(\mathcal{W}^\perp)^\perp$. \\
 Applying 1) to the subspace
 $\mathcal{W}$$^\perp$, we get dim $W^\perp$ + dim (W$^\perp)^\perp$ = dim V. Hence, dim W = dim (W$^\perp)^\perp$, and W = ( W$^\perp)^\perp$.
 \end{proof}
@@ -1260,15 +1258,15 @@ A subspace $\mathcal{W}$ of an inner product space $\mathcal{V}$ is nondegenerat
 A subspace $\mathcal{W}$ of an inner product space is nondegenerate if and only if $\mathcal{W}$$^\perp$ is nondegenerate.
 \end{cor}
 \begin{lem}
-6 Let x and y be two vectors in $\mathcal{V}$ such that g(x, x) =
-g(y, y) $\ne$ 0. \\Then there is a reflection R such that R(x) = $\pm y$.
+6 Let $x$ and $y $be two vectors in $\mathcal{V}$ such that $g(x, x) =
+g(y, y)$ $\ne$ 0. \\Then there is a reflection R such that $R(x) = $$\pm y$.
 \end{lem}
 \begin{proof}
 Because of the relation
 \begin{align*}
 g(x + y, x + y) + g(x -y, x - y) = 4g(x, x) \ne 0,
 \end{align*}
-at least one of the terms on the left is nonzero. \\Assume that g(x -y, x - y) $\ne$, and let z = x - y. \\Then the reflection operator
+at least one of the terms on the left is nonzero. \\Assume that $g(x -y, x - y)$ $\ne$, and let $z = x - y.$ \\Then the reflection operator
 \begin{align*}
 R_z = 1 - 2P_z = 1 - 2z \dfrac{1}{g(z, z)} \phi_z
 \end{align*}
@@ -1289,14 +1287,14 @@ R_z(x) = x - 2z\dfrac{g(z,x)}{g(z,z)} = x - 2(x + y)\dfrac{g(x+y,x)}{g(x+y, x+y)
 and the proof of the lemma is complete. 
 \end{proof}
 \begin{thm}
-Let $\mathcal{V}$ be an N-dimensional inner product space.
-Then any isometry T of $\mathcal{V}$ is the product of at most N + 1 reflections.
+Let $\mathcal{V}$ be an $N$-dimensional inner product space.
+Then any isometry $T$ of $\mathcal{V}$ is the product of at most $N + 1$ reflections.
 \end{thm}
 \subsubsection{Orthonormal Basis}
 Whenever there is an inner product on a vector space, there is the possibility
-of orthogonal basis vectors. \\Since, in general, g(v, v) is allowed to be negative or zero, we have to redefine what we mean by a vector of norm 1. \\If
-g(v, v) $\ne$ 0, we define the norm of v as ||v|| = |$\sqrt{g(v,v)}|$. A unit vector, or
-a vector of norm 1 obtained from v is simply v /||v||.
+of orthogonal basis vectors. \\Since, in general, $g(v, v)$ is allowed to be negative or zero, we have to redefine what we mean by a vector of norm 1. \\If
+$g(v, v)$ $\ne$ 0, we define the norm of v as$ ||v|| = $|$\sqrt{g(v,v)}|$. A unit vector, or
+a vector of norm 1 obtained from $v$ is simply $v /||v||.$
 \begin{thm}
 An inner product space $\mathcal{V}$ has an orthonormal basis.
 \end{thm}
@@ -1312,11 +1310,11 @@ The number $n_-$ of negative signs in ($\eta_{11}, \eta_{22},..., \eta{NN}$), th
 \end{thm}
 \begin{cor}
 Let $\mathcal{W}$$^-$ denote the largest subspace of the inner product
-space $\mathcal{V}$ on which g is negative definite. \\Then $\mathcal{V}$ = $\mathcal{W}^- \oplus \mathcal{W}^+$. where $\mathcal{W}$$^+$ is
+space $\mathcal{V}$ on which $g$ is negative definite. \\Then $\mathcal{V}$ = $\mathcal{W}^- \oplus \mathcal{W}^+$. where $\mathcal{W}$$^+$ is
 the orthogonal complement of $\mathcal{W}^-$ and g is positive definite on $\mathcal{W}^+$.
 \end{cor}
 \begin{exmp}
-Take the Euclidean n-space $\mathbb{R}^n$ and for some integer 0 $\leq$ v $\leq$ n, change
+Take the Euclidean $n-$space $\mathbb{R}^n$ and for some integer 0 $\leq$ v $\leq$ n, change
 the signs of the first v terms in the usual inner product of $\mathbb{R}^n$:
 \begin{align*}
 \braket{u, v} \equiv g(u,v) = \eta_{ij} u^i v^j = \sum^n_{i=1} \eta_{ij} u^i v^i=
@@ -1334,7 +1332,7 @@ Let $\mathbb{R}^n_v$ and $\mathbb{R}^m_\mu$ be semi-Euclidean spaces.Then
 \end{prop}
 \begin{defn}
 The volume element of an inner product space ($\mathcal{V}$,g)
-relative to g is a volume element obtained from any orthonormal basis
+relative to $g$ is a volume element obtained from any orthonormal basis
 of $\mathcal{V}$$^*$
 \end{defn}
 \subsubsection{Inner Product on $\Lambda^{p}(\mathcal{V}, \mathcal{U})$}
@@ -1378,7 +1376,7 @@ Therefore,
 \end{align*}
 because $\alpha_{\pi (j_1) \pi (j_2) ... \pi (j_p)}$ = $\epsilon_\pi \alpha_{j_1 j_2 ... j_p}$ due to the antisymmetry of the components of p-forms.\\\\
 
-Having found $\widetilde{g}$, we can extend it further to  $\Lambda^{p}(\mathcal{V}, \ \mathcal{U})$ if $\mathcal{U}$ has an inner product h. \\Let \{f$_a$\}$^{dim \mathcal{U}}_{a=1}$ be a basis of $\mathcal{U}$, and note that any $\alpha \in \Lambda^{p}(\mathcal{V},\ \mathcal{U})$ can be written as $\alpha = \sum^{dim \mathcal{U}}_{a =1} \alpha^a f_a$, where $\alpha^a \in \Lambda^{p}(\mathcal{V})$. \\Denote the inner product of $\Lambda^{p}(\mathcal{V},\ \mathcal{U})$ as gh and, for 
+Having found $\widetilde{g}$, we can extend it further to  $\Lambda^{p}(\mathcal{V}, \ \mathcal{U})$ if $\mathcal{U}$ has an inner product $h$. \\Let \{f$_a$\}$^{dim \mathcal{U}}_{a=1}$ be a basis of $\mathcal{U}$, and note that any $\alpha \in \Lambda^{p}(\mathcal{V},\ \mathcal{U})$ can be written as $\alpha = \sum^{dim \mathcal{U}}_{a =1} \alpha^a f_a$, where $\alpha^a \in \Lambda^{p}(\mathcal{V})$. \\Denote the inner product of $\Lambda^{p}(\mathcal{V},\ \mathcal{U})$ as $gh$ and, for 
 
 \begin{align*}
 \alpha = \sum^{dim \mathcal{U}}_{a=1} \alpha^a f_a
@@ -1453,7 +1451,7 @@ identity operator. This is partially true. \\\\The following theorem is a precis
 statement of this conjecture
 
 \begin{thm}
-Let V be an oriented space with an inner product g.\\
+Let $\mathcal{V}$ be an oriented space with an inner product g.\\
 For A $\in$ $\Lambda^{p}(\mathcal{V})$ we have
 \begin{align*}
 \ast \circ \ast A \equiv \ast \ast A = (-1)^v(-1)^{p(N-p)}A
@@ -1464,9 +1462,9 @@ In particular, for Euclidean spaces with an odd number of dimensions
 (such as $\mathbb{R}^3, \ \mathbb{R}^5$ etc), $\ast \ast A = A.$\\
 One can extend the star operation to any A $\in \Lambda^{p}(\mathcal{V})$ by writing A as a linear combination of basis vectors of $\Lambda^{p}(\mathcal{V})$ constructed out of 
 \{e$_i$\}$^N_{i=1}$ and using linearity of $\ast$.\\
-The star operator creates an (N - p)-form out of a p-form. If we take
-the exterior product of a p-form and the star of another p-form, we get an
-N-form, which is proportional to a volume element.
+The star operator creates an $(N - p)-$form out of a $p$-form. If we take
+the exterior product of a p-form and the star of another $p$-form, we get an
+$N$-form, which is proportional to a volume element.
 \begin{thm}
 Let ($\mathcal{V}$, g) be an inner product space and $\mu$ a volume element relative to g. \\Let $\widetilde{g}$ be the inner product induced by g on $\in \Lambda^{p}(\mathcal{V})$  and given explicitly in $\ref{star}$. \\Then for $\alpha \beta \in \Lambda^{p}(\mathcal{V})$ , we have $\alpha \wedge \ast \beta = \widetilde{g}(\alpha, \beta) \mu.$
 \end{thm}
@@ -1482,7 +1480,7 @@ B^{123} = -B^{132} = -B^{213} = B^{231} = B^{312} = -B^{231} = \dfrac{1}{6}
 \end{align*}
 This should be kept in mind when sums over exterior products with numerical coefficients are encountered.
 \begin{exmp}
-Let a, b $\in \mathbb{R}^3$ and $\{e_1, e_2, e_3\}$ an oriented orthonormal basis of $\mathbb{R}^3$. Then a = $a^i e_i$ and b = $b^j e_j$.\\
+Let $a, b $$\in \mathbb{R}^3$ and $\{e_1, e_2, e_3\}$ an oriented orthonormal basis of $\mathbb{R}^3$. Then a = $a^i e_i$ and b = $b^j e_j$.\\
 Let us calculate  $a \wedge b$ and $\ast(a \wedge b)$.\\
 We assume a Euclidean g on $\mathbb{R}^3$. Then $a \wedge b$ = $( a^i e_i) \wedge (b^j e_j) = a^i b^j e_i \wedge e_j$ , and
 \begin{align*}
@@ -1502,16 +1500,11 @@ When the product of two tensors is summed over a pair of indices in which one of
 \newpage
 \begin{thebibliography}{9}
 
-\bibitem{1}  Hassani, S,
-
-  \emph{Mathematical Physics: A Modern Introduction to Its Foundations}  2nd ed. Springer, 2013
+\bibitem{1}  Hassani, S, Mathematical Physics: A Modern Introduction to Its Foundations  2nd ed. Springer, 2013
  
-\bibitem{2}  Keith Contrad,
+\bibitem{2}  Keith Conrad, Tensor products  https://kconrad.math.uconn.edu/blurbs/linmultialg/tensorprod.pdf
 
-  \emph{Tensor products}  https://kconrad.math.uconn.edu/blurbs/linmultialg/tensorprod.pdf
-
-\bibitem{3} Mathonline.wikidot.com
-  \emph{Vector space Isomorphisms examples 1} http://mathonline.wikidot.com/vector-space-isomorphisms-examples-1
+\bibitem{3} Mathonline.wikidot.com Vector space Isomorphisms examples 1 http://mathonline.wikidot.com/vector-space-isomorphisms-examples-1
 
 
 \end{thebibliography}
