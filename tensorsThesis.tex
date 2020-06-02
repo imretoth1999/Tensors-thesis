@@ -64,7 +64,7 @@ Let’s consider that for most of civilization, the tallest structures created b
 The tensor mathematics used to model stresses in materials such as steel was developed in the mid 1800’s by Augustin-Louis Cauchy. These tensor equations helped advance humanity’s engineering from tall piles of stones to the Eiffel Tower, and far beyond.
 The consequences of this can be staggering if you think that every time you drive over a large bridge or ride a tall elevator, that your life relies (at least in some small way) on these equations of mathematical physics and continuum mechanics. Engineering design calculations apply principles of tensors to ensure that the roof doesn’t fall in on our heads.\\
 Because I am a mathematics and informatics student, I can't neglect the use of tensors in deep learning. As we know modern data is often multi-dimensional. Tensors can play an important role in deep learning by encoding multi-dimensional data. For example, a picture is generally represented by three fields: width, height and color. It makes total sense to encode it as a 3D tensor.  Operations with tensors can simplify the process of creating neural networks used in algorithms to predict data.\\
-My paper structures the tensors in two parts.\\The first part being the preliminaries that are needed to understand the rest of the paper. It discusses concepts like vector space, multilinear maps, dimensions that are extremely important in understanding the tensors. This way if anyone reads the paper, they can refresh their memory about the basic concepts so they can dive in confidently in the second part.\\
+My paper structures the tensors in two parts.\\The first part being the preliminaries that are needed to understand the rest of the paper. It discusses concepts like vector space, multilinear maps, dimensions that are extremely important in understanding the tensors. This way if anyone reads the paper, they can refresh their memory about the basic concepts so they can dive in confidently in the second part. Also there are examples that further help the reader understand those concepts.\\
 The second part of my paper consists of the actual concepts regarding tensors. This part consists of 6 subparts that contain important concepts about the tensors.\\The first part talks about the use of tensors as multilinear maps. The second part talks about the symmetry of tensors. The third part discusses about the exterior algebra by first introducing the important notion of am exterior product. The fourth part talks about sympletic vector spaces. The fifth part talks about the inner product revised in the context of tensors, we heard about the inner product of vectors but now we extend the concept to tensors. The sixth part introduces the concept of Hodge Star operator. This separation of concepts by parts is similar to the one used by Sadri Hassani in the book Mathematical Physics A Modern Introduction to Its Foundations, the book that is used in making this thesis. 
 \newpage 
 \section{Preliminaries}
@@ -432,7 +432,7 @@ and $s$ is called the \textbf{covariant degree} of the tensor.\\\\
 \end{defn}
 
 \begin{exmp}
-\item[a)]A tensor of type (0, 0) is defined to be a scalar, so $T^0_0$(V) = $\mathbb(R)$.
+\item[a)]A tensor of type (0, 0) is defined to be a scalar, so $T^0_0$(V) = $\mathbb{R}$.
 \item[b]) A tensor of type (1, 0), an ordinary vector, is called a contravariant vector, and one
 of type (0, 1), a dual vector (or a linear functional), is called a covariant
 vector.
@@ -540,7 +540,7 @@ A tensor A is \textbf{symmetric} in the $i$th and $j$th variables if its value a
 \end{defn}
 \hspace{1cm} From this definition. it follows that in any basis, the components of a symmetric tensor do not change when the $i$th and $j$th indices are interchanged.
 \begin{defn}
-A tensor is \textbf{contravariant-symmetric} if it is symmetric in every pair of its covariant indices. A tensor is \textbf{symmetric} if it is both contravariant-symmetric and covariant-symmetric.
+A tensor is \textbf{contravariant-symmetric} if it is symmetric in every pair of its contravariant indices. A tensor is \textbf{covariant-symmetric} if it is symmetric in every pair of its covariant indices. A tensor is \textbf{symmetric} if it is both contravariant-symmetric and covariant-symmetric.
 \end{defn}
 \hspace{1cm} An immediate consequence of this definition is the following theorem:
 \begin{thm}
@@ -615,7 +615,7 @@ The \textbf{symmetric product} of symmetric tensors A$\in S^r$($\mathcal{V}$) an
 (AB)(\tau^1,...,\tau^{r+s})\equiv \dfrac{(r+s)!}{r!s!}S(A\otimes B)(\tau^1,...,\tau^{r+s})\\
 = \dfrac{1}{r!s!}\sum_{\pi}A(\tau^{\pi(1)},...,\tau^{\pi(r)})B(\tau^{\pi(r+1)},...,\tau^{\pi(r+s)}), 
 \end{align*} 
-where the sum is over all permutations of $1 2,...,r+s$. The symmetric product of A$\in S_{r}$($\mathcal{V}$) and B$\in S_{s}$($\mathcal{V}$) is defined similarly.
+where the sum is over all permutations of $1,2,...,r+s$. The symmetric product of A$\in S_{r}$($\mathcal{V}$) and B$\in S_{s}$($\mathcal{V}$) is defined similarly.
 \end{defn}
 \begin{exmp}
 Let us construct the symmetric tensor products of vectors. First we find the symmetric product of v$_1$ and v$_2$ both belonging to $\mathcal{V}$ = T$_0^1$($\mathcal{V}$):
@@ -643,7 +643,7 @@ and contravariant skew-symmetric.
 \begin{thm}
 A tensor $A$ of type$(r, 0)$ is skew if and only if for any permutations $\pi$ of $1, 2, ... r$ and any $\tau^1,\tau^2, ..., \tau^r$ in $\mathcal{V}$$^*$. we have
 \begin{align*}
-A(\tau^{\pi(1)},\tau^{\pi(2)},....,\tau^{\pi(r)} = \epsilon_\pi A(\tau^1,\tau^2,...,\tau^r).
+A(\tau^{\pi(1)},\tau^{\pi(2)},....,\tau^{\pi(r)}) = \epsilon_\pi A(\tau^1,\tau^2,...,\tau^r).
 \end{align*}
 \end{thm}
 \begin{proof}
@@ -654,7 +654,7 @@ If by all the permutations $\pi$ of any $\tau$, the tensor $A$ changes it's sign
 \begin{defn}
 An \textbf{antisymmetrizer} is a linear operator $A$ on T$^r_0$, given by 
 \begin{align*}
-[A(T)](\tau^1,...,\tau^r) = \dfrac{1}{r!}\sum_{\pi}T(\tau^{\pi(1)},....,\tau^{\pi(r)}).
+[A(T)](\tau^1,...,\tau^r) = \dfrac{1}{r!}\sum_{\pi} \epsilon_\pi T(\tau^{\pi(1)},....,\tau^{\pi(r)}).
 \end{align*}
 \end{defn}
 $A(T)$ is denoted by $T$$_a$.\\\\
@@ -703,7 +703,7 @@ T_a(\tau^1,\tau^2,\tau^3) =
 
 \subsection{Exterior algebra}
 The following discussion will concentrate on tensors of type $(r, 0)$. However, interchanging the roles of $\mathcal{V}$ and $\mathcal{V}$$^*$ makes all definitions, theorems,
-propositions, and conclusions valid for tensors of type $(0, s)$ as well. The set of all skew-symmetric tensors of type $(p, 0)$ forms a subspace of T$^{p}_{0}$. This subspace is denoted by $\Lambda^{p}  (V^*)$ and its members are called \textbf{p-vectors} It is not, however, an algebra unless we define a skew-symmetric
+propositions, and conclusions valid for tensors of type $(0, s)$ as well. The set of all skew-symmetric tensors of type $(p, 0)$ forms a subspace of T$^{p}_{0}$. This subspace is denoted by $\Lambda^{p}  (V^*)$ and its members are called \textbf{p-vectors}. It is not, however, an algebra unless we define a skew-symmetric
 product analogous to that for the symmetric case. This is done in the following definition:
 \begin{defn}
 The \textbf{exterior product} (also called the wedge, Grassmann, alternating, or veck product) of two skew-symmetric tensors \textbf{A}$\in\Lambda^{p}(\mathcal{V}^*)$ and  \textbf{B}$\in\Lambda^{q}(\mathcal{V}^*)$ is a skew-symmetric tensor belonging to $\Lambda^{p+q}(\mathcal{V}^*)$ and given by
@@ -826,6 +826,44 @@ each will have two factors of a vector in the wedge product) except the first
 one. Thus, we have $\alpha_1 v_1 \wedge ... \wedge v_p $.  The fact that the wedge product is
 not zero forces $\alpha_1$ to be zero. \\Similarly, multiplying by $v_1 \wedge v_3 \wedge ... \wedge v_p$ shows that $\alpha_2$ = 0, and so on.
 \end{proof}
+\begin{exmp}
+Using the exterior product show whether the following three vectors are linearly dependent or independent:
+\begin{align*}
+v_1 = 2e_1 - e_2 +3 e_3,\\
+v_2 = -e_1 + 3e_2,\\
+v_3 = 3e_1 + 2e_2 - 4e_3.
+\end{align*}
+Using the above proposition, the vectors $v_1, v_2, v_3$ are linearly independent if and only if
+\begin{align*}
+v_1 \wedge v_2 \wedge v_3 \ne 0
+\end{align*}
+Let's compute $v_1 \wedge v_2 \wedge v_3$
+\begin{align*}
+v_1 \wedge v_2 \wedge v_3 =
+\end{align*}
+\begin{align*}
+( 2e_1 - e_2 +3 e_3) \wedge ( -e_1 + 3e_2) \wedge (3e_1 + 2e_2 - 4e_3 ) =
+\end{align*}
+\begin{align*}
+(-2 e_1 \wedge e_1 + 6 e_1 \wedge e_2  -1 e_1 \wedge e_2 -3 e_2 \wedge e_2 + 3 e_1 \wedge e_3 - 9 e_2\wedge e_3)\wedge v_3=
+\end{align*}
+\begin{align*}
+(6 e_3 - 1 e_3 - 3 e_2 -9 e_1) \wedge v_3 =
+\end{align*}
+\begin{align*}
+(-9 e_1 - 3 e_2 + 5 e_3) \wedge (3e_1 + 2e_2 - 4e_3) = 
+\end{align*}
+\begin{align*}
+(- 27 e_1 \wedge e_1 - 18 e_1 \wedge e_2 - 36 e_1 \wedge e_3 + 9 e_1 \wedge e_2 - 6 e_2 \wedge e_2 +\\12 e_2 \wedge e_3 -15 e_1 \wedge e_3 - 10 e_2 \wedge e_3 -20 e_3 \wedge e_3) =
+\end{align*}
+\begin{align*}
+(- 18 e_3 + 36 e_2 + 9 e_3 + 12 e_1 +15 e_2 -10 e_1) =
+\end{align*}
+\begin{align*}
+(2 e_1 + 51 e_2  - 9_3)
+\end{align*}
+where we used that $e_i \wedge e_i$ is zero and $e_j \wedge e_i = - e_i \wedge e_j$. We can see that it is indeed different from zero so the vectors are linearly independent.
+\end{exmp}
 \begin{exmp}
 Let \{e$_i$\}$^N_{i=1}$ be a basis for $\mathcal{V}$. \\\\Let $v_1 = e_1 + 2e_2 - e_3$ $v_2 = 3e_1 + e_2 + 2e_3$ , $v_3 = -e_1 - 3e_2 + 2 e_3$.\\\\
 \begin{align*}
@@ -1260,7 +1298,7 @@ A subspace $\mathcal{W}$ of an inner product space $\mathcal{V}$ is nondegenerat
 A subspace $\mathcal{W}$ of an inner product space is nondegenerate if and only if $\mathcal{W}$$^\perp$ is nondegenerate.
 \end{cor}
 \begin{lem}
-6 Let $x$ and $y $be two vectors in $\mathcal{V}$ such that $g(x, x) =
+Let $x$ and $y $be two vectors in $\mathcal{V}$ such that $g(x, x) =
 g(y, y)$ $\ne$ 0. \\Then there is a reflection R such that $R(x) = $$\pm y$.
 \end{lem}
 \begin{proof}
@@ -1416,14 +1454,14 @@ from $\epsilon_{j_1...j_N}$ by raising its first p subscripts.\\
 Let us apply Definition $\ref{star}$ to $\Lambda^p(\mathbb{R}^3*)$ for p = 0, 1, 2, 3.\\
 Let $\{e_1, e_2, e_3 \}$ be an oriented orthonormal basis of $\mathbb{R}^3$.
 \\\\
-a) For $\Lambda^0(\mathbb{R}^3*)$ = $\mathbb{R}$ a basis is 1, and $\ref{star}$ gives:
+a) For $\Lambda^0(\mathbb{R}^3*)$ = $\mathbb{R}$ a basis is 1, and definition $\ref{star}$ gives:
 \begin{align*}
 \ast 1 = \dfrac{1}{3!} \epsilon^{ijk} e_i \wedge e_j \wedge e_k =
 \end{align*}
 \begin{align*}
  e_1 \wedge e_2 \wedge e_3.
 \end{align*}
-b) For $\Lambda^1(\mathbb{R}^3*)$ = $\mathbb{R}^3$ a basis is $\{e_1, e_2, e_3 \}$ and $\ref{star}$ gives 
+b) For $\Lambda^1(\mathbb{R}^3*)$ = $\mathbb{R}^3$ a basis is $\{e_1, e_2, e_3 \}$ and definition $\ref{star}$ gives 
 \begin{align*}
 \ast e_i = \dfrac{1}{2} \epsilon^{jk}_i e_j \wedge e_k
 \end{align*}
@@ -1433,7 +1471,7 @@ or
 \ast e_2 = e_3 \wedge e_1\\
 \ast e_3 = e_1 \wedge e_2
 \end{align*}
-c) For $\Lambda^2(\mathbb{R}^3*)$ a basis is $\{ e_1 \wedge e_2, e_1 \wedge e_3, e_2 \wedge e_3 \}$ and $\ref{star}$ gives
+c) For $\Lambda^2(\mathbb{R}^3*)$ a basis is $\{ e_1 \wedge e_2, e_1 \wedge e_3, e_2 \wedge e_3 \}$ and definition $\ref{star}$ gives
 \begin{align*}
 \ast e_i \wedge e_j = \epsilon^k_{ij} e_k
 \end{align*}
@@ -1443,7 +1481,7 @@ or
 \ast (e_1 \wedge e_3) = - e_2\\
 \ast(e_2 \wedge e_3) = e_1
 \end{align*}
-d) For $\Lambda^3(\mathbb{R}^3*)$ a basis is $\{ e_1 \wedge e_2 \wedge e_3 \}$ and $\ref{star}$ yields
+d) For $\Lambda^3(\mathbb{R}^3*)$ a basis is $\{ e_1 \wedge e_2 \wedge e_3 \}$ and definition $\ref{star}$ yields
 \begin{align*}
 \ast ( e_1 \wedge e_2 \wedge e_3) = \epsilon_{123}= 1.
 \end{align*}
